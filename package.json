@@ -2,6 +2,36 @@
   "name": "rucken-todo",
   "version": "0.0.1",
   "license": "MIT",
+  "author": "EndyKaufman <admin@site15.ru>",
+  "maintainers": [
+    {
+      "name": "EndyKaufman",
+      "email": "admin@site15.ru"
+    }
+  ],
+  "description": "Simple todo application with: projects, tasks, statuses (backend: http://mockapi.io).",
+  "keywords": [
+    "auth",
+    "groups",
+    "permissions",
+    "projects",
+    "tasks",
+    "statuses",
+    "rucken",
+    "angular 4",
+    "i18n",
+    "ngx-bootstap",
+    "bootstrap",
+    "mockapi"
+  ],
+  "homepage": "https://github.com/site15/rucken-todo",
+  "bugs": {
+    "url": "https://github.com/site15/rucken-todo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/site15/rucken-todo.git"
+  },
   "scripts": {
     "start": "ng serve",
     "test": "npm-run-all lint build",
