@@ -1,0 +1,12 @@
+{
+  "po": {
+    "input": {
+      "dir": "./src/app/todo/i18n"
+    }
+  },
+  "ts": {
+    "output": {
+      "dir": "./src/app/todo/i18n"
+    }
+  }
+}

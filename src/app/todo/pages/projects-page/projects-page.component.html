@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <br/>
+  <div class="row">
+    <div class="col-md-5">
+      <page-sub-header [title]="'Projects'|translate"></page-sub-header>
+      <todo-projects-grid (onSelectItems)="onSelectProjects($event)" #todoProjectsGrid></todo-projects-grid>
+    </div>
+    <div class="col-md-7">
+      <page-sub-header [title]="'Tasks'|translate"></page-sub-header>
+      <todo-tasks-grid [loadAll]="false" (onSelectItems)="onSelectTasks($event)" #todoTasksGrid></todo-tasks-grid>
+    </div>
+    <div class="col-md-12">
+      <page-sub-header [title]="'Changes'|translate"></page-sub-header>
+      <todo-changes-grid [loadAll]="false" #todoChangesGrid></todo-changes-grid>
+    </div>
+  </div>
+</div>

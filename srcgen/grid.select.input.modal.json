@@ -1,0 +1,56 @@
+{
+    "app": {
+        "name": {
+            "kebab": "todo"
+        }
+    },
+    "module": {
+        "name": {
+            "kebab": "todo"
+        }
+    },
+    "grid": {
+        "list": {
+            "name": {
+                "kebab": "todo-statuses",
+                "camel": "TodoStatuses",
+                "lower": {
+                    "camel": "todoStatuses"
+                },
+                "caption": "Todo statuses",
+                "snake": "todo_statuses"
+            }
+        },
+        "name": {
+            "kebab": "todo-status",
+            "camel": "TodoStatus",
+            "lower": {
+                "camel": "todoStatus"
+            },
+            "caption": "Todo status",
+            "snake": "todo_status"
+        },
+        "item": {
+            "name": {
+                "caption": "todo status"
+            }
+        },
+        "table": {
+            "fields": {
+                "names": [
+                    "name",
+                    "title",
+                    "createdAt",
+                    "updatedAt"
+                ],
+                "dates": [
+                    "createdAt",
+                    "updatedAt"
+                ]
+            },
+            "pk": {
+                "name": "id"
+            }
+        }
+    }
+}

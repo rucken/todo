@@ -1,0 +1,43 @@
+<div bsModal #modal="bs-modal" class="modal fade todo-project-modal" [ngClass]="class" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+        <h4 class="modal-title">{{title | translate}}</h4>
+      </div>
+      <form (ngSubmit)="save()">
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <text-input [errors]="errors" [info]="info" name="title" [(model)]="item.title" [title]="modelMeta.titles.title" [readonly]="readonly"
+                [focused]="true" #focusElement></text-input>
+              <div class="form-group novalidation">
+                <label>
+              <input type="checkbox" [(ngModel)]="item.isPublic" [ngModelOptions]="{standalone: true}" [disabled]="readonly"> {{modelMeta.titles.isPublic | translate}}
+            </label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <text-input [errors]="errors" [info]="info" name="description" [(model)]="item.description" [title]="modelMeta.titles.description"
+                [readonly]="readonly"></text-input>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <todo-statuses-grid [loadAll]="false" headerType="custom" #statusesGrid></todo-statuses-grid>
+            </div>
+            <div class="col-md-6">
+              <todo-users-grid [loadAll]="false" #usersGrid></todo-users-grid>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <modal-footer-buttons (onClose)="close()" [readonly]="readonly" [okTitle]="text"></modal-footer-buttons>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
