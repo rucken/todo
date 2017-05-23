@@ -36,7 +36,7 @@
     "start": "ng serve",
     "test": "npm-run-all lint build",
     "lint": "ng lint",
-    "app.build": "ng build --prod --aot=false",
+    "app.build": "ng build --base-href https://site15.github.io/rucken-todo/ --prod --aot=false",
     "app.add-version": "gulp add-version",
     "app.deploy": "gh-pages -d dist",
     "app.gh-pages": "npm-run-all app.build app.add-version app.deploy",
