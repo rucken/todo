@@ -1,4 +1,4 @@
-import { AppService, AlertModalComponent, BaseAppComponent, RuckenRuI18n } from 'rucken';
+import { AppService, AlertModalComponent, BaseAppComponent, RuckenRuI18n, translate } from 'rucken';
 import { Component, ViewContainerRef, ComponentFactoryResolver, Input, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
@@ -13,9 +13,16 @@ import { TodoRuI18n } from './todo/i18n/ru.i18n';
   encapsulation: ViewEncapsulation.None
 })
 export class TodoAppComponent extends BaseAppComponent {
-  @Input()
-  autoLoadLang?= true;
 
+  languages = [{
+    code: 'ru',
+    title: translate('Russian'),
+    dic: _.merge(RuckenRuI18n, TodoRuI18n)
+  }, {
+    code: 'en',
+    title: translate('English'),
+    dic: null
+  }]
   pleaseWaitVisible = false;
 
   constructor(
@@ -54,12 +61,5 @@ export class TodoAppComponent extends BaseAppComponent {
       window['loading_screen'].finish();
       this.pleaseWaitVisible = false;
     }
-  }
-  loadLang() {
-    this.translateService.addLangs(['en', 'ru']);
-    this.translateService.setDefaultLang('en');
-    this.translateService.setTranslation('ru', _.merge(RuckenRuI18n, TodoRuI18n));
-    const browserLang: string = this.translateService.getBrowserLang();
-    this.translateService.use(browserLang.match(/en|ru/) ? browserLang : 'en');
   }
 }
