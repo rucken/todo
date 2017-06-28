@@ -25,7 +25,7 @@ export class TodoStatusesListModalComponent extends BaseResourceModalComponent {
   @Output()
   onClose: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
   @Output()
-  onSave: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
+  onOk: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
 
   item: any | TodoStatus;
   items: any[] | TodoStatus[] = [];
@@ -44,9 +44,5 @@ export class TodoStatusesListModalComponent extends BaseResourceModalComponent {
   selectTodoStatus(items: any[] | TodoStatus[]) {
     this.item = items[0];
     this.items = items;
-  }
-  select() {
-    this.onSave.emit(this);
-    return false;
   }
 }

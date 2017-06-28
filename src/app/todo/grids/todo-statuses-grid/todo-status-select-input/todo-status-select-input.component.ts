@@ -70,7 +70,7 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
     itemModal.account = this.account;
     itemModal.text = this.translateService.instant('Select');
     itemModal.title = this.translateService.instant('Todo statuses');
-    itemModal.onSave.subscribe(($event: any) => {
+    itemModal.onOk.subscribe(($event: any) => {
       this.value = itemModal.item;
       if (this.inputElement) {
         this.inputElement.value = this.value.pk;

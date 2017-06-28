@@ -32,10 +32,10 @@ export class TodoChangeModalComponent extends BaseResourceModalComponent {
   @Output()
   onClose: EventEmitter<TodoChangeModalComponent> = new EventEmitter<TodoChangeModalComponent>();
   @Output()
-  onSave: EventEmitter<TodoChangeModalComponent> = new EventEmitter<TodoChangeModalComponent>();
+  onOk: EventEmitter<TodoChangeModalComponent> = new EventEmitter<TodoChangeModalComponent>();
 
   save() {
-    this.onSave.emit(this);
+    this.onOk.emit(this);
     return false;
   }
 }

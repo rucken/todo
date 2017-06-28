@@ -36,7 +36,7 @@ export class TodoProjectModalComponent extends BaseResourceModalComponent {
   @Output()
   onClose: EventEmitter<TodoProjectModalComponent> = new EventEmitter<TodoProjectModalComponent>();
   @Output()
-  onSave: EventEmitter<TodoProjectModalComponent> = new EventEmitter<TodoProjectModalComponent>();
+  onOk: EventEmitter<TodoProjectModalComponent> = new EventEmitter<TodoProjectModalComponent>();
 
   afterOpen() {
     this.usersGrid.meta.perPage = 10;
@@ -47,7 +47,7 @@ export class TodoProjectModalComponent extends BaseResourceModalComponent {
   }
   save() {
     this.item.users = this.usersGrid.mockedItems;
-    this.onSave.emit(this);
+    this.onOk.emit(this);
     return false;
   }
 }

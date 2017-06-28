@@ -166,10 +166,16 @@ msgstr ""
 msgid "Date range"
 msgstr ""
 
+msgid "Language"
+msgstr ""
+
 msgid "Menu"
 msgstr ""
 
 msgid "Rucken: Todo"
+msgstr ""
+
+msgid "{{item.title}}"
 msgstr ""
 
 msgid "Logout"

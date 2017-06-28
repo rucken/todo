@@ -61,7 +61,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-status']);
     itemModal.text = this.translateService.instant('Create');
     itemModal.title = this.translateService.instant('Create new todo status');
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoStatus();
     itemModal.item.project = this.project;
@@ -81,7 +81,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     if (itemModal.readonly) {
       itemModal.title = this.translateService.instant('Todo status info');
     }
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoStatus(item);
     itemModal.modal.show();
@@ -96,7 +96,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     confirm.size = 'md';
     confirm.title = this.translateService.instant('Remove');
     confirm.message = this.translateService.instant('Are you sure you want to remove a todo status?');
-    confirm.onYes.subscribe(($event: any) => this.remove($event));
+    confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();

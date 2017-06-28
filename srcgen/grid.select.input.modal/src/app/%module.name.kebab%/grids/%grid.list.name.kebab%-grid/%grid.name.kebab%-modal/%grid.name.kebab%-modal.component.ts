@@ -33,5 +33,5 @@ export class <%=grid.name.camel%>ModalComponent extends BaseResourceModalCompone
   @Output()
   onClose: EventEmitter<<%=grid.name.camel%>ModalComponent> = new EventEmitter<<%=grid.name.camel%>ModalComponent>();
   @Output()
-  onSave: EventEmitter<<%=grid.name.camel%>ModalComponent> = new EventEmitter<<%=grid.name.camel%>ModalComponent>();
+  onOk: EventEmitter<<%=grid.name.camel%>ModalComponent> = new EventEmitter<<%=grid.name.camel%>ModalComponent>();
 }
