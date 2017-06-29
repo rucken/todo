@@ -3,6 +3,11 @@
     "node_modules/codelyzer"
   ],
   "rules": {
+    "arrow-return-shorthand": true,
+    "no-duplicate-super": true,
+    "no-misused-new": true,
+    "no-non-null-assertion": true,
+    "no-unnecessary-initializer": true,
     "callable-types": true,
     "class-name": true,
     "comment-format": [

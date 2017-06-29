@@ -1,3 +1,11 @@
+<a name="0.1.1"></a>
+## [0.1.1](https://github.com/site15/rucken-todo/compare/0.1.0...v0.1.1) (2017-06-29)
+
+### Bug Fixes
+
+* **deps:** Update deps
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2017-05-28)
 

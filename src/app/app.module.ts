@@ -7,6 +7,7 @@ import {
   ComponentLoaderFactory, PositioningService, TooltipConfig,
   PaginationConfig, TabsetConfig, PopoverConfig
 } from 'ngx-bootstrap';
+import { LaddaModule } from 'angular2-ladda';
 import { AuthHttp, AuthConfig } from 'angular2-jwt';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {
@@ -32,6 +33,11 @@ import { TodoRoutes } from './app.routes';
     BrowserModule,
     FormsModule,
     HttpModule,
+    LaddaModule.forRoot({
+      style: 'expand-left',
+      spinnerColor: 'white',
+      spinnerLines: 12
+    }),
     AlertModalModule.forRoot(),
     TodoNavbarModule.forRoot(),
     AuthModalModule.forRoot(),

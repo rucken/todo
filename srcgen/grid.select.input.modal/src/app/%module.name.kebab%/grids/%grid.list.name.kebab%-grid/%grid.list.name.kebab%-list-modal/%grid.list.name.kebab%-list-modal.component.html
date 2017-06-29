@@ -9,12 +9,12 @@
         <h4 class="modal-title">{{title | translate}}</h4>
       </div>
       <div class="modal-body">
-        <<%=grid.list.name.kebab%>-grid #<%=grid.list.name.lower.camel%> (onEnter)="select()" [onEnterEnabled]="true" (onSelectItems)="select<%=grid.name.camel%>($event)"
+        <<%=grid.list.name.kebab%>-grid #<%=grid.list.name.lower.camel%> (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="select<%=grid.name.camel%>($event)"
         [hardReadonly]="hardReadonly" [exclude]="exclude" #focusElement></<%=grid.list.name.kebab%>-grid>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="close()" translate>Close</button>
-        <button type="button" class="btn btn-success" (click)="select()">{{text | translate}}</button>
+        <modal-footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"
+          okBtnClass="btn-success" [okInProcess]="okInProcess"></modal-footer-buttons>
       </div>
     </div>
   </div>

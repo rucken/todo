@@ -56,7 +56,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
     itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-project']);
     itemModal.text = this.translateService.instant('Create');
     itemModal.title = this.translateService.instant('Create new todo project');
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoProject();
     itemModal.modal.show();
@@ -75,7 +75,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
     if (itemModal.readonly) {
       itemModal.title = this.translateService.instant('Todo project info');
     }
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoProject(item);
     itemModal.modal.show();
@@ -90,7 +90,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
     confirm.size = 'md';
     confirm.title = this.translateService.instant('Remove');
     confirm.message = this.translateService.instant('Are you sure you want to remove a todo project?');
-    confirm.onYes.subscribe(($event: any) => this.remove($event));
+    confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();

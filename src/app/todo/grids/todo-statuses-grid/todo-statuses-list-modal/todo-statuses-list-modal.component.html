@@ -9,12 +9,12 @@
         <h4 class="modal-title">{{title | translate}}</h4>
       </div>
       <div class="modal-body">
-        <todo-statuses-grid #todoStatuses [project]="project" (onEnter)="select()" [onEnterEnabled]="true" (onSelectItems)="selectTodoStatus($event)"
+        <todo-statuses-grid #todoStatuses [project]="project" (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="selectTodoStatus($event)"
           [exclude]="exclude" [hardReadonly]="hardReadonly" [loadAll]="false" #focusElement></todo-statuses-grid>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" (click)="close()" translate>Close</button>
-        <button type="button" class="btn btn-success" (click)="select()">{{text | translate}}</button>
+        <modal-footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"
+          okBtnClass="btn-success" [okInProcess]="okInProcess"></modal-footer-buttons>
       </div>
     </div>
   </div>

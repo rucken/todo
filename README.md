@@ -1,5 +1,9 @@
 ## rucken-todo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/site15/rucken-todo.svg)](https://greenkeeper.io/)
+[![Build Status][travis-image]][travis-url]
+
+
 A simple todo application demonstrating the basic usage of [rucken](https://github.com/site15/rucken).
 
 
@@ -15,7 +19,6 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - Open browser to [`http://localhost:4200`](http://localhost:4200)
 - If you want to use custom port, run `ng serve --port=4201`
 
-
 ### Build
 - run `npm run build` to build application
 
@@ -25,3 +28,10 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - run `npm run _grid`
 - reset changes on `./srcgen/grid.select.input.modal.json`
 - add custom code in generated files `./src/app/todo/grids/[grid]` and `./src/app/todo/shared/[service and model]`
+
+## License
+
+MIT
+
+[travis-image]: https://travis-ci.org/site15/rucken-todo.svg?branch=develop
+[travis-url]: https://travis-ci.org/site15/rucken-todo

@@ -55,7 +55,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>']);
     itemModal.text = this.translateService.instant('Create');
     itemModal.title = this.translateService.instant('Create new <%=grid.item.name.caption%>');
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new <%=grid.name.camel%>();
     itemModal.modal.show();
@@ -74,7 +74,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     if (itemModal.readonly) {
       itemModal.title = this.translateService.instant('<%=grid.name.caption%> info');
     }
-    itemModal.onSave.subscribe(($event: any) => this.save($event));
+    itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new <%=grid.name.camel%>(item);
     itemModal.modal.show();
@@ -89,7 +89,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     confirm.size = 'md';
     confirm.title = this.translateService.instant('Remove');
     confirm.message = this.translateService.instant('Are you sure you want to remove a <%=grid.item.name.caption%>?');
-    confirm.onYes.subscribe(($event: any) => this.remove($event));
+    confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();

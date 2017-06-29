@@ -22,7 +22,7 @@ export class TodoTasksListModalComponent extends BaseResourceModalComponent {
   @Output()
   onClose: EventEmitter<TodoTasksListModalComponent> = new EventEmitter<TodoTasksListModalComponent>();
   @Output()
-  onSave: EventEmitter<TodoTasksListModalComponent> = new EventEmitter<TodoTasksListModalComponent>();
+  onOk: EventEmitter<TodoTasksListModalComponent> = new EventEmitter<TodoTasksListModalComponent>();
 
   item: any | TodoTask = new TodoTask();
   items: any[] | TodoTask[]=[];
@@ -31,9 +31,5 @@ export class TodoTasksListModalComponent extends BaseResourceModalComponent {
   selectTodoTask(items: any[] | TodoTask[]) {
     this.item = items[0];
     this.items = items;
-  }
-  select() {
-    this.onSave.emit(this);
-    return false;
   }
 }

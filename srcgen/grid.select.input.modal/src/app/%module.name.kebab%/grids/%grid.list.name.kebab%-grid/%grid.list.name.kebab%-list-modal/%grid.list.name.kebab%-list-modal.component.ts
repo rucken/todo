@@ -21,7 +21,7 @@ export class <%=grid.list.name.camel%>ListModalComponent extends BaseResourceMod
   @Output()
   onClose: EventEmitter<<%=grid.list.name.camel%>ListModalComponent> = new EventEmitter<<%=grid.list.name.camel%>ListModalComponent>();
   @Output()
-  onSave: EventEmitter<<%=grid.list.name.camel%>ListModalComponent> = new EventEmitter<<%=grid.list.name.camel%>ListModalComponent>();
+  onOk: EventEmitter<<%=grid.list.name.camel%>ListModalComponent> = new EventEmitter<<%=grid.list.name.camel%>ListModalComponent>();
 
   item: any | <%=grid.name.camel%> = new <%=grid.name.camel%>();
   items: any[] | <%=grid.name.camel%>[] = [];
@@ -30,9 +30,5 @@ export class <%=grid.list.name.camel%>ListModalComponent extends BaseResourceMod
   select<%=grid.name.camel%>(items: any[] | <%=grid.name.camel%>[]) {
     this.item = items[0];
     this.items = items;
-  }
-  select() {
-    this.onSave.emit(this);
-    return false;
   }
 }

@@ -22,7 +22,7 @@ export class TodoChangesListModalComponent extends BaseResourceModalComponent {
   @Output()
   onClose: EventEmitter<TodoChangesListModalComponent> = new EventEmitter<TodoChangesListModalComponent>();
   @Output()
-  onSave: EventEmitter<TodoChangesListModalComponent> = new EventEmitter<TodoChangesListModalComponent>();
+  onOk: EventEmitter<TodoChangesListModalComponent> = new EventEmitter<TodoChangesListModalComponent>();
 
   item: any | TodoChange = new TodoChange();
   items: any[] | TodoChange[] = [];
@@ -31,9 +31,5 @@ export class TodoChangesListModalComponent extends BaseResourceModalComponent {
   selectTodoChange(items: any[] | TodoChange[]) {
     this.item = items[0];
     this.items = items;
-  }
-  select() {
-    this.onSave.emit(this);
-    return false;
   }
 }
