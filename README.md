@@ -1,6 +1,6 @@
 ## rucken-todo
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/site15/rucken.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/site15/rucken-todo.svg)](https://greenkeeper.io/)
 [![Build Status][travis-image]][travis-url]
 
 
