@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 APP="$0"
 COMMAND=$1
 
