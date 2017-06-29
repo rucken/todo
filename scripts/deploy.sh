@@ -26,17 +26,18 @@ fi
 
 # full commands
 if [ "$COMMAND" = "--rollbar" ]; then
+        echo "Start request to rollbar..."
         ENVIRONMENT="$2"
         LOCAL_USERNAME=`whoami`
         REVISION=`git log -n 1 --pretty=format:"%H"`
-
         curl https://api.rollbar.com/api/1/deploy/ \
           -F access_token=$ACCESS_TOKEN \
           -F environment=$ROLLBAR_ACCESS_TOKEN \
           -F revision=$REVISION \
           -F local_username=$LOCAL_USERNAME
+        echo "End request to rollbar."
         exit
 elif [ "$COMMAND" = "--help" ]; then
-	$APP
-	exit
+  $APP
+  exit
 fi
