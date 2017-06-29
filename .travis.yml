@@ -2,3 +2,12 @@ language: node_js
 node_js:
   - "7"
   - "6"
+deploy:
+  - provider: script
+    script: scripts/deploy.sh --rollbar development
+    on:
+      branch: develop
+  - provider: script
+    script: scripts/deploy.sh --rollbar production
+    on:
+      branch: master
