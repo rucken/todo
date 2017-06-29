@@ -2,15 +2,23 @@
 
 APP="$0"
 COMMAND=$1
+ENV=""
+
+if [ "$TRAVIS_BRANCH" == "develop" ]; then
+  ENV="development"
+fi
+if [ "$TRAVIS_BRANCH" == "master" ]; then
+  ENV="production"
+fi
 
 if [ "$1" = "" ]; then
  echo "
- To deploy, run:
- ./deploy.sh --rollbar [ environment ]
+ To hooks, run:
+ ./hooks.sh --rollbar [ environment ]
 
  Example:
- ./deploy.sh --rollbar development
- ./deploy.sh --rollbar production
+ ./hooks.sh --rollbar development
+ ./hooks.sh --rollbar production
 "
  exit
 fi
@@ -37,7 +45,10 @@ if [ "$COMMAND" = "--rollbar" ]; then
           -F local_username=$LOCAL_USERNAME
         echo "End request to rollbar."
         exit
+elif [ "$COMMAND" = "--all" ]; then
+        $APP --rollbar "$ENV"
+        exit
 elif [ "$COMMAND" = "--help" ]; then
-  $APP
-  exit
+        $APP
+        exit
 fi
