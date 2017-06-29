@@ -3,4 +3,5 @@ node_js:
   - "7"
   - "6"
 after_success:
-- "./scripts/hooks.sh --all"
+  - chmod +x ./scripts/hooks.sh
+  - "./scripts/hooks.sh --all"
