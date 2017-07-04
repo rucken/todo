@@ -3,13 +3,13 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoTasksListModalComponent } from './todo-tasks-list-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { ModalFooterButtonsModule } from 'rucken';
+import { FooterButtonsModule } from 'rucken';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule, ModalModule.forRoot(), TranslateModule.forChild(),
-    ModalFooterButtonsModule.forRoot(), TodoTasksGridModule.forRoot()
+    FooterButtonsModule.forRoot(), TodoTasksGridModule.forRoot()
   ],
   declarations: [
     TodoTasksListModalComponent

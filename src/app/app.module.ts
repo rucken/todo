@@ -14,7 +14,7 @@ import {
   RuckenComponents, RuckenServices, RepositoryHelper,
   EndpointHelper, HttpHelper, AccountService, AuthHttpFactory, BaseResourceSelectInputConfig,
   TextInputConfig, SelectInputConfig, TableColumnConfig,
-  TextInputModule, ModalFooterButtonsModule, AuthModalModule, AlertModalModule
+  TextInputModule, FooterButtonsModule, AuthModalModule, AlertModalModule
 } from 'rucken';
 import { RouterModule } from '@angular/router';
 import {

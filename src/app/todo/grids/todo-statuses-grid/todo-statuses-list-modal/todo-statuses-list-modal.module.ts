@@ -3,13 +3,13 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoStatusesListModalComponent } from './todo-statuses-list-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { ModalFooterButtonsModule } from 'rucken';
+import { FooterButtonsModule } from 'rucken';
 import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule, ModalModule.forRoot(), TranslateModule.forChild(),
-    ModalFooterButtonsModule.forRoot(), TodoStatusesGridModule.forRoot()
+    FooterButtonsModule.forRoot(), TodoStatusesGridModule.forRoot()
   ],
   declarations: [
     TodoStatusesListModalComponent

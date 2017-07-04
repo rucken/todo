@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService, ResouceEnumStatus, translate } from 'rucken';
+import { AccountService, EndpointStatusEnum, translate } from 'rucken';
 import { AppService } from 'rucken';
 import { BasePageComponent } from 'rucken';
 import { TodoProjectsGridComponent } from '../../grids/todo-projects-grid/todo-projects-grid.component';
@@ -36,36 +36,36 @@ export class TodoProjectsPageComponent extends BasePageComponent {
   init() {
     super.init();
     this.todoProjectsGrid.cachedResourcesService.changeStatusList$.subscribe(
-      (status: ResouceEnumStatus) => {
-        if (status === ResouceEnumStatus.Loading) {
-          this.todoTasksGrid.cachedResourcesService.setStatusList(ResouceEnumStatus.Loading,
+      (status: EndpointStatusEnum) => {
+        if (status === EndpointStatusEnum.Loading) {
+          this.todoTasksGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
             translate('Loading...')
           );
         }
       }
     );
     this.todoTasksGrid.cachedResourcesService.changeStatusList$.subscribe(
-      (status: ResouceEnumStatus) => {
-        if (status === ResouceEnumStatus.Loading) {
-          this.todoChangesGrid.cachedResourcesService.setStatusList(ResouceEnumStatus.Loading,
+      (status: EndpointStatusEnum) => {
+        if (status === EndpointStatusEnum.Loading) {
+          this.todoChangesGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
             translate('Loading...')
           );
         }
       }
     );
     this.todoProjectsGrid.cachedResourcesService.changeStatusItem$.subscribe(
-      (status: ResouceEnumStatus) => {
-        if (status === ResouceEnumStatus.Ok) {
-          this.todoTasksGrid.cachedResourcesService.setStatusList(ResouceEnumStatus.Loading,
+      (status: EndpointStatusEnum) => {
+        if (status === EndpointStatusEnum.Ok) {
+          this.todoTasksGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
             translate('Loading...')
           );
         }
       }
     );
     this.todoTasksGrid.cachedResourcesService.changeStatusItem$.subscribe(
-      (status: ResouceEnumStatus) => {
-        if (status === ResouceEnumStatus.Ok) {
-          this.todoChangesGrid.cachedResourcesService.setStatusList(ResouceEnumStatus.Loading,
+      (status: EndpointStatusEnum) => {
+        if (status === EndpointStatusEnum.Ok) {
+          this.todoChangesGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
             translate('Loading...')
           );
         }

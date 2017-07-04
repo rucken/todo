@@ -1,3 +1,13 @@
+<a name="0.1.3"></a>
+## [0.1.3](https://github.com/site15/rucken-todo/compare/0.1.2...v0.1.3) (2017-07-04)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies and change code for it ([53ae546](https://github.com/site15/rucken-todo/commit/53ae546))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/site15/rucken-todo/compare/0.1.0...v0.1.2) (2017-06-29)
 
