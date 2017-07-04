@@ -6,7 +6,7 @@ import { ConfirmModalComponent } from 'rucken';
 import { AccountService } from 'rucken';
 import { AppService } from 'rucken';
 import { UsersService } from 'rucken';
-import { ResouceEnumStatus } from 'rucken';
+import { EndpointStatusEnum } from 'rucken';
 import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';

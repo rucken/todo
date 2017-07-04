@@ -7,7 +7,7 @@ import { ConfirmModalComponent } from 'rucken';
 import { TodoProjectsService } from '../../shared/todo-projects.service';
 import { AppService } from 'rucken';
 import { AccountService } from 'rucken';
-import { ResouceEnumStatus } from 'rucken';
+import { EndpointStatusEnum } from 'rucken';
 import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';

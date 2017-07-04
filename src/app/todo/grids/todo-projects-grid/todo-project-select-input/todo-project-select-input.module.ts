@@ -3,7 +3,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoProjectSelectInputComponent } from './todo-project-select-input.component';
 import { ModalModule, TooltipModule } from 'ngx-bootstrap';
-import { ModalFooterButtonsModule } from 'rucken';
+import { FooterButtonsModule } from 'rucken';
 import { TextInputModule } from 'rucken';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,7 +13,7 @@ import { TodoProjectsListModalModule } from '../todo-projects-list-modal/todo-pr
   imports: [
     CommonModule, FormsModule, ModalModule.forRoot(), TranslateModule.forChild(),
     TodoProjectsListModalModule.forRoot(),
-    ModalFooterButtonsModule.forRoot(), TextInputModule.forRoot(),
+    FooterButtonsModule.forRoot(), TextInputModule.forRoot(),
     TooltipModule.forRoot(), SelectInputModule.forRoot()
   ],
   declarations: [

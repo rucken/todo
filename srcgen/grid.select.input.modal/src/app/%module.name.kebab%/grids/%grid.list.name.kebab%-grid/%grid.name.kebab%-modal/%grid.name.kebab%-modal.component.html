@@ -13,7 +13,7 @@
 <%for (var i=0; i<grid.table.fields.names.length; i++) {%>          <text-input [errors]="errors" [info]="info" name="<%=grid.table.fields.names[i]%>" [(model)]="item.<%=grid.table.fields.names[i]%>" [title]="modelMeta.titles.<%=grid.table.fields.names[i]%>" [readonly]="readonly" <%=(i==0)?'[focused]="true" #focusElement':''%>></text-input>
 <%}%></div>
         <div class="modal-footer">
-          <modal-footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" [okInProcess]="okInProcess"></modal-footer-buttons>
+          <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" [okInProcess]="okInProcess"></footer-buttons>
         </div>
       </form>
     </div>
