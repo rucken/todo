@@ -9,7 +9,7 @@
         <h4 class="modal-title">{{title | translate}}</h4>
       </div>
       <div class="modal-body">
-        <todo-projects-grid #todoProjects (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="selectTodoProject($event)" [exclude]="exclude"
+        <todo-projects-grid #todoProjects (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="selectTodoProject($event)"
           [hardReadonly]="hardReadonly" #focusElement></todo-projects-grid>
       </div>
       <div class="modal-footer">

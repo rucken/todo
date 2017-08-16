@@ -132,9 +132,6 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
   }
   search(ignoreCache?: boolean) {
     const filter: any = {};
-    if (this.exclude) {
-      filter.exclude = this.exclude;
-    }
     filter.project = this.project && this.project.pk ? this.project.pk : null;
     this.cachedResourcesService.ignoreCache = ignoreCache;
     this.cachedResourcesService.loadAll(this.searchText, filter);

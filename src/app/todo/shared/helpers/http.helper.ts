@@ -7,7 +7,8 @@ import { environment } from '../../../../environments/environment';
 
 @Injectable()
 export class TodoHttpHelper extends HttpHelper {
-  withCredentials = false;
+
+  direct = environment.type === 'mockapi';
 
   constructor(
     public authHttp: AuthHttp,

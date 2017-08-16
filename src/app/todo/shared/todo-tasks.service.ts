@@ -13,8 +13,8 @@ export class TodoTasksService extends BaseRepositoryService {
 
   constructor(public repositoryHelper: RepositoryHelper) {
     super(repositoryHelper);
-    this.pluralName = 'tasks';
-    this.name = 'task';
+    this.pluralName = 'todo-tasks';
+    this.name = 'todo-task';
     this.apiUrl = `${repositoryHelper.apiUrl}/${this.pluralName}`;
     this.items$ = <Subject<TodoTask[]>>new Subject();
   }

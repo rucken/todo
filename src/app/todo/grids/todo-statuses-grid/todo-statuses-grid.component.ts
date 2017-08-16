@@ -134,9 +134,6 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
   }
   search(ignoreCache?: boolean) {
     const filter: any = {};
-    if (this.exclude) {
-      filter.exclude = this.exclude;
-    }
     if (this.project) {
       filter.project = this.project.pk;
     }

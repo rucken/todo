@@ -6,6 +6,7 @@ import {
 } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TodoRoutes } from '../../../app.routes';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'todo-navbar',
@@ -16,6 +17,8 @@ import { TodoRoutes } from '../../../app.routes';
 export class TodoNavbarComponent extends NavbarComponent {
 
   changelog: string = require('html-loader!markdown-loader!./../../../../../CHANGELOG.md');
+
+  private _childrenRoutes: any[] = [];
 
   constructor(
     public accountService: AccountService,
@@ -30,5 +33,25 @@ export class TodoNavbarComponent extends NavbarComponent {
   init() {
     super.init();
     this.childrenRoutes = TodoRoutes;
+  }
+  set childrenRoutes(routes: any[]) {
+    this._childrenRoutes = routes;
+  }
+  get childrenRoutes() {
+    const items: any[] = this._childrenRoutes.filter(
+      item =>
+        item.data &&
+        item.data.visible &&
+        this.account &&
+        this.account.checkPermissions([`read_${item.data.name}-page`])
+    ).map(
+      item => {
+        const newItem = item.data;
+        newItem.url = `/${newItem.name}`;
+        return newItem;
+      });
+    return _.sortBy(items, [
+      (item: any) => item.title
+    ]);
   }
 }

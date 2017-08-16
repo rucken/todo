@@ -18,11 +18,12 @@ import {
 } from 'rucken';
 import { RouterModule } from '@angular/router';
 import {
-  TodoEndpointHelper, TodoHttpHelper, TodoAccountService,
-  TodoRepositoryHelper, TodoNavbarModule, TodoServices
+  TodoEndpointHelper, TodoHttpHelper, TodoNavbarModule, TodoServices
 } from './todo';
 import { TodoAppComponent } from './app.component';
 import { TodoRoutes } from './app.routes';
+import { environment } from '../environments/environment';
+import { RepositoryHelper } from 'rucken';
 
 @NgModule({
   declarations: [
@@ -58,10 +59,9 @@ import { TodoRoutes } from './app.routes';
     SelectInputConfig,
     TableColumnConfig,
     { provide: AuthHttp, useFactory: AuthHttpFactory.create, deps: [Http, RequestOptions] },
-    { provide: RepositoryHelper, useClass: TodoRepositoryHelper },
+    { provide: RepositoryHelper, useClass: RepositoryHelper },
     { provide: EndpointHelper, useClass: TodoEndpointHelper },
-    { provide: HttpHelper, useClass: TodoHttpHelper },
-    { provide: AccountService, useClass: TodoAccountService }
+    { provide: HttpHelper, useClass: TodoHttpHelper }
   ],
   bootstrap: [TodoAppComponent]
 })
