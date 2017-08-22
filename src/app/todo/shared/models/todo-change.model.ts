@@ -1,6 +1,7 @@
-import { TodoProject } from '../..';
+
 import { BaseResourceModel, translate } from 'rucken';
 import { TodoTask } from './todo-task.model';
+import { TodoProject } from './todo-project.model';
 
 export class TodoChange extends BaseResourceModel {
   static titles: any = {
@@ -25,8 +26,6 @@ export class TodoChange extends BaseResourceModel {
     'updatedAt',
 
   ];
-
-  className = 'TodoChange';
 
   id: number;
   project: TodoProject;

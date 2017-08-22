@@ -29,8 +29,6 @@ export class TodoTask extends BaseResourceModel {
     'updatedAt',
   ];
 
-  className = 'TodoTask';
-
   id: number;
   project: TodoProject;
   title: string;
