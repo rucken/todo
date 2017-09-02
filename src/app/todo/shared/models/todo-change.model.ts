@@ -1,7 +1,7 @@
 
 import { BaseResourceModel, translate } from 'rucken';
 import { TodoTask } from './todo-task.model';
-import { TodoProject } from './todo-project.model';
+import { ShortTodoProject } from './short-todo-project.model';
 
 export class TodoChange extends BaseResourceModel {
   static titles: any = {
@@ -28,7 +28,7 @@ export class TodoChange extends BaseResourceModel {
   ];
 
   id: number;
-  project: TodoProject;
+  project: ShortTodoProject;
   task: TodoTask;
   oldData: string;
   newData: string;
@@ -37,7 +37,7 @@ export class TodoChange extends BaseResourceModel {
 
   static meta() {
     const meta: any = TodoChange;
-    meta.project = TodoProject;
+    meta.project = ShortTodoProject;
     meta.task = TodoTask;
     return meta;
   }
@@ -46,13 +46,13 @@ export class TodoChange extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoChange.meta());
-    this.project = obj.project ? new TodoProject(obj.project) : null;
+    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
     this.task = obj.task ? new TodoTask(obj.task) : null;
   }
   format() {
     const result = this.formatByFields(TodoChange.meta());
-    result.project = result.project ? result.project.format() : null;
-    result.task = result.task ? result.task.format() : null;
+    result.project = result.project ? result.project.pk : null;
+    result.task = result.task ? result.task.pk : null;
     return result;
   }
   get objectType() {

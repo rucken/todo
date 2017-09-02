@@ -13,14 +13,14 @@
           <div class="row">
             <div class="col-md-4">
               <todo-project-select-input [errors]="errors" name="project" [(model)]="item.project" [(modelAsString)]="item.projectAsString" [title]="modelMeta.titles.project"
-                [readonly]="readonly" [focused]="true" #focusElement></todo-project-select-input>
+                [readonly]="readonly" [focused]="true" #projectSelectInput #focusElement></todo-project-select-input>
             </div>
             <div class="col-md-4">
-              <todo-task-select-input [errors]="errors" name="task" [(model)]="item.task" [(modelAsString)]="item.taskAsString" [title]="modelMeta.titles.task"
-                [readonly]="readonly"></todo-task-select-input>
+              <todo-task-select-input [errors]="errors" name="task" [project]="item.project" [(model)]="item.task" [(modelAsString)]="item.taskAsString" [title]="modelMeta.titles.task"
+                [readonly]="readonly" #taskSelectInput></todo-task-select-input>
             </div>
             <div class="col-md-4">
-              <text-input [errors]="errors" [info]="info" name="createdAt" [(model)]="item.createdAt" [title]="modelMeta.titles.createdAt"
+              <text-input [errors]="errors" [info]="info" name="createdAt" type="date" [(model)]="item.createdAtInput" [title]="modelMeta.titles.createdAt"
                 [readonly]="true"></text-input>
             </div>
             <div class="col-md-6">

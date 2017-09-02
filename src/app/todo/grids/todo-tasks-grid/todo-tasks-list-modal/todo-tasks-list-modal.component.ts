@@ -3,6 +3,7 @@ import { TodoTask } from './../../../shared/models/todo-task.model';
 import { User, BaseResourceModalComponent } from 'rucken';
 import { ModalDirective } from 'ngx-bootstrap';
 import { TodoTasksGridComponent } from '../todo-tasks-grid.component';
+import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-tasks-list-modal',
@@ -19,6 +20,8 @@ export class TodoTasksListModalComponent extends BaseResourceModalComponent {
   @ViewChild('todoTasks')
   todoTasks: TodoTasksGridComponent;
 
+  @Input()
+  project?: ShortTodoProject;
   @Output()
   onClose: EventEmitter<TodoTasksListModalComponent> = new EventEmitter<TodoTasksListModalComponent>();
   @Output()

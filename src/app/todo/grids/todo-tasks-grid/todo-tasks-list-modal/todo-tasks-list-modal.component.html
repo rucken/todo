@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <todo-tasks-grid #todoTasks (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="selectTodoTask($event)" [hardReadonly]="hardReadonly"
-          [loadAll]="false" #focusElement></todo-tasks-grid>
+          [project]="project" #focusElement></todo-tasks-grid>
       </div>
       <div class="modal-footer">
         <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"
