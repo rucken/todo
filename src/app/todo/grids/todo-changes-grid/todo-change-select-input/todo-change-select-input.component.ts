@@ -28,11 +28,11 @@ export class TodoChangeSelectInputComponent extends BaseResourceSelectInputCompo
   @Input()
   name = 'todoChange';
   @Input()
-  model: any | TodoChange = new TodoChange();
+  model: TodoChange = new TodoChange();
   @Output()
-  modelChange: EventEmitter<any | TodoChange> = new EventEmitter<any | TodoChange>();
+  modelChange: EventEmitter<TodoChange> = new EventEmitter<TodoChange>();
 
-  items: any[] | TodoChange[];
+  items: TodoChange[];
   cachedResourcesService: TodoChangesService;
 
   constructor(

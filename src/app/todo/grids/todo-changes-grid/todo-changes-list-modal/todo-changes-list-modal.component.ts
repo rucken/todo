@@ -24,11 +24,11 @@ export class TodoChangesListModalComponent extends BaseResourceModalComponent {
   @Output()
   onOk: EventEmitter<TodoChangesListModalComponent> = new EventEmitter<TodoChangesListModalComponent>();
 
-  item: any | TodoChange = new TodoChange();
-  items: any[] | TodoChange[] = [];
+  item: TodoChange = new TodoChange();
+  items: TodoChange[] = [];
   modelMeta: any = TodoChange.meta();
 
-  selectTodoChange(items: any[] | TodoChange[]) {
+  selectTodoChange(items: TodoChange[]) {
     this.item = items[0];
     this.items = items;
   }

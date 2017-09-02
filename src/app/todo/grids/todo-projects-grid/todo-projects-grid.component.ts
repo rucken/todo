@@ -21,13 +21,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
 
   @Output()
-  onSelectItems: EventEmitter<any[] | TodoProject[] | any>;
+  onSelectItems: EventEmitter<TodoProject[] | any>;
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
   modelMeta: any = TodoProject.meta();
-  items: any[] | TodoProject[];
-  selectedItems: any[] | TodoProject[];
+  items: TodoProject[];
+  selectedItems: TodoProject[];
   cachedResourcesService: TodoProjectsService;
 
   constructor(
@@ -62,7 +62,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showEditModal(item: any | TodoProject) {
+  showEditModal(item: TodoProject) {
     if (this.modalIsOpened) {
       return;
     }
@@ -81,7 +81,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showRemoveModal(item: any | TodoProject) {
+  showRemoveModal(item: TodoProject) {
     if (this.modalIsOpened) {
       return;
     }
@@ -97,7 +97,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
   }
   save(itemModal: TodoProjectModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(
-      (todoProject: any | TodoProject) => {
+      (todoProject: TodoProject) => {
         itemModal.modal.hide();
       }, (errors: any) => {
         if (errors.message) {

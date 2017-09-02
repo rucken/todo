@@ -11,7 +11,7 @@ import { EndpointStatusEnum } from 'rucken';
 import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
-import { TodoProject } from '../../shared/models/todo-project.model';
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 @Component({
   selector: 'todo-statuses-grid',
   templateUrl: './todo-statuses-grid.component.html',
@@ -23,16 +23,16 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
 
   @Input()
   headerType: string = 'basic';
-  @Input()
-  project?: any | TodoProject;
   @Output()
   onSelectItems: EventEmitter<TodoStatus[] | any>;
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
+  @Input()
+  project?: ShortTodoProject;
   modelMeta: any = TodoStatus.meta();
-  items: any[] | TodoStatus[];
-  selectedItems: any[] | TodoStatus[];
+  items: TodoStatus[];
+  selectedItems: TodoStatus[];
   cachedResourcesService: TodoStatusesService;
 
   constructor(
@@ -68,7 +68,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showEditModal(item: any | TodoStatus) {
+  showEditModal(item: TodoStatus) {
     if (this.modalIsOpened) {
       return;
     }
@@ -87,7 +87,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showRemoveModal(item: any | TodoStatus) {
+  showRemoveModal(item: TodoStatus) {
     if (this.modalIsOpened) {
       return;
     }
@@ -103,7 +103,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
   }
   save(itemModal: TodoStatusModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(
-      (todoStatus: any | TodoStatus) => {
+      (todoStatus: TodoStatus) => {
         itemModal.modal.hide();
       }, (errors: any) => {
         if (errors.message) {
@@ -134,9 +134,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
   }
   search(ignoreCache?: boolean) {
     const filter: any = {};
-    if (this.project) {
-      filter.project = this.project.pk;
-    }
+    filter.project = this.project && this.project.pk ? this.project.pk : null;
     this.cachedResourcesService.ignoreCache = ignoreCache;
     this.cachedResourcesService.loadAll(this.searchText, filter);
   }

@@ -12,11 +12,11 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-4">
-              <todo-project-select-input [errors]="errors" [(model)]="item.project" [(modelAsString)]="item.projectAsString" [title]="modelMeta.titles.project"
+              <todo-project-select-input [errors]="errors" name="project" [(model)]="item.project" [(modelAsString)]="item.projectAsString" [title]="modelMeta.titles.project"
                 [readonly]="readonly" [focused]="true" #focusElement></todo-project-select-input>
             </div>
             <div class="col-md-4">
-              <todo-task-select-input [errors]="errors" [(model)]="item.task" [(modelAsString)]="item.taskAsString" [title]="modelMeta.titles.task"
+              <todo-task-select-input [errors]="errors" name="task" [(model)]="item.task" [(modelAsString)]="item.taskAsString" [title]="modelMeta.titles.task"
                 [readonly]="readonly"></todo-task-select-input>
             </div>
             <div class="col-md-4">

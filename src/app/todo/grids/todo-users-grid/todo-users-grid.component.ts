@@ -25,6 +25,8 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
+  @Input()
+  project?: TodoProject;
   modelMeta: any = TodoProject.meta();
   selectedItems: User[] | any[];
   cachedResourcesService: UsersService;
@@ -95,23 +97,6 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     confirm.modal.show();
   }
   save(itemModal: TodoUserModalComponent) {
-    if (!itemModal.item.pk) {
-      if (this.cachedResourcesService.items.length > 0) {
-
-        const lastItem = this.cachedResourcesService.items.reduce((prev: User, cur: User, index: number, users: User[]) => {
-          return prev && cur && Math.abs(+prev.pk) < Math.abs(+cur.pk) ? cur : prev;
-        })[0];
-
-        if (lastItem) {
-          itemModal.item.id = lastItem.pk + 1;
-        } else {
-          itemModal.item.id = +this.cachedResourcesService.items[0].pk + 1;
-        }
-      } else {
-        itemModal.item.id = 1;
-      }
-      itemModal.item.id = itemModal.item.pk * -1;
-    }
     this.cachedResourcesService.save(itemModal.item).subscribe(
       (user: User | any) => {
         itemModal.modal.hide();
@@ -141,5 +126,11 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
           itemModal.errors.emit(errors);
         }
       });
+  }
+  search(ignoreCache?: boolean) {
+    const filter: any = {};
+    filter.project = this.project && this.project.pk ? this.project.pk : null;
+    this.cachedResourcesService.ignoreCache = ignoreCache;
+    this.cachedResourcesService.loadAll(this.searchText, filter);
   }
 }

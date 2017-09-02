@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-6">
               <text-input [errors]="errors" [info]="info" type="email" name="email" [(model)]="item.email" [title]="modelMeta.titles.email"
-                [readonly]="readonly"></text-input>
+                [readonly]="readonly || item.pk"></text-input>
             </div>
           </div>
         </div>

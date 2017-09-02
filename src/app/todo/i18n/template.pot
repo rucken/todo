@@ -118,6 +118,21 @@ msgstr ""
 msgid "Id"
 msgstr ""
 
+msgid "Title"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Is public"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Updated at"
+msgstr ""
+
 msgid "Project"
 msgstr ""
 
@@ -131,21 +146,6 @@ msgid "Old data"
 msgstr ""
 
 msgid "New data"
-msgstr ""
-
-msgid "Created at"
-msgstr ""
-
-msgid "Updated at"
-msgstr ""
-
-msgid "Title"
-msgstr ""
-
-msgid "Description"
-msgstr ""
-
-msgid "Is public"
 msgstr ""
 
 msgid "Name"

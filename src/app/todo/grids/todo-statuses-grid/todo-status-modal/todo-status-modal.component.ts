@@ -25,7 +25,7 @@ export class TodoStatusModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  item: any | TodoStatus = new TodoStatus();
+  item: TodoStatus = new TodoStatus();
   @Input()
   modelMeta: any = TodoStatus.meta();
   @Output()

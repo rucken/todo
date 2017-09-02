@@ -16,6 +16,8 @@ import { TodoEndpointHelper } from './shared/helpers/endpoint.helper';
 export { TodoEndpointHelper } from './shared/helpers/endpoint.helper';
 import { TodoHttpHelper } from './shared/helpers/http.helper';
 export { TodoHttpHelper } from './shared/helpers/http.helper';
+import { ShortTodoProject } from './shared/models/short-todo-project.model';
+export { ShortTodoProject } from './shared/models/short-todo-project.model';
 import { TodoChange } from './shared/models/todo-change.model';
 export { TodoChange } from './shared/models/todo-change.model';
 import { TodoProject } from './shared/models/todo-project.model';
@@ -134,6 +136,6 @@ import { TodoUsersFrameRoutes } from './pages/admin-page/users-frame/users-frame
 export { TodoUsersFrameRoutes } from './pages/admin-page/users-frame/users-frame.routes';
 export const TodoModules: any[] = [TodoNavbarModule, TodoChangesGridModule, TodoChangeModalModule, TodoChangeSelectInputModule, TodoChangesListModalModule, TodoProjectsGridModule, TodoProjectModalModule, TodoProjectSelectInputModule, TodoProjectsListModalModule, TodoStatusesGridModule, TodoStatusModalModule, TodoStatusSelectInputModule, TodoStatusesListModalModule, TodoTasksGridModule, TodoTaskModalModule, TodoTaskSelectInputModule, TodoTasksListModalModule, TodoUsersGridModule, TodoUserModalModule, HomePageModule, ProjectsPageModule, TodoThemesPageModule, TodoAccountPageModule, TodoProfileFrameModule, TodoAdminPageModule, TodoGroupsFrameModule, TodoUsersFrameModule];
 export const TodoComponents: any[] = [TodoNavbarComponent, TodoChangesGridComponent, TodoChangeModalComponent, TodoChangeSelectInputComponent, TodoChangesListModalComponent, TodoProjectsGridComponent, TodoProjectModalComponent, TodoProjectSelectInputComponent, TodoProjectsListModalComponent, TodoStatusesGridComponent, TodoStatusModalComponent, TodoStatusSelectInputComponent, TodoStatusesListModalComponent, TodoTasksGridComponent, TodoTaskModalComponent, TodoTaskSelectInputComponent, TodoTasksListModalComponent, TodoUsersGridComponent, TodoUserModalComponent, TodoHomePageComponent, TodoProjectsPageComponent];
-export const TodoShareds: any[] = [TodoRuI18n, TodoEndpointHelper, TodoHttpHelper, TodoChange, TodoProject, TodoStatus, TodoTask, TodoHomePageRoutes, TodoProjectsPageRoutes, TodoThemesPageRoutes, TodoAccountPageRoutes, TodoProfileFrameRoutes, TodoAdminPageRoutes, TodoGroupsFrameRoutes, TodoUsersFrameRoutes];
+export const TodoShareds: any[] = [TodoRuI18n, TodoEndpointHelper, TodoHttpHelper, ShortTodoProject, TodoChange, TodoProject, TodoStatus, TodoTask, TodoHomePageRoutes, TodoProjectsPageRoutes, TodoThemesPageRoutes, TodoAccountPageRoutes, TodoProfileFrameRoutes, TodoAdminPageRoutes, TodoGroupsFrameRoutes, TodoUsersFrameRoutes];
 export const TodoServices: any[] = [TodoChangesService, TodoProjectsService, TodoStatusesService, TodoTasksService];
 export const TodoPipes: any[] = [];

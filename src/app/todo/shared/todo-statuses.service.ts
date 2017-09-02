@@ -13,8 +13,8 @@ export class TodoStatusesService extends BaseRepositoryService {
 
   constructor(public repositoryHelper: RepositoryHelper) {
     super(repositoryHelper);
-    this.pluralName = 'todo-statuses';
-    this.name = 'todo-status';
+    this.pluralName = 'todo_statuses';
+    this.name = 'todo_status';
     this.apiUrl = `${repositoryHelper.apiUrl}/${this.pluralName}`;
     this.items$ = <Subject<TodoStatus[]>>new Subject();
   }

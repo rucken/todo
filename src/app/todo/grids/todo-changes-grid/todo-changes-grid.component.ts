@@ -22,17 +22,17 @@ import { TodoProject } from '../../shared/models/todo-project.model';
 export class TodoChangesGridComponent extends BaseResourcesGridComponent {
 
   @Input()
-  project?: any | TodoProject;
+  project?: TodoProject;
   @Input()
-  task?: any | TodoTask;
+  task?: TodoTask;
   @Output()
   onSelectItems: EventEmitter<TodoChange[] | any>;
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
   modelMeta: any = TodoChange.meta();
-  items: any[] | TodoChange[];
-  selectedItems: any[] | TodoChange[];
+  items: TodoChange[];
+  selectedItems: TodoChange[];
   cachedResourcesService: TodoChangesService;
 
   constructor(
@@ -67,7 +67,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showEditModal(item: any | TodoChange) {
+  showEditModal(item: TodoChange) {
     if (this.modalIsOpened) {
       return;
     }
@@ -86,7 +86,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showRemoveModal(item: any | TodoChange) {
+  showRemoveModal(item: TodoChange) {
     if (this.modalIsOpened) {
       return;
     }
@@ -102,7 +102,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
   }
   save(itemModal: TodoChangeModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(
-      (todoChange: any | TodoChange) => {
+      (todoChange: TodoChange) => {
         itemModal.modal.hide();
       }, (errors: any) => {
         if (errors.message) {
