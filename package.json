@@ -63,7 +63,7 @@
     "rxjs": "^5.4.1",
     "zone.js": "^0.8.12",
     "@ngui/auto-complete": "^0.13.3",
-    "@ngx-translate/core": "^7.0.0",
+    "@ngx-translate/core": "^8.0.0",
     "@types/lodash": "^4.14.68",
     "angular2-jwt": "^0.2.3",
     "angular2-text-mask": "^8.0.2",
