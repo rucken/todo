@@ -32,9 +32,4 @@ export class TodoTaskModalComponent extends BaseResourceModalComponent {
   onClose: EventEmitter<TodoTaskModalComponent> = new EventEmitter<TodoTaskModalComponent>();
   @Output()
   onOk: EventEmitter<TodoTaskModalComponent> = new EventEmitter<TodoTaskModalComponent>();
-
-  save() {
-    this.onOk.emit(this);
-    return false;
-  }
 }

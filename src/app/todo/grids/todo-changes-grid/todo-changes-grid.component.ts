@@ -21,10 +21,6 @@ import { TodoProject } from '../../shared/models/todo-project.model';
 })
 export class TodoChangesGridComponent extends BaseResourcesGridComponent {
 
-  @Input()
-  project?: TodoProject;
-  @Input()
-  task?: TodoTask;
   @Output()
   onSelectItems: EventEmitter<TodoChange[] | any>;
   @ViewChild('focusElement')
@@ -130,16 +126,5 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
           itemModal.errors.emit(errors);
         }
       });
-  }
-  search(ignoreCache?: boolean) {
-    const filter: any = {};
-    if (this.project) {
-      filter.project = this.project.pk;
-    }
-    if (this.task) {
-      filter.task = this.task.pk;
-    }
-    this.cachedResourcesService.ignoreCache = ignoreCache;
-    this.cachedResourcesService.loadAll(this.searchText, filter);
   }
 }

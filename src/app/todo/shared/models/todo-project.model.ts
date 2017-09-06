@@ -51,6 +51,7 @@ export class TodoProject extends BaseResourceModel {
   format() {
     const result = this.formatByFields(TodoProject.meta());
     result.users = result.users ? result.users.map(user => user.format()) : [];
+    console.log(this);
     result.statuses = result.statuses ? result.statuses.map(status => status.format()) : [];
     return result;
   }

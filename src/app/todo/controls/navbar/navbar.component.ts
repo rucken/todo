@@ -50,8 +50,6 @@ export class TodoNavbarComponent extends NavbarComponent {
         newItem.url = `/${newItem.name}`;
         return newItem;
       });
-    return _.sortBy(items, [
-      (item: any) => item.title
-    ]);
+    return items;
   }
 }

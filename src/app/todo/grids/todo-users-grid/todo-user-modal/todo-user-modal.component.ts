@@ -35,9 +35,4 @@ export class TodoUserModalComponent extends BaseResourceModalComponent {
   onClose: EventEmitter<TodoUserModalComponent | any> = new EventEmitter();
   @Output()
   onOk: EventEmitter<TodoUserModalComponent | any> = new EventEmitter();
-
-  save() {
-    this.onOk.emit(this);
-    return false;
-  }
 }

@@ -10,7 +10,6 @@ import { BaseResourceSelectInputConfig } from 'rucken';
 import { BaseResourceSelectInputComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'todo-project-select-input',
@@ -40,11 +39,10 @@ export class TodoProjectSelectInputComponent extends BaseResourceSelectInputComp
     public accountService: AccountService,
     public todoProjectsService: TodoProjectsService,
     public resolver: ComponentFactoryResolver,
-    public sanitizer: DomSanitizer,
     public translateService: TranslateService,
     public config: BaseResourceSelectInputConfig
   ) {
-    super(sanitizer, translateService, config);
+    super(translateService, config);
     this.cachedResourcesService = todoProjectsService.createCache();
   }
   get account(): User {

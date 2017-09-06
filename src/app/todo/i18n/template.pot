@@ -133,19 +133,25 @@ msgstr ""
 msgid "Updated at"
 msgstr ""
 
-msgid "Project"
+msgid "Content type"
 msgstr ""
 
-msgid "Task"
+msgid "Action"
 msgstr ""
 
-msgid "Object type"
+msgid "Data ID"
 msgstr ""
 
 msgid "Old data"
 msgstr ""
 
 msgid "New data"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Project"
 msgstr ""
 
 msgid "Name"
@@ -173,9 +179,6 @@ msgid "Menu"
 msgstr ""
 
 msgid "Rucken: Todo"
-msgstr ""
-
-msgid "{{item.title}}"
 msgstr ""
 
 msgid "Logout"

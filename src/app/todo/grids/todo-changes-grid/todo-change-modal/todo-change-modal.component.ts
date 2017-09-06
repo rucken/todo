@@ -10,13 +10,12 @@ import { ModalDirective } from 'ngx-bootstrap';
 import { AccountService } from 'rucken';
 import { BaseResourceModalComponent } from 'rucken';
 import { TextInputComponent } from 'rucken';
-import { TodoProjectSelectInputComponent } from '../../todo-projects-grid/todo-project-select-input/todo-project-select-input.component';
-import { TodoTaskSelectInputComponent } from '../../todo-tasks-grid/todo-task-select-input/todo-task-select-input.component';
-
+import { ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'todo-change-modal',
   templateUrl: './todo-change-modal.component.html',
-  styleUrls: ['./todo-change-modal.component.scss']
+  styleUrls: ['./todo-change-modal.component.scss'],
+  encapsulation: ViewEncapsulation.None  // Enable dynamic HTML styles
 })
 
 export class TodoChangeModalComponent extends BaseResourceModalComponent {
@@ -25,10 +24,6 @@ export class TodoChangeModalComponent extends BaseResourceModalComponent {
   modal: ModalDirective;
   @ViewChild('focusElement')
   focusElement: TodoProjectSelectInputComponent;
-  @ViewChild('projectSelectInput')
-  projectSelectInput: TodoProjectSelectInputComponent;
-  @ViewChild('taskSelectInput')
-  taskSelectInput: TodoTaskSelectInputComponent;
 
   @Input()
   item: TodoChange = new TodoChange();
@@ -38,9 +33,4 @@ export class TodoChangeModalComponent extends BaseResourceModalComponent {
   onClose: EventEmitter<TodoChangeModalComponent> = new EventEmitter<TodoChangeModalComponent>();
   @Output()
   onOk: EventEmitter<TodoChangeModalComponent> = new EventEmitter<TodoChangeModalComponent>();
-
-  save() {
-    this.onOk.emit(this);
-    return false;
-  }
 }

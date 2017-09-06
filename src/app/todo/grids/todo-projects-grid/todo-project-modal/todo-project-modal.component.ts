@@ -46,12 +46,9 @@ export class TodoProjectModalComponent extends BaseResourceModalComponent {
     this.statusesGrid.mockedItems = this.item.statuses;
     this.statusesGrid.search();
   }
-  save() {
-    if (!this.item.pk) {
-      this.item.users = this.usersGrid.mockedItems;
-      this.item.statuses = this.statusesGrid.mockedItems;
-    }
-    this.onOk.emit(this);
-    return false;
+  ok() {
+    this.item.users = this.usersGrid.mockedItems;
+    this.item.statuses = this.statusesGrid.mockedItems;
+    super.ok();
   }
 }
