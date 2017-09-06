@@ -25,16 +25,11 @@ export class TodoTaskModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  item: any | TodoTask = new TodoTask();
+  item: TodoTask = new TodoTask();
   @Input()
   modelMeta: any = TodoTask.meta();
   @Output()
   onClose: EventEmitter<TodoTaskModalComponent> = new EventEmitter<TodoTaskModalComponent>();
   @Output()
   onOk: EventEmitter<TodoTaskModalComponent> = new EventEmitter<TodoTaskModalComponent>();
-
-  save() {
-    this.onOk.emit(this);
-    return false;
-  }
 }

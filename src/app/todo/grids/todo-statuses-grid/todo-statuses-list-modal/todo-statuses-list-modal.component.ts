@@ -3,7 +3,7 @@ import { TodoStatus } from './../../../shared/models/todo-status.model';
 import { BaseResourceModalComponent } from 'rucken';
 import { ModalDirective } from 'ngx-bootstrap';
 import { TodoStatusesGridComponent } from '../todo-statuses-grid.component';
-import { TodoProject } from '../../../shared/models/todo-project.model';
+import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-statuses-list-modal',
@@ -17,31 +17,24 @@ export class TodoStatusesListModalComponent extends BaseResourceModalComponent {
   modal: ModalDirective;
   @ViewChild('focusElement')
   focusElement: ElementRef;
-  @ViewChild('todoStatuses')
-  todoStatuses: TodoStatusesGridComponent;
+  @ViewChild('statuses')
+  statuses: TodoStatusesGridComponent;
 
   @Input()
-  project?: any | TodoProject;
+  project?: ShortTodoProject;
   @Output()
   onClose: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
   @Output()
   onOk: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
 
-  item: any | TodoStatus;
-  items: any[] | TodoStatus[] = [];
+  item: TodoStatus;
+  items: TodoStatus[] = [];
   modelMeta: any = TodoStatus.meta();
 
-  afterInit() {
-    this.modal.onHidden.subscribe(() => this.close());
-    this.modal.onShown.subscribe(() => {
-      this.todoStatuses.search(true);
-      this.focus();
-    });
-  }
   focus() {
-    this.todoStatuses.focus();
+    this.statuses.focus();
   }
-  selectTodoStatus(items: any[] | TodoStatus[]) {
+  selectTodoStatus(items: TodoStatus[]) {
     this.item = items[0];
     this.items = items;
   }

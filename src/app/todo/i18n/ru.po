@@ -85,8 +85,11 @@ msgstr "Информация о задаче"
 msgid "Are you sure you want to remove a todo task?"
 msgstr "Вы уверены, что хотите удалить задачу?"
 
-msgid "Create new user"
-msgstr "Добавление нового пользователя"
+msgid "Append"
+msgstr "Добавить"
+
+msgid "Append new user to project"
+msgstr "Добавление пользователя к проекту"
 
 msgid "Edit user"
 msgstr "Редактирование пользователя"
@@ -94,8 +97,8 @@ msgstr "Редактирование пользователя"
 msgid "User info"
 msgstr "Информация о пользователе"
 
-msgid "Are you sure you want to remove a user?"
-msgstr "Вы уверены, что хотите удалить пользователя?"
+msgid "Are you sure you want to remove a user from project?"
+msgstr "Вы уверены, что хотите отключить пользователя от проекта?"
 
 msgid "Account"
 msgstr "Личный кабинет"
@@ -127,27 +130,6 @@ msgstr "Темы"
 msgid "Id"
 msgstr "Ид."
 
-msgid "Project"
-msgstr "Проект"
-
-msgid "Task"
-msgstr "Задача"
-
-msgid "Object type"
-msgstr "Тип объекта"
-
-msgid "Old data"
-msgstr "Старые данные"
-
-msgid "New data"
-msgstr "Новые данные"
-
-msgid "Created at"
-msgstr "Дата создания"
-
-msgid "Updated at"
-msgstr "Дата обновления"
-
 msgid "Title"
 msgstr "Заголовок"
 
@@ -156,6 +138,33 @@ msgstr "Описание"
 
 msgid "Is public"
 msgstr "Публичный"
+
+msgid "Created at"
+msgstr "Дата создания"
+
+msgid "Updated at"
+msgstr "Дата обновления"
+
+msgid "Content type"
+msgstr "Тип содержимого"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Data ID"
+msgstr "Ид."
+
+msgid "Changes"
+msgstr "Изменения"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "Wrong json data"
+msgstr "Неверные JSON-данные"
+
+msgid "Project"
+msgstr "Проект"
 
 msgid "Name"
 msgstr "Наименование"
@@ -175,6 +184,9 @@ msgstr "Дата закрытия"
 msgid "Date range"
 msgstr "Диапозон"
 
+msgid "Language"
+msgstr "Язык"
+
 msgid "Menu"
 msgstr "Меню"
 
@@ -193,11 +205,20 @@ msgstr "Действия"
 msgid "Close"
 msgstr "Закрыть"
 
-msgid "Append"
-msgstr "Добавить"
-
 msgid "Tasks"
 msgstr "Задачи"
 
-msgid "Changes"
-msgstr "Изменения"
+#~ msgid "Create new user"
+#~ msgstr "Добавление нового пользователя"
+
+#~ msgid "Are you sure you want to remove a user?"
+#~ msgstr "Вы уверены, что хотите удалить пользователя?"
+
+#~ msgid "Old data"
+#~ msgstr "Старые данные"
+
+#~ msgid "New data"
+#~ msgstr "Новые данные"
+
+#~ msgid "Task"
+#~ msgstr "Задача"

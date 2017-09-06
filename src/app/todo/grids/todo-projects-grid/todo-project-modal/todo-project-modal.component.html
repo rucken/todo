@@ -27,10 +27,10 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <todo-statuses-grid [loadAll]="false" headerType="custom" #statusesGrid></todo-statuses-grid>
+              <todo-statuses-grid [loadAll]="false" headerType="custom" [project]="item" #statusesGrid></todo-statuses-grid>
             </div>
             <div class="col-md-6">
-              <todo-users-grid [loadAll]="false" #usersGrid></todo-users-grid>
+              <todo-users-grid [loadAll]="false" [project]="item" #usersGrid></todo-users-grid>
             </div>
           </div>
         </div>

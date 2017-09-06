@@ -72,15 +72,14 @@ export class TodoProjectsPageComponent extends BasePageComponent {
       }
     );
   }
-  onSelectProjects(projects: any[] | TodoProject[]) {
+  onSelectProjects(projects: TodoProject[]) {
     this.todoTasksGrid.project = projects && projects[0] ? projects[0] : new TodoProject(-1);
     this.todoTasksGrid.search();
-    this.todoChangesGrid.task = null;
+    this.todoChangesGrid.project = this.todoTasksGrid.project;
     this.todoChangesGrid.search();
   }
-  onSelectTasks(tasks: any[] | TodoTask[]) {
+  onSelectTasks(tasks: TodoTask[]) {
     this.todoChangesGrid.project = this.todoTasksGrid.project;
-    this.todoChangesGrid.task = tasks && tasks[0] ? tasks[0] : new TodoTask(-1);
     this.todoChangesGrid.search();
   }
 }

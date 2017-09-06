@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <todo-changes-grid #todoChanges (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="selectTodoChange($event)" [hardReadonly]="hardReadonly"
-          [exclude]="exclude" #focusElement></todo-changes-grid>
+          #focusElement></todo-changes-grid>
       </div>
       <div class="modal-footer">
         <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"

@@ -1,4 +1,5 @@
 export const environment = {
+  type: 'django',
   production: false,
-  apiUrl: 'http://5909bf418231c1001184c506.mockapi.io/api'
+  apiUrl: 'http://localhost:5000/api'
 };

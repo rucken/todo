@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TodoChangesGridComponent } from './todo-changes-grid.component';
-import { GridSearchPanelModule } from 'rucken';
+import { GridSearchPanelModule, PipesModule } from 'rucken';
 import { TableColumnModule } from 'rucken';
 import { GridRowButtonsModule } from 'rucken';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
@@ -13,7 +13,7 @@ import { ConfirmModalModule } from 'rucken';
   imports: [
     CommonModule, TranslateModule.forChild(), GridSearchPanelModule.forRoot(),
     TodoChangeModalModule.forRoot(), ConfirmModalModule.forRoot(),
-    TableColumnModule.forRoot(), GridRowButtonsModule.forRoot(), PaginationModule.forRoot()
+    TableColumnModule.forRoot(), GridRowButtonsModule.forRoot(), PaginationModule.forRoot(), PipesModule.forRoot()
   ],
   declarations: [
     TodoChangesGridComponent

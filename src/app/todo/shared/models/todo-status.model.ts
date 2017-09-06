@@ -1,5 +1,5 @@
 import { BaseResourceModel, translate } from 'rucken';
-import { TodoProject } from './todo-project.model';
+import { ShortTodoProject } from './short-todo-project.model';
 
 export class TodoStatus extends BaseResourceModel {
   static titles: any = {
@@ -22,10 +22,8 @@ export class TodoStatus extends BaseResourceModel {
     'updatedAt',
   ];
 
-  className = 'TodoStatus';
-
   id: number;
-  project: TodoProject;
+  project: ShortTodoProject;
   name: string;
   title: string;
   createdAt: Date;
@@ -33,6 +31,7 @@ export class TodoStatus extends BaseResourceModel {
 
   static meta() {
     const meta: any = TodoStatus;
+    meta.todoProject = ShortTodoProject;
     return meta;
   }
   constructor(obj?: any) {
@@ -40,14 +39,21 @@ export class TodoStatus extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoStatus.meta());
-    this.project = obj.project ? new TodoProject(obj.project) : null;
+    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
   }
   format() {
     const result = this.formatByFields(TodoStatus.meta());
-    result.project = result.project ? result.project.format() : null;
+    result.project = result.project ? result.project.pk : null;
     return result;
   }
   get asString() {
     return this.title;
+  }
+  get projectAsString() {
+    if (this.project) {
+      return this.project.asString;
+    } else {
+      return '';
+    }
   }
 }

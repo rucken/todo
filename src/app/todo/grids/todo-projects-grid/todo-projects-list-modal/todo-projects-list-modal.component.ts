@@ -23,11 +23,11 @@ export class TodoProjectsListModalComponent extends BaseResourceModalComponent {
   @Output()
   onOk: EventEmitter<TodoProjectsListModalComponent> = new EventEmitter<TodoProjectsListModalComponent>();
 
-  item: any | TodoProject= new TodoProject();
-  items: any[] | TodoProject[] = [];
+  item: TodoProject= new TodoProject();
+  items: TodoProject[] = [];
   modelMeta: any = TodoProject.meta();
 
-  selectTodoProject(items: any[] | TodoProject[]) {
+  selectTodoProject(items: TodoProject[]) {
     this.item = items[0];
     this.items = items;
   }

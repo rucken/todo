@@ -20,7 +20,8 @@ recursive(scanPath, ['!*.ts'], function (err, files) {
     'module',
     'component',
     'shared',
-    'service'
+    'service',
+    'pipe'
   ];
   var moduleName = _.upperFirst(path.basename(scanPath));
   if (moduleName == 'Src') {

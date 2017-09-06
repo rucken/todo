@@ -25,16 +25,11 @@ export class TodoStatusModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  item: any | TodoStatus = new TodoStatus();
+  item: TodoStatus = new TodoStatus();
   @Input()
   modelMeta: any = TodoStatus.meta();
   @Output()
   onClose: EventEmitter<TodoStatusModalComponent> = new EventEmitter<TodoStatusModalComponent>();
   @Output()
   onOk: EventEmitter<TodoStatusModalComponent> = new EventEmitter<TodoStatusModalComponent>();
-
-  save() {
-    this.onOk.emit(this);
-    return false;
-  }
 }

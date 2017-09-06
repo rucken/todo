@@ -10,7 +10,7 @@ import { BaseResourceSelectInputConfig } from 'rucken';
 import { BaseResourceSelectInputComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
-import { DomSanitizer } from '@angular/platform-browser';
+import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-task-select-input',
@@ -26,13 +26,15 @@ export class TodoTaskSelectInputComponent extends BaseResourceSelectInputCompone
   tooltip: TooltipDirective;
 
   @Input()
+  project?: ShortTodoProject;
+  @Input()
   name = 'todoTask';
   @Input()
-  model: any | TodoTask = new TodoTask();
+  model: TodoTask = new TodoTask();
   @Output()
-  modelChange: EventEmitter<any | TodoTask> = new EventEmitter<any | TodoTask>();
+  modelChange: EventEmitter<TodoTask> = new EventEmitter<TodoTask>();
 
-  items: any[] | TodoTask[];
+  items: TodoTask[];
   cachedResourcesService: TodoTasksService;
 
   constructor(
@@ -40,11 +42,10 @@ export class TodoTaskSelectInputComponent extends BaseResourceSelectInputCompone
     public accountService: AccountService,
     public todoTasksService: TodoTasksService,
     public resolver: ComponentFactoryResolver,
-    public sanitizer: DomSanitizer,
     public translateService: TranslateService,
     public config: BaseResourceSelectInputConfig
   ) {
-    super(sanitizer, translateService, config);
+    super(translateService, config);
     this.cachedResourcesService = todoTasksService.createCache();
   }
   get account(): User {
@@ -55,6 +56,7 @@ export class TodoTaskSelectInputComponent extends BaseResourceSelectInputCompone
       this.app.modals(this.resolver).create(TodoTasksListModalComponent);
     itemModal.hardReadonly = this.hardReadonly;
     itemModal.account = this.account;
+    itemModal.project = this.project;
     itemModal.text = this.translateService.instant('Select');
     itemModal.title = this.translateService.instant('Todo tasks');
     itemModal.onOk.subscribe(($event: any) => {

@@ -10,7 +10,7 @@ import { BaseResourceSelectInputConfig } from 'rucken';
 import { BaseResourceSelectInputComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
-import { DomSanitizer } from '@angular/platform-browser';
+import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-status-select-input',
@@ -27,15 +27,15 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
   tooltip: TooltipDirective;
 
   @Input()
-  project?: any | TodoProject;
+  project?: ShortTodoProject;
   @Input()
   name = 'todoStatus';
   @Input()
-  model: any | TodoStatus = new TodoStatus();
+  model: TodoStatus = new TodoStatus();
   @Output()
-  modelChange: EventEmitter<any | TodoStatus> = new EventEmitter<any | TodoStatus>();
+  modelChange: EventEmitter<TodoStatus> = new EventEmitter<TodoStatus>();
 
-  items: any[] | TodoStatus[];
+  items: TodoStatus[];
   cachedResourcesService: TodoStatusesService;
 
   constructor(
@@ -43,11 +43,10 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
     public accountService: AccountService,
     public todoStatusesService: TodoStatusesService,
     public resolver: ComponentFactoryResolver,
-    public sanitizer: DomSanitizer,
     public translateService: TranslateService,
     public config: BaseResourceSelectInputConfig
   ) {
-    super(sanitizer, translateService, config);
+    super(translateService, config);
     this.cachedResourcesService = todoStatusesService.createCache();
   }
   search() {
@@ -64,12 +63,12 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
   onLookup() {
     const itemModal: TodoStatusesListModalComponent =
       this.app.modals(this.resolver).create(TodoStatusesListModalComponent);
-    console.log(this.project);
     itemModal.project = this.project;
     itemModal.hardReadonly = this.hardReadonly;
     itemModal.account = this.account;
     itemModal.text = this.translateService.instant('Select');
     itemModal.title = this.translateService.instant('Todo statuses');
+    itemModal.project = this.project;
     itemModal.onOk.subscribe(($event: any) => {
       this.value = itemModal.item;
       if (this.inputElement) {

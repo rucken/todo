@@ -10,7 +10,7 @@
       </div>
       <div class="modal-body">
         <<%=grid.list.name.kebab%>-grid #<%=grid.list.name.lower.camel%> (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="select<%=grid.name.camel%>($event)"
-        [hardReadonly]="hardReadonly" [exclude]="exclude" #focusElement></<%=grid.list.name.kebab%>-grid>
+        [hardReadonly]="hardReadonly" #focusElement></<%=grid.list.name.kebab%>-grid>
       </div>
       <div class="modal-footer">
         <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"

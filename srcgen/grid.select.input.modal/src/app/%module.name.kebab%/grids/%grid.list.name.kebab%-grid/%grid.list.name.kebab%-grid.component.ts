@@ -43,7 +43,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>', 'change_<%=grid.name.kebab%>', 'delete_<%=grid.name.kebab%>']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>', 'change_<%=grid.name.kebab%>', 'delete_<%=grid.name.kebab%>']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {

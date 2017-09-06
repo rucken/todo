@@ -11,7 +11,7 @@ import { EndpointStatusEnum } from 'rucken';
 import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
-import { TodoProject } from '../../shared/models/todo-project.model';
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-tasks-grid',
@@ -22,15 +22,15 @@ import { TodoProject } from '../../shared/models/todo-project.model';
 export class TodoTasksGridComponent extends BaseResourcesGridComponent {
 
   @Input()
-  project?: any | TodoProject;
+  project?: ShortTodoProject;
   @Output()
   onSelectItems: EventEmitter<TodoTask[] | any>;
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
   modelMeta: any = TodoTask.meta();
-  items: any[] | TodoTask[];
-  selectedItems: any[] | TodoTask[];
+  items: TodoTask[];
+  selectedItems: TodoTask[];
   cachedResourcesService: TodoTasksService;
 
   constructor(
@@ -47,7 +47,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_todo-task', 'change_todo-task', 'delete_todo-task']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-task', 'change_todo-task', 'delete_todo-task']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -66,7 +66,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showEditModal(item: any | TodoTask) {
+  showEditModal(item: TodoTask) {
     if (this.modalIsOpened) {
       return;
     }
@@ -85,7 +85,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showRemoveModal(item: any | TodoTask) {
+  showRemoveModal(item: TodoTask) {
     if (this.modalIsOpened) {
       return;
     }
@@ -101,7 +101,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
   }
   save(itemModal: TodoTaskModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(
-      (todoTask: any | TodoTask) => {
+      (todoTask: TodoTask) => {
         itemModal.modal.hide();
       }, (errors: any) => {
         if (errors.message) {
@@ -132,9 +132,6 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
   }
   search(ignoreCache?: boolean) {
     const filter: any = {};
-    if (this.exclude) {
-      filter.exclude = this.exclude;
-    }
     filter.project = this.project && this.project.pk ? this.project.pk : null;
     this.cachedResourcesService.ignoreCache = ignoreCache;
     this.cachedResourcesService.loadAll(this.searchText, filter);

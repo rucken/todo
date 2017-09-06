@@ -14,17 +14,25 @@ export class TodoEndpointHelper extends EndpointHelper {
   get apiUrl() {
     return environment.apiUrl;
   }
-  actionRequest(endpointService: any, action?: any, data?: any): Observable<Response> {
-    if (endpointService.name === 'account') {
-      const url = this.actionUrl(endpointService, action).replace('account/', 'account-');
-      if (action === 'info') {
-        return this.httpHelper.http.get(url);
-      }
-      if (action === 'login') {
-        return this.httpHelper.http.get(url, data);
-      }
-      return this.httpHelper.http.post(url, data);
+  actionUrl(endpointService: any, action: any, data: any, customUrl?: string) {
+    let url: string = endpointService.apiUrl;
+    if (environment.type === 'mockapi' && endpointService.name === 'account') {
+      url += '/1';
     }
-    return super.actionRequest(endpointService, action, data);
+    if (customUrl) {
+      url = customUrl;
+    }
+    if (action !== undefined && action !== null) {
+      url = `${url}/${action}`;
+    }
+    if (data) {
+      let key: string;
+      for (key in data) {
+        if (data.hasOwnProperty(key)) {
+          url = url.replace(new RegExp(`{${key}}`, 'ig'), data[key]);
+        }
+      }
+    }
+    return url;
   };
 }

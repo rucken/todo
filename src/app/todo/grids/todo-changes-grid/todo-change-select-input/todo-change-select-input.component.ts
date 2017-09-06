@@ -10,7 +10,6 @@ import { BaseResourceSelectInputConfig } from 'rucken';
 import { BaseResourceSelectInputComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'todo-change-select-input',
@@ -28,11 +27,11 @@ export class TodoChangeSelectInputComponent extends BaseResourceSelectInputCompo
   @Input()
   name = 'todoChange';
   @Input()
-  model: any | TodoChange = new TodoChange();
+  model: TodoChange = new TodoChange();
   @Output()
-  modelChange: EventEmitter<any | TodoChange> = new EventEmitter<any | TodoChange>();
+  modelChange: EventEmitter<TodoChange> = new EventEmitter<TodoChange>();
 
-  items: any[] | TodoChange[];
+  items: TodoChange[];
   cachedResourcesService: TodoChangesService;
 
   constructor(
@@ -40,11 +39,10 @@ export class TodoChangeSelectInputComponent extends BaseResourceSelectInputCompo
     public accountService: AccountService,
     public todoChangesService: TodoChangesService,
     public resolver: ComponentFactoryResolver,
-    public sanitizer: DomSanitizer,
     public translateService: TranslateService,
     public config: BaseResourceSelectInputConfig
   ) {
-    super(sanitizer, translateService, config);
+    super(translateService, config);
     this.cachedResourcesService = todoChangesService.createCache();
   }
   get account(): User {

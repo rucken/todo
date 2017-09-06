@@ -12,6 +12,7 @@ import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TodoProject } from '../../shared/models/todo-project.model';
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-changes-grid',
@@ -22,17 +23,15 @@ import { TodoProject } from '../../shared/models/todo-project.model';
 export class TodoChangesGridComponent extends BaseResourcesGridComponent {
 
   @Input()
-  project?: any | TodoProject;
-  @Input()
-  task?: any | TodoTask;
+  project?: ShortTodoProject;
   @Output()
   onSelectItems: EventEmitter<TodoChange[] | any>;
   @ViewChild('focusElement')
   focusElement: ElementRef;
 
   modelMeta: any = TodoChange.meta();
-  items: any[] | TodoChange[];
-  selectedItems: any[] | TodoChange[];
+  items: TodoChange[];
+  selectedItems: TodoChange[];
   cachedResourcesService: TodoChangesService;
 
   constructor(
@@ -49,7 +48,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_todo-change', 'change_todo-change', 'delete_todo-change']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-change', 'change_todo-change', 'delete_todo-change']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -64,10 +63,11 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoChange();
+    itemModal.item.project = this.project;
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showEditModal(item: any | TodoChange) {
+  showEditModal(item: TodoChange) {
     if (this.modalIsOpened) {
       return;
     }
@@ -86,7 +86,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
-  showRemoveModal(item: any | TodoChange) {
+  showRemoveModal(item: TodoChange) {
     if (this.modalIsOpened) {
       return;
     }
@@ -102,7 +102,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
   }
   save(itemModal: TodoChangeModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(
-      (todoChange: any | TodoChange) => {
+      (todoChange: TodoChange) => {
         itemModal.modal.hide();
       }, (errors: any) => {
         if (errors.message) {
@@ -133,15 +133,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
   }
   search(ignoreCache?: boolean) {
     const filter: any = {};
-    if (this.exclude) {
-      filter.exclude = this.exclude;
-    }
-    if (this.project) {
-      filter.project = this.project.pk;
-    }
-    if (this.task) {
-      filter.task = this.task.pk;
-    }
+    filter.project = this.project && this.project.pk ? this.project.pk : null;
     this.cachedResourcesService.ignoreCache = ignoreCache;
     this.cachedResourcesService.loadAll(this.searchText, filter);
   }

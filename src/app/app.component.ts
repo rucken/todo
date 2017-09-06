@@ -1,5 +1,5 @@
 import { AppService, AlertModalComponent, BaseAppComponent, RuckenRuI18n, translate } from 'rucken';
-import { Component, ViewContainerRef, ComponentFactoryResolver, Input, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewContainerRef, ComponentFactoryResolver, Input, ViewEncapsulation, ViewChild, ElementRef, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import * as _ from 'lodash';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
@@ -61,5 +61,25 @@ export class TodoAppComponent extends BaseAppComponent {
       window['loading_screen'].finish();
       this.pleaseWaitVisible = false;
     }
+  }
+  // todo: remove after update rucken
+  showContentModal(content: string, title?: string, size?: string): EventEmitter<any> {
+    if (size === undefined) {
+      size = 'md';
+    }
+    if (title === undefined) {
+      title = this.translateService.instant('Info');
+    }
+    const alert: AlertModalComponent = this.app.modals(this.resolver).create(AlertModalComponent);
+    alert.focused = false;
+    alert.name = 'error';
+    alert.text = title;
+    alert.content = content;
+    alert.messageClass = '';
+    alert.size = size;
+    alert.buttonClass = 'btn-primary';
+    alert.buttonText = this.translateService.instant('ОК');
+    alert.modal.show();
+    return alert.onClose;
   }
 }

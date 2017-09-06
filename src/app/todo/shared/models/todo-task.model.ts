@@ -1,6 +1,6 @@
 import { BaseResourceModel, translate } from 'rucken';
 import { TodoStatus } from './todo-status.model';
-import { TodoProject } from './todo-project.model';
+import { ShortTodoProject } from './short-todo-project.model';
 
 export class TodoTask extends BaseResourceModel {
   static titles: any = {
@@ -29,10 +29,8 @@ export class TodoTask extends BaseResourceModel {
     'updatedAt',
   ];
 
-  className = 'TodoTask';
-
   id: number;
-  project: TodoProject;
+  project: ShortTodoProject;
   title: string;
   description: string;
   status: TodoStatus;
@@ -44,7 +42,7 @@ export class TodoTask extends BaseResourceModel {
   static meta() {
     const meta: any = TodoTask;
     meta.status = TodoStatus;
-    meta.project = TodoProject;
+    meta.project = ShortTodoProject;
     return meta;
   }
 
@@ -54,12 +52,12 @@ export class TodoTask extends BaseResourceModel {
   parse(obj: any) {
     this.parseByFields(obj, TodoTask.meta());
     this.status = obj.status ? new TodoStatus(obj.status) : null;
-    this.project = obj.project ? new TodoProject(obj.project) : null;
+    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
   }
   format() {
     const result = this.formatByFields(TodoTask.meta());
-    result.status = result.status ? result.status.format() : null;
-    result.project = result.project ? result.project.format() : null;
+    result.status = result.status ? result.status.pk : null;
+    result.project = result.project ? result.project.pk : null;
     return result;
   }
   get dateRangeAsString() {
