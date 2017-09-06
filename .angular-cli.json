@@ -27,7 +27,7 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
-        "django": "environments/environment.django.ts"
+        "mockapi": "environments/environment.mockapi.ts"
       }
     }
   ],

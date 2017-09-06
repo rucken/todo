@@ -15,9 +15,10 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - Install Angular CLI global `npm install -g @angular/cli@latest`
 - Install Angular CLI local `npm install --save-dev @angular/cli@latest`
 - run `npm install` to install project dependencies
-- run `npm start` to fire up dev server
+- run `npm start` to fire up dev server (with backend on port: 5000)
 - Open browser to [`http://localhost:4200`](http://localhost:4200)
 - If you want to use custom port, run `ng serve --port=4201`
+- If you want to use run with mock backend [mockapi.io](https://www.mockapi.io/), run `ng serve --env=mockapi`
 
 ### Build
 - run `npm run build` to build application
