@@ -12,6 +12,7 @@ import { MetaModel } from 'rucken';
 import { BaseResourcesGridComponent } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TodoProject } from '../../shared/models/todo-project.model';
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-changes-grid',
@@ -21,6 +22,8 @@ import { TodoProject } from '../../shared/models/todo-project.model';
 })
 export class TodoChangesGridComponent extends BaseResourcesGridComponent {
 
+  @Input()
+  project?: ShortTodoProject;
   @Output()
   onSelectItems: EventEmitter<TodoChange[] | any>;
   @ViewChild('focusElement')
@@ -60,6 +63,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoChange();
+    itemModal.item.project = this.project;
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
   }
@@ -126,5 +130,11 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
           itemModal.errors.emit(errors);
         }
       });
+  }
+  search(ignoreCache?: boolean) {
+    const filter: any = {};
+    filter.project = this.project && this.project.pk ? this.project.pk : null;
+    this.cachedResourcesService.ignoreCache = ignoreCache;
+    this.cachedResourcesService.loadAll(this.searchText, filter);
   }
 }

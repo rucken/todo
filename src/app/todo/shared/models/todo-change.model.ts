@@ -1,9 +1,11 @@
 
 import { BaseResourceModel, ContentType, translate, User } from 'rucken';
+import { ShortTodoProject } from './short-todo-project.model';
 
 export class TodoChange extends BaseResourceModel {
   static titles: any = {
     id: translate('Id'),
+    project: translate('Project'),
     contentType: translate('Content type'),
     action: translate('Action'),
     dataId: translate('Data ID'),
@@ -16,6 +18,7 @@ export class TodoChange extends BaseResourceModel {
   static dateFields: any = ['createdAt', 'updatedAt'];
   static fields: any = [
     'id',
+    'project',
     'contentType',
     'action',
     'dataId',
@@ -29,6 +32,7 @@ export class TodoChange extends BaseResourceModel {
   dateAsStringFormat = 'DD.MM.YYYY HH:mm';
 
   id: number;
+  project: ShortTodoProject;
   contentType: ContentType;
   action: string;
   dataId: string;
@@ -39,6 +43,7 @@ export class TodoChange extends BaseResourceModel {
 
   static meta() {
     const meta: any = TodoChange;
+    meta.project = ShortTodoProject;
     meta.contentType = ContentType;
     meta.user = User;
     return meta;
@@ -48,14 +53,23 @@ export class TodoChange extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoChange.meta());
+    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
     this.contentType = obj.contentType ? new ContentType(obj.contentType) : null;
     this.user = obj.user ? new User(obj.user) : null;
   }
   format() {
     const result = this.formatByFields(TodoChange.meta());
+    result.project = result.project ? result.project.pk : null;
     result.contentType = result.contentType ? result.contentType.pk : null;
     result.user = result.user ? result.user.pk : null;
     return result;
+  }
+  get projectAsString() {
+    if (this.project) {
+      return this.project.asString;
+    } else {
+      return '';
+    }
   }
   get dataAsString() {
     return JSON.stringify(JSON.parse(this.data), null, 2);
