@@ -76,7 +76,10 @@ msgstr ""
 msgid "Are you sure you want to remove a todo task?"
 msgstr ""
 
-msgid "Create new user"
+msgid "Append"
+msgstr ""
+
+msgid "Append new user to project"
 msgstr ""
 
 msgid "Edit user"
@@ -85,7 +88,7 @@ msgstr ""
 msgid "User info"
 msgstr ""
 
-msgid "Are you sure you want to remove a user?"
+msgid "Are you sure you want to remove a user from project?"
 msgstr ""
 
 msgid "Account"
@@ -142,13 +145,13 @@ msgstr ""
 msgid "Data ID"
 msgstr ""
 
-msgid "Old data"
-msgstr ""
-
-msgid "New data"
+msgid "Changes"
 msgstr ""
 
 msgid "User"
+msgstr ""
+
+msgid "Wrong json data"
 msgstr ""
 
 msgid "Project"
@@ -193,11 +196,5 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-msgid "Append"
-msgstr ""
-
 msgid "Tasks"
-msgstr ""
-
-msgid "Changes"
 msgstr ""

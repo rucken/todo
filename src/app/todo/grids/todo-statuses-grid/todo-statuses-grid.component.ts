@@ -49,7 +49,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_todo-status', 'change_todo-status', 'delete_todo-status']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-status', 'change_todo-status', 'delete_todo-status']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {

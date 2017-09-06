@@ -47,7 +47,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_todo-task', 'change_todo-task', 'delete_todo-task']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-task', 'change_todo-task', 'delete_todo-task']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {

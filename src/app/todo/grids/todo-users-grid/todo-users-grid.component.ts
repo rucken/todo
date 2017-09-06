@@ -45,7 +45,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     return this.accountService.account;
   }
   get readonly() {
-    return this.hardReadonly !== true || !this.account || !this.account.checkPermissions(['add_user', 'change_user', 'delete_user']);
+    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_user', 'change_user']);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -55,8 +55,8 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     const itemModal: TodoUserModalComponent = this.app.modals(this.resolver).create(TodoUserModalComponent);
     itemModal.account = this.accountService.account;
     itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_user']);
-    itemModal.text = this.translateService.instant('Create');
-    itemModal.title = this.translateService.instant('Create new user');
+    itemModal.text = this.translateService.instant('Append');
+    itemModal.title = this.translateService.instant('Append new user to project');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new User();
@@ -90,7 +90,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     const confirm: ConfirmModalComponent = this.app.modals(this.resolver).create(ConfirmModalComponent);
     confirm.size = 'md';
     confirm.title = this.translateService.instant('Remove');
-    confirm.message = this.translateService.instant('Are you sure you want to remove a user?');
+    confirm.message = this.translateService.instant('Are you sure you want to remove a user from project?');
     confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
