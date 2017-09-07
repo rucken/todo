@@ -41,7 +41,7 @@
     "build": "npm-run-all prod.build app.add-version",
     "app.add-version": "gulp add-version",
     "app.deploy": "gh-pages -d dist",
-    "app.gh-pages": "npm-run-all demo.build app.deploy",
+    "app.gh-pages": "npm-run-all demo.build app.add-version app.deploy",
     "local.build": "npm-run-all demo.build app.add-version",
     "local.extract_translate": "ngx-translate-extract --input ./src/app/todo --output ./src/app/todo/i18n/template.pot --format=pot --marker translate --clean",
     "local.po2ts": "srcgen -x -t convert.po.to.ts -f ./srcgen/convert.po.to.ts.json",
