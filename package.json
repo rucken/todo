@@ -64,7 +64,7 @@
     "@ngui/auto-complete": "^0.13.8",
     "rucken": "^1.12.0",
     "@ngx-translate/core": "^7.2.0",
-    "@types/jasmine": "2.5.54",
+    "@types/jasmine": "2.6.0",
     "@types/lodash": "^4.14.74",
     "@types/marked": "0.3.0",
     "@types/node": "^8.0.26",
