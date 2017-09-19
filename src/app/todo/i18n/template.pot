@@ -136,6 +136,9 @@ msgstr ""
 msgid "Updated at"
 msgstr ""
 
+msgid "Project"
+msgstr ""
+
 msgid "Content type"
 msgstr ""
 
@@ -152,9 +155,6 @@ msgid "User"
 msgstr ""
 
 msgid "Wrong json data"
-msgstr ""
-
-msgid "Project"
 msgstr ""
 
 msgid "Name"

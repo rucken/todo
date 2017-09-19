@@ -33,22 +33,4 @@ export class TodoNavbarComponent extends NavbarComponent {
     super.init();
     this.childrenRoutes = TodoRoutes;
   }
-  set childrenRoutes(routes: any[]) {
-    this._childrenRoutes = routes;
-  }
-  get childrenRoutes() {
-    const items: any[] = this._childrenRoutes.filter(
-      item =>
-        item.data &&
-        item.data.visible &&
-        this.account &&
-        this.account.checkPermissions([`read_${item.data.name}-page`])
-    ).map(
-      item => {
-        const newItem = item.data;
-        newItem.url = `/${newItem.name}`;
-        return newItem;
-      });
-    return items;
-  }
 }

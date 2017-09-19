@@ -45,14 +45,13 @@ export class TodoProject extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoProject.meta());
-    this.users = obj.users ? obj.users.map(user => new User(user)) : [];
-    this.statuses = obj.statuses ? obj.statuses.map(status => new TodoStatus(status)) : [];
+    this.users = obj.users ? obj.users.map((user: any) => new User(user)) : [];
+    this.statuses = obj.statuses ? obj.statuses.map((status: any) => new TodoStatus(status)) : [];
   }
   format() {
     const result = this.formatByFields(TodoProject.meta());
-    result.users = result.users ? result.users.map(user => user.format()) : [];
-    console.log(this);
-    result.statuses = result.statuses ? result.statuses.map(status => status.format()) : [];
+    result.users = result.users ? result.users.map((user: User) => user.format()) : [];
+    result.statuses = result.statuses ? result.statuses.map((status: TodoStatus) => status.format()) : [];
     return result;
   }
   get isPublicAsString() {

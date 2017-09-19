@@ -1,6 +1,6 @@
 import { User } from 'rucken';
 import { Subscription } from 'rxjs/Rx';
-import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild, ElementRef } from '@angular/core';
 import { TodoChange } from './../../shared/models/todo-change.model';
 import { TodoChangeModalComponent } from './todo-change-modal/todo-change-modal.component';
 import { ConfirmModalComponent } from 'rucken';

@@ -15,7 +15,7 @@
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
+      "tsconfig": "tsconfig.aot.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
@@ -38,7 +38,7 @@
   },
   "lint": [
     {
-      "project": "src/tsconfig.app.json"
+      "project": "src/tsconfig.aot.json"
     },
     {
       "project": "src/tsconfig.spec.json"

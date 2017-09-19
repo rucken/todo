@@ -11,6 +11,7 @@ import { AccountService } from 'rucken';
 import { BaseResourceModalComponent } from 'rucken';
 import { TextInputComponent } from 'rucken';
 import { ViewEncapsulation } from '@angular/core';
+import { TodoProjectSelectInputComponent } from '../../todo-projects-grid/todo-project-select-input/todo-project-select-input.component';
 @Component({
   selector: 'todo-change-modal',
   templateUrl: './todo-change-modal.component.html',

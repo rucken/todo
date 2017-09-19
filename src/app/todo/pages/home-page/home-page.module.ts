@@ -14,10 +14,10 @@ import { PageHeaderModule, SharedModule } from 'rucken';
   exports: [TodoHomePageComponent],
   entryComponents: [TodoHomePageComponent]
 })
-export class HomePageModule {
+export class TodoHomePageModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: HomePageModule,
+      ngModule: TodoHomePageModule,
       providers: []
     };
   }

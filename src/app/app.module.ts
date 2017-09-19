@@ -21,7 +21,6 @@ import {
 } from './todo';
 import { TodoAppComponent } from './app.component';
 import { TodoRoutes } from './app.routes';
-import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [

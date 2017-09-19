@@ -18,7 +18,7 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - run `npm start` to fire up dev server (with backend on port: 5000)
 - Open browser to [`http://localhost:4200`](http://localhost:4200)
 - If you want to use custom port, run `ng serve --port=4201`
-- If you want to use run with mock backend [mockapi.io](https://www.mockapi.io/), run `ng serve --env=mockapi`
+- If you want to use run with mock backend [mockapi.io](https://www.mockapi.io/), run `npm run demo`
 
 ### Build
 - run `npm run build` to build application
@@ -26,7 +26,7 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 
 ### Scaffold
 - For scaffold grid, update manually `./srcgen/grid.select.input.modal.json`
-- run `npm run _grid`
+- run `npm run make-grid`
 - reset changes on `./srcgen/grid.select.input.modal.json`
 - add custom code in generated files `./src/app/todo/grids/[grid]` and `./src/app/todo/shared/[service and model]`
 

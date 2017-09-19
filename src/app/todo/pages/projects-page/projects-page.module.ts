@@ -21,10 +21,10 @@ import { TodoProjectsGridModule } from '../../grids/todo-projects-grid/todo-proj
   exports: [TodoProjectsPageComponent],
   entryComponents: [TodoProjectsPageComponent]
 })
-export class ProjectsPageModule {
+export class TodoProjectsPageModule {
   static forRoot(): ModuleWithProviders {
     return {
-      ngModule: ProjectsPageModule,
+      ngModule: TodoProjectsPageModule,
       providers: []
     };
   }
