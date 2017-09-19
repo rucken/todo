@@ -22,7 +22,7 @@ import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
 
   @Input()
-  headerType: string = 'basic';
+  headerType = 'basic';
   @Output()
   onSelectItems: EventEmitter<TodoStatus[] | any>;
   @ViewChild('focusElement')

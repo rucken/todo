@@ -22,7 +22,7 @@ export class TodoAppComponent extends BaseAppComponent {
     code: 'en',
     title: translate('English'),
     dic: null
-  }]
+  }];
   pleaseWaitVisible = false;
 
   constructor(
