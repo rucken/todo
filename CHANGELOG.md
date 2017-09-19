@@ -1,3 +1,13 @@
+<a name="0.1.7"></a>
+## [0.1.7](https://github.com/site15/rucken-todo/compare/0.1.6...0.1.7) (2017-09-19)
+
+
+### Bug Fixes
+
+* **script:** Fix test script ([2df26d9](https://github.com/site15/rucken-todo/commit/2df26d9))
+
+
+
 <a name="0.1.6"></a>
 # [0.1.6](https://github.com/site15/rucken-todo/compare/0.1.5...0.1.6) (2017-09-19)
 
