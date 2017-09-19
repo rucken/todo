@@ -1,15 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoHomePageComponent } from './home-page.component';
 import { RouterModule } from '@angular/router';
 import { TodoHomePageRoutes } from './home-page.routes';
-import { PageHeaderModule } from 'rucken';
-import { TranslateModule } from '@ngx-translate/core';
+import { PageHeaderModule, SharedModule } from 'rucken';
 
 @NgModule({
   imports: [
-    CommonModule,
-    TranslateModule.forChild(),
+    SharedModule.forRoot(),
     PageHeaderModule.forRoot(),
     RouterModule.forChild(TodoHomePageRoutes)
   ],

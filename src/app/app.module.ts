@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +13,7 @@ import {
   RuckenComponents, RuckenServices, RepositoryHelper,
   EndpointHelper, HttpHelper, AccountService, AuthHttpFactory, BaseResourceSelectInputConfig,
   TextInputConfig, SelectInputConfig, TableColumnConfig,
-  TextInputModule, FooterButtonsModule, AuthModalModule, AlertModalModule
+  TextInputModule, FooterButtonsModule, AuthModalModule, AlertModalModule, SharedModule
 } from 'rucken';
 import { RouterModule } from '@angular/router';
 import {
@@ -23,14 +22,12 @@ import {
 import { TodoAppComponent } from './app.component';
 import { TodoRoutes } from './app.routes';
 import { environment } from '../environments/environment';
-import { RepositoryHelper } from 'rucken';
 
 @NgModule({
   declarations: [
     TodoAppComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -43,6 +40,7 @@ import { RepositoryHelper } from 'rucken';
     TodoNavbarModule.forRoot(),
     AuthModalModule.forRoot(),
     TranslateModule.forRoot(),
+    SharedModule.forRoot(),
     RouterModule.forRoot(TodoRoutes, { useHash: true })
   ],
   providers: [

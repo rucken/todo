@@ -1,20 +1,20 @@
-import { SelectInputModule } from 'rucken';
+import { SelectInputModule, SharedModule, FooterButtonsModule, TextInputModule } from 'rucken';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoStatusSelectInputComponent } from './todo-status-select-input.component';
 import { ModalModule, TooltipModule } from 'ngx-bootstrap';
-import { FooterButtonsModule } from 'rucken';
-import { TextInputModule } from 'rucken';
 import { FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 import { TodoStatusesListModalModule } from '../todo-statuses-list-modal/todo-statuses-list-modal.module';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ModalModule.forRoot(), TranslateModule.forChild(),
+    SharedModule.forRoot(),
+    FormsModule,
+    ModalModule.forRoot(),
     TodoStatusesListModalModule.forRoot(),
-    FooterButtonsModule.forRoot(), TextInputModule.forRoot(),
-    TooltipModule.forRoot(), SelectInputModule.forRoot()
+    FooterButtonsModule.forRoot(),
+    TextInputModule.forRoot(),
+    TooltipModule.forRoot(),
+    SelectInputModule.forRoot()
   ],
   declarations: [
     TodoStatusSelectInputComponent

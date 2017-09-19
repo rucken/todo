@@ -1,15 +1,15 @@
 import { TodoProjectsGridModule } from '../todo-projects-grid.module';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoProjectsListModalComponent } from './todo-projects-list-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule } from 'rucken';
-import { TranslateModule } from '@ngx-translate/core';
+import { FooterButtonsModule, SharedModule } from 'rucken';
 
 @NgModule({
   imports: [
-    CommonModule, ModalModule.forRoot(), TranslateModule.forChild(),
-    FooterButtonsModule.forRoot(), TodoProjectsGridModule.forRoot()
+    SharedModule.forRoot(),
+    ModalModule.forRoot(),
+    FooterButtonsModule.forRoot(),
+    TodoProjectsGridModule.forRoot()
   ],
   declarations: [
     TodoProjectsListModalComponent
