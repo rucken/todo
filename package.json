@@ -1,6 +1,6 @@
 {
   "name": "rucken-todo",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
   "maintainers": [
@@ -37,7 +37,7 @@
     "demo": "npm-run-all tools-prepare demo-serve",
     "test": "npm-run-all lint build",
     "lint": "ng lint",
-    "build": "npm-run-all app-build tools-add_version",
+    "build": "npm-run-all app-build tools-demo-add_version",
     "app-build": "ng build --prod --aot",
     "app-serve": "ng serve --host 0.0.0.0 --aot",
     "demo-serve": "ng serve --host 0.0.0.0 --aot --env=mockapi",
