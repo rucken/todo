@@ -2,7 +2,7 @@ import { Component, ComponentFactoryResolver } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {
   AdminPageComponent, AppService, AuthModalComponent, NavbarComponent,
-  AccountService, User, ConfirmModalComponent
+  AccountService, User, ConfirmModalComponent, SharedService
 } from 'rucken';
 import { TranslateService } from '@ngx-translate/core';
 import { TodoRoutes } from '../../../app.routes';
@@ -18,38 +18,19 @@ export class TodoNavbarComponent extends NavbarComponent {
 
   changelog: string = require('html-loader!markdown-loader!./../../../../../CHANGELOG.md');
 
-  private _childrenRoutes: any[] = [];
-
   constructor(
     public accountService: AccountService,
     public app: AppService,
     public translateService: TranslateService,
     public activatedRoute: ActivatedRoute,
     public router: Router,
-    public resolver: ComponentFactoryResolver
+    public resolver: ComponentFactoryResolver,
+    public sharedService: SharedService
   ) {
-    super(accountService, app, translateService, activatedRoute, router, resolver);
+    super(accountService, app, translateService, activatedRoute, router, resolver, sharedService);
   }
   init() {
     super.init();
     this.childrenRoutes = TodoRoutes;
-  }
-  set childrenRoutes(routes: any[]) {
-    this._childrenRoutes = routes;
-  }
-  get childrenRoutes() {
-    const items: any[] = this._childrenRoutes.filter(
-      item =>
-        item.data &&
-        item.data.visible &&
-        this.account &&
-        this.account.checkPermissions([`read_${item.data.name}-page`])
-    ).map(
-      item => {
-        const newItem = item.data;
-        newItem.url = `/${newItem.name}`;
-        return newItem;
-      });
-    return items;
   }
 }

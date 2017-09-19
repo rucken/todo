@@ -1,8 +1,26 @@
+<a name="0.1.6"></a>
+# [0.1.6](https://github.com/site15/rucken-todo/compare/0.1.5...0.1.6) (2017-09-19)
+
+
+### Bug Fixes
+
+* **AoT:** Add check length of items on html template ([f290254](https://github.com/site15/rucken-todo/commit/f290254))
+* **AoT:** Remove attribute from method in html template ([dbcc081](https://github.com/site15/rucken-todo/commit/dbcc081))
+* **deps:** Update dependencies and change code for it ([cc8b3bf](https://github.com/site15/rucken-todo/commit/cc8b3bf))
+* **lint:** Fix errors ([6b489b6](https://github.com/site15/rucken-todo/commit/6b489b6))
+
+
+### Features
+
+* **AoT:** Update for correct work with AoT over lazy routes ([7f3f666](https://github.com/site15/rucken-todo/commit/7f3f666))
+
+
+
 <a name="0.1.5"></a>
 ## [0.1.5](https://github.com/site15/rucken-todo/compare/0.1.4...0.1.5) (2017-09-07)
 
 
-### Update scripts and evironments
+* Update scripts and environments
 
 
 <a name="0.1.4"></a>

@@ -4,17 +4,22 @@ import { TodoProjectsPageRoutes } from './todo/pages/projects-page/projects-page
 import { TodoThemesPageRoutes } from './todo/pages/themes-page/themes-page.routes';
 import { TodoAdminPageRoutes } from './todo/pages/admin-page/admin-page.routes';
 import { TodoAccountPageRoutes } from './todo/pages/account-page/account-page.routes';
+import { TodoHomePageModule } from './todo/pages/home-page/home-page.module';
+import { TodoProjectsPageModule } from './todo/pages/projects-page/projects-page.module';
+import { TodoThemesPageModule } from './todo/pages/themes-page/themes-page.module';
+import { TodoAdminPageModule } from './todo/pages/admin-page/admin-page.module';
+import { TodoAccountPageModule } from './todo/pages/account-page/account-page.module';
 
 export const TodoRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
-    loadChildren: './todo/pages/home-page/home-page.module#HomePageModule',
+    loadChildren: './todo/pages/home-page/home-page.module#TodoHomePageModule',
     data: TodoHomePageRoutes[0].data
   },
   {
     path: 'projects',
-    loadChildren: './todo/pages/projects-page/projects-page.module#ProjectsPageModule',
+    loadChildren: './todo/pages/projects-page/projects-page.module#TodoProjectsPageModule',
     data: TodoProjectsPageRoutes[0].data
   },
   {

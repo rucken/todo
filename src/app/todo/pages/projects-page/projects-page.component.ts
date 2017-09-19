@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService, EndpointStatusEnum, translate } from 'rucken';
+import { AccountService, EndpointStatusEnum, translate, SharedService } from 'rucken';
 import { AppService } from 'rucken';
 import { BasePageComponent } from 'rucken';
 import { TodoProjectsGridComponent } from '../../grids/todo-projects-grid/todo-projects-grid.component';
@@ -29,9 +29,10 @@ export class TodoProjectsPageComponent extends BasePageComponent {
     public app: AppService,
     public translateService: TranslateService,
     public activatedRoute: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    public sharedService: SharedService
   ) {
-    super(accountService, app, translateService, activatedRoute, router);
+    super(accountService, app, translateService, activatedRoute, router, sharedService);
   }
   init() {
     super.init();

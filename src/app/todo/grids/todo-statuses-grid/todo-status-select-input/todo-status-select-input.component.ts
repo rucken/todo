@@ -22,7 +22,7 @@ import { ShortTodoProject } from '../../../shared/models/short-todo-project.mode
 export class TodoStatusSelectInputComponent extends BaseResourceSelectInputComponent {
 
   @ViewChild('inputElement')
-  inputElem
+  inputElement: any;
   @ViewChild('tooltip')
   tooltip: TooltipDirective;
 

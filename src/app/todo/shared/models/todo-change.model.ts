@@ -28,8 +28,6 @@ export class TodoChange extends BaseResourceModel {
     'updatedAt',
 
   ];
-  // todo: move to local use, after update rucken
-  dateAsStringFormat = 'DD.MM.YYYY HH:mm';
 
   id: number;
   project: ShortTodoProject;
@@ -81,7 +79,7 @@ export class TodoChange extends BaseResourceModel {
     this.setDateInput('createdAt', text);
   }
   get createdAtAsString() {
-    return this.dateAsString('createdAt');
+    return this.dateAsString('createdAt', 'DD.MM.YYYY HH:mm');
   }
   get contentTypeAsString() {
     if (this.contentType) {

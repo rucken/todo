@@ -34,5 +34,5 @@ export class TodoEndpointHelper extends EndpointHelper {
       }
     }
     return url;
-  };
+  }
 }

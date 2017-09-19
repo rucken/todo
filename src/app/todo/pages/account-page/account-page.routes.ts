@@ -1,8 +1,9 @@
 import { Routes } from '@angular/router';
 import { AccountPageComponent, translate } from 'rucken';
 import { TodoProfileFrameRoutes } from './profile-frame/profile-frame.routes';
+import { TodoProfileFrameModule } from './profile-frame/profile-frame.module';
 
-const children = [
+export const children = [
   {
     path: 'profile',
     data: TodoProfileFrameRoutes[0].data,

@@ -1,16 +1,16 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoStatusModalComponent } from './todo-status-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule } from 'rucken';
-import { TextInputModule } from 'rucken';
-import { TranslateModule } from '@ngx-translate/core';
+import { FooterButtonsModule, TextInputModule, SharedModule } from 'rucken';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ModalModule.forRoot(), TranslateModule.forChild(),
-    FooterButtonsModule.forRoot(), TextInputModule.forRoot()
+    SharedModule.forRoot(),
+    FormsModule,
+    ModalModule.forRoot(),
+    FooterButtonsModule.forRoot(),
+    TextInputModule.forRoot()
   ],
   declarations: [
     TodoStatusModalComponent

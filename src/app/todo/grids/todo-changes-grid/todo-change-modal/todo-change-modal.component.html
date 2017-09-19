@@ -12,7 +12,7 @@
         <div class="modal-body">
           <div class="row">
             <div class="col-md-4">
-              <content-type-select-input [errors]="errors" [info]="info" name="contentType" [(model)]="item.contentType" [(modelAsString)]="item.contentTypeAsString" [title]="modelMeta.titles.contentType"
+              <content-type-select-input [errors]="errors" [info]="info" name="contentType" [(model)]="item.contentType" [modelAsString]="item.contentTypeAsString" [title]="modelMeta.titles.contentType"
                 [readonly]="readonly" [focused]="true" #focusElement></content-type-select-input>
             </div>
             <div class="col-md-4">
@@ -24,10 +24,10 @@
                 [readonly]="readonly"></text-input>
             </div>
             <div class="col-md-12">
-              <text-input [errors]="errors" [info]="info" type="textarea" rows="" name="data" [(model)]="item.dataAsString" [title]="modelMeta.titles.data" [readonly]="readonly"></text-input>
+              <text-input [errors]="errors" [info]="info" type="textarea" rows="" name="data" [model]="item.dataAsString" [title]="modelMeta.titles.data" [readonly]="readonly"></text-input>
             </div>
             <div class="col-md-6">
-              <user-select-input [errors]="errors" [info]="info" name="user" [(model)]="item.user" [(modelAsString)]="item.userAsString" [title]="modelMeta.titles.user"
+              <user-select-input [errors]="errors" [info]="info" name="user" [(model)]="item.user" [modelAsString]="item.userAsString" [title]="modelMeta.titles.user"
                 [readonly]="readonly"></user-select-input>
             </div>
             <div class="col-md-6">

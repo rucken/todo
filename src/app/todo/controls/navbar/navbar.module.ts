@@ -1,15 +1,12 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoNavbarComponent } from './navbar.component';
-import { ConfirmModalModule, AuthModalModule } from 'rucken';
-import { TranslateModule } from '@ngx-translate/core';
+import { ConfirmModalModule, AuthModalModule, SharedModule } from 'rucken';
 import { CollapseModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
-    CommonModule,
-    TranslateModule.forChild(),
+    SharedModule.forRoot(),
     ConfirmModalModule.forRoot(),
     AuthModalModule.forRoot(),
     CollapseModule.forRoot(),

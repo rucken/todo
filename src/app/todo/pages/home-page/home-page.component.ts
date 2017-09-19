@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService } from 'rucken';
+import { AccountService, SharedService } from 'rucken';
 import { AppService } from 'rucken';
 import { BasePageComponent } from 'rucken';
 
@@ -19,8 +19,9 @@ export class TodoHomePageComponent extends BasePageComponent {
     public app: AppService,
     public translateService: TranslateService,
     public activatedRoute: ActivatedRoute,
-    public router: Router
+    public router: Router,
+    public sharedService: SharedService
   ) {
-    super(accountService, app, translateService, activatedRoute, router);
+    super(accountService, app, translateService, activatedRoute, router, sharedService);
   }
 }

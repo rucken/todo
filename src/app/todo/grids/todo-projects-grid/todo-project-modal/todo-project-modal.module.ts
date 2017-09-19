@@ -1,18 +1,20 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { TodoProjectModalComponent } from './todo-project-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, UsersGridModule } from 'rucken';
-import { TextInputModule } from 'rucken';
-import { TranslateModule } from '@ngx-translate/core';
+import { FooterButtonsModule, UsersGridModule, SharedModule, TextInputModule } from 'rucken';
 import { FormsModule } from '@angular/forms';
 import { TodoUsersGridModule } from '../../todo-users-grid/todo-users-grid.module';
 import { TodoStatusesGridModule } from '../../todo-statuses-grid/todo-statuses-grid.module';
 
 @NgModule({
   imports: [
-    CommonModule, FormsModule, ModalModule.forRoot(), TranslateModule.forChild(), TodoUsersGridModule.forRoot(), TodoStatusesGridModule.forRoot(),
-    FooterButtonsModule.forRoot(), TextInputModule.forRoot()
+    SharedModule.forRoot(),
+    FormsModule,
+    ModalModule.forRoot(),
+    TodoUsersGridModule.forRoot(),
+    TodoStatusesGridModule.forRoot(),
+    FooterButtonsModule.forRoot(),
+    TextInputModule.forRoot()
   ],
   declarations: [
     TodoProjectModalComponent
