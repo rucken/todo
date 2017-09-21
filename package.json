@@ -38,7 +38,7 @@
     "test": "npm-run-all lint build",
     "lint": "ng lint",
     "build": "npm-run-all app-build tools-demo-add_version",
-    "app-build": "ng build --prod --aot",
+    "app-build": "ng build --prod --aot --build-optimizer",
     "app-serve": "ng serve --host 0.0.0.0 --aot",
     "demo-serve": "ng serve --host 0.0.0.0 --aot --env=mockapi",
     "demo-prod_build": "ng build --base-href https://site15.github.io/rucken-todo/ --prod --env=mockapi --aot --build-optimizer",
