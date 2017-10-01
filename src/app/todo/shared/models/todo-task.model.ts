@@ -1,6 +1,7 @@
-import { BaseResourceModel, translate } from 'rucken';
-import { TodoStatus } from './todo-status.model';
+import { BaseResourceModel, translate } from '@rucken/core';
+
 import { ShortTodoProject } from './short-todo-project.model';
+import { TodoStatus } from './todo-status.model';
 
 export class TodoTask extends BaseResourceModel {
   static titles: any = {

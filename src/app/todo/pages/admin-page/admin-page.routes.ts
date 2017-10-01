@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { AdminPageComponent, translate } from 'rucken';
+import { translate } from '@rucken/core';
+import { AdminPageComponent } from '@rucken/web';
+
 import { TodoGroupsFrameRoutes } from './groups-frame/groups-frame.routes';
 import { TodoUsersFrameRoutes } from './users-frame/users-frame.routes';
-import { TodoUsersFrameModule } from './users-frame/users-frame.module';
-import { TodoGroupsFrameModule } from './groups-frame/groups-frame.module';
 
 export const children = [
   {

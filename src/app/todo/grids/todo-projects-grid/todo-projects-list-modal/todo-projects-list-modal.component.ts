@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
-import { TodoProject } from './../../../shared/models/todo-project.model';
-import { User, BaseResourceModalComponent } from 'rucken';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { BaseResourceModalComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
+
 import { TodoProjectsGridComponent } from '../todo-projects-grid.component';
+import { TodoProject } from './../../../shared/models/todo-project.model';
 
 @Component({
   selector: 'todo-projects-list-modal',

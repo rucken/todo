@@ -1,16 +1,8 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild
-} from '@angular/core';
-import { User } from 'rucken';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { User } from '@rucken/core';
+import { BaseResourceModalComponent } from '@rucken/web';
+import { TextInputComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
-import { AccountService } from 'rucken';
-import { TextInputComponent } from 'rucken';
-import { Group, BaseResourceModalComponent } from 'rucken';
-import { UserGroup } from 'rucken';
 
 @Component({
   selector: 'todo-user-modal',

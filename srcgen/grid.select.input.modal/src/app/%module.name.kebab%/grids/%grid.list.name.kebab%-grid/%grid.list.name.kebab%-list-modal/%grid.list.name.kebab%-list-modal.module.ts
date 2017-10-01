@@ -2,7 +2,8 @@ import { <%=grid.list.name.camel%>GridModule } from '../<%=grid.list.name.kebab%
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.list.name.camel%>ListModalComponent } from './<%=grid.list.name.kebab%>-list-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, SharedModule } from 'rucken';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule } from '@rucken/web';
 
 @NgModule({
   imports: [

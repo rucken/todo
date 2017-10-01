@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
-import { TodoStatus } from './../../../shared/models/todo-status.model';
-import { BaseResourceModalComponent } from 'rucken';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { BaseResourceModalComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
-import { TodoStatusesGridComponent } from '../todo-statuses-grid.component';
+
 import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
+import { TodoStatusesGridComponent } from '../todo-statuses-grid.component';
+import { TodoStatus } from './../../../shared/models/todo-status.model';
 
 @Component({
   selector: 'todo-statuses-list-modal',

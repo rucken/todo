@@ -1,17 +1,13 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild
-} from '@angular/core';
-import { TodoChange } from './../../../shared/models/todo-change.model';
-import { ModalDirective } from 'ngx-bootstrap';
-import { AccountService } from 'rucken';
-import { BaseResourceModalComponent } from 'rucken';
-import { TextInputComponent } from 'rucken';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
-import { TodoProjectSelectInputComponent } from '../../todo-projects-grid/todo-project-select-input/todo-project-select-input.component';
+import { BaseResourceModalComponent } from '@rucken/web';
+import { ModalDirective } from 'ngx-bootstrap';
+
+import {
+    TodoProjectSelectInputComponent,
+} from '../../todo-projects-grid/todo-project-select-input/todo-project-select-input.component';
+import { TodoChange } from './../../../shared/models/todo-change.model';
+
 @Component({
   selector: 'todo-change-modal',
   templateUrl: './todo-change-modal.component.html',

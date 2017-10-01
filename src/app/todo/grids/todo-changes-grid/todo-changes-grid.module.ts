@@ -1,10 +1,12 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoChangesGridComponent } from './todo-changes-grid.component';
-import { GridSearchPanelModule, PipesModule } from 'rucken';
-import { TableColumnModule, GridRowButtonsModule, SharedModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '@rucken/core';
+import { GridSearchPanelModule, PipesModule } from '@rucken/web';
+import { GridRowButtonsModule, TableColumnModule } from '@rucken/web';
+import { ConfirmModalModule } from '@rucken/web';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { TodoChangeModalModule } from './todo-change-modal/todo-change-modal.module';
-import { ConfirmModalModule } from 'rucken';
+import { TodoChangesGridComponent } from './todo-changes-grid.component';
 
 @NgModule({
   imports: [

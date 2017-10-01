@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService, SharedService } from 'rucken';
-import { AppService } from 'rucken';
-import { BasePageComponent } from 'rucken';
+import { AccountService, SharedService } from '@rucken/core';
+import { AppService } from '@rucken/core';
+import { BasePageComponent } from '@rucken/web';
 
 @Component({
   selector: 'todo-home-page',
@@ -11,8 +11,6 @@ import { BasePageComponent } from 'rucken';
   styleUrls: ['./home-page.component.scss']
 })
 export class TodoHomePageComponent extends BasePageComponent {
-
-  readme: string = require('html-loader!markdown-loader!./../../../../../README.md');
 
   constructor(
     public accountService: AccountService,
@@ -23,5 +21,7 @@ export class TodoHomePageComponent extends BasePageComponent {
     public sharedService: SharedService
   ) {
     super(accountService, app, translateService, activatedRoute, router, sharedService);
+    const readme = require('html-loader!markdown-loader!./../../../../../README.md');
+    this.readme = readme.replace('<h1 id="rucken">rucken-todo</h1>', '');
   }
 }

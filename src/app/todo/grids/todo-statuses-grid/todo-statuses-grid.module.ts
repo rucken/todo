@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoStatusesGridComponent } from './todo-statuses-grid.component';
-import { GridSearchPanelModule, SharedModule, TableColumnModule, GridRowButtonsModule, ConfirmModalModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '@rucken/core';
+import { ConfirmModalModule, GridRowButtonsModule, GridSearchPanelModule, TableColumnModule } from '@rucken/web';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { TodoStatusModalModule } from './todo-status-modal/todo-status-modal.module';
+import { TodoStatusesGridComponent } from './todo-statuses-grid.component';
 
 @NgModule({
   imports: [

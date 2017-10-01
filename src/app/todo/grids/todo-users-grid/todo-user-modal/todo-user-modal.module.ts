@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoUserModalComponent } from './todo-user-modal.component';
-import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, TextInputModule, CheckboxesInputModule, SharedModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '@rucken/core';
+import { CheckboxesInputModule, FooterButtonsModule, TextInputModule } from '@rucken/web';
+import { ModalModule } from 'ngx-bootstrap';
+
+import { TodoUserModalComponent } from './todo-user-modal.component';
 
 @NgModule({
   imports: [

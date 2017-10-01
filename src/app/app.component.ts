@@ -1,9 +1,12 @@
-import { AlertModalComponent, AppService, BaseAppComponent, RuckenRuI18n, SharedService, translate } from 'rucken';
-import { Component, ViewContainerRef, ComponentFactoryResolver, Input, ViewEncapsulation, ViewChild, ElementRef, EventEmitter } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AppService, RuckenCoreRuI18n, SharedService, translate } from '@rucken/core';
+import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n } from '@rucken/web';
 import * as _ from 'lodash';
-import { Router, NavigationStart, NavigationEnd } from '@angular/router';
-import { TodoRuI18n } from './todo/i18n/ru.i18n';
+
+import { RuckenTodoRuI18n } from './todo/i18n/ru.i18n';
+
 
 @Component({
   selector: 'todo-app-root',
@@ -17,7 +20,7 @@ export class TodoAppComponent extends BaseAppComponent {
   languages = [{
     code: 'ru',
     title: translate('Russian'),
-    dic: _.merge(RuckenRuI18n, TodoRuI18n)
+    dic: _.merge(RuckenCoreRuI18n, RuckenWebRuI18n, RuckenTodoRuI18n)
   }, {
     code: 'en',
     title: translate('English'),

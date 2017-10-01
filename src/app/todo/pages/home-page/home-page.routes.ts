@@ -1,5 +1,7 @@
+import { translate } from '@rucken/core';
+
 import { TodoHomePageComponent } from './home-page.component';
-import { translate } from 'rucken';
+
 export const TodoHomePageRoutes = [{
   path: '',
   pathMatch: 'full',

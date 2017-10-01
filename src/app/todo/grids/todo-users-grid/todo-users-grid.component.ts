@@ -1,15 +1,13 @@
-import { TodoProject } from '../../shared/models/todo-project.model';
-import { Subscription } from 'rxjs/Rx';
-import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild, ElementRef } from '@angular/core';
-import { User } from 'rucken';
-import { ConfirmModalComponent } from 'rucken';
-import { AccountService } from 'rucken';
-import { AppService } from 'rucken';
-import { UsersService } from 'rucken';
-import { EndpointStatusEnum } from 'rucken';
-import { MetaModel } from 'rucken';
-import { BaseResourcesGridComponent } from 'rucken';
+import { Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { User } from '@rucken/core';
+import { AccountService } from '@rucken/core';
+import { AppService } from '@rucken/core';
+import { UsersService } from '@rucken/core';
+import { ConfirmModalComponent } from '@rucken/web';
+import { BaseResourcesGridComponent } from '@rucken/web';
+
+import { TodoProject } from '../../shared/models/todo-project.model';
 import { TodoUserModalComponent } from './todo-user-modal/todo-user-modal.component';
 
 @Component({

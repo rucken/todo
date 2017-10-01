@@ -1,9 +1,11 @@
-import { SelectInputModule, SharedModule, FooterButtonsModule, TextInputModule } from 'rucken';
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoProjectSelectInputComponent } from './todo-project-select-input.component';
-import { ModalModule, TooltipModule } from 'ngx-bootstrap';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule, SelectInputModule, TextInputModule } from '@rucken/web';
+import { ModalModule, TooltipModule } from 'ngx-bootstrap';
+
 import { TodoProjectsListModalModule } from '../todo-projects-list-modal/todo-projects-list-modal.module';
+import { TodoProjectSelectInputComponent } from './todo-project-select-input.component';
 
 @NgModule({
   imports: [

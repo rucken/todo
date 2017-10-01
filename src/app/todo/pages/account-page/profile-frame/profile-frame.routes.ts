@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { ProfileFrameComponent, translate } from 'rucken';
+import { translate } from '@rucken/core';
+import { ProfileFrameComponent } from '@rucken/web';
 
 export const TodoProfileFrameRoutes: Routes = [
   {
