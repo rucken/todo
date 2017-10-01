@@ -1,3 +1,15 @@
+<a name="0.1.8"></a>
+## [0.1.8](https://github.com/rucken/todo-web/compare/0.1.7...0.1.8) (2017-10-01)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies and fix code for new [@rucken](https://github.com/rucken) ([c42ef8e](https://github.com/rucken/todo-web/commit/c42ef8e))
+* **scaffold:** Update scaffold scrips ([78187d5](https://github.com/rucken/todo-web/commit/78187d5))
+* **scripts:** Add --build-optimizer to app-build command ([b2c98ef](https://github.com/rucken/todo-web/commit/b2c98ef))
+
+
+
 <a name="0.1.7"></a>
 ## [0.1.7](https://github.com/rucken/todo-web/compare/0.1.6...0.1.7) (2017-09-19)
 
