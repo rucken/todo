@@ -1,14 +1,14 @@
 ## rucken-todo
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/site15/rucken-todo.svg)](https://greenkeeper.io/)
+[![Greenkeeper badge](https://badges.greenkeeper.io/rucken/todo-web.svg)](https://greenkeeper.io/)
 [![Build Status][travis-image]][travis-url]
 
 
-A simple todo application demonstrating the basic usage of [rucken](https://github.com/site15/rucken).
+A simple todo application demonstrating the basic usage of [rucken](https://github.com/rucken).
 
 
 ### Usage
-- Clone or fork this repository `git clone https://github.com/site15/rucken-todo.git`
+- Clone or fork this repository `git clone https://github.com/rucken/todo-web.git`
 - Make sure you have [node.js](https://nodejs.org/) installed version 6+
 - Make sure you have NPM installed version 3+
 - Open comand line in folder `rucken-todo`
@@ -34,5 +34,5 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 
 MIT
 
-[travis-image]: https://travis-ci.org/site15/rucken-todo.svg?branch=develop
-[travis-url]: https://travis-ci.org/site15/rucken-todo
+[travis-image]: https://travis-ci.org/rucken/todo-web.svg?branch=develop
+[travis-url]: https://travis-ci.org/rucken/todo-web

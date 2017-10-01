@@ -24,13 +24,13 @@
     "bootstrap",
     "mockapi"
   ],
-  "homepage": "https://github.com/site15/rucken-todo",
+  "homepage": "https://github.com/rucken/todo-web",
   "bugs": {
-    "url": "https://github.com/site15/rucken-todo/issues"
+    "url": "https://github.com/rucken/todo-web/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/site15/rucken-todo.git"
+    "url": "git+https://github.com/rucken/todo-web.git"
   },
   "scripts": {
     "start": "npm-run-all tools-prepare app-serve",
@@ -41,7 +41,7 @@
     "app-build": "ng build --prod --aot --build-optimizer",
     "app-serve": "ng serve --host 0.0.0.0 --aot",
     "demo-serve": "ng serve --host 0.0.0.0 --aot --env=mockapi",
-    "demo-prod_build": "ng build --base-href https://site15.github.io/rucken-todo/ --prod --env=mockapi --aot --build-optimizer",
+    "demo-prod_build": "ng build --base-href https://rucken.github.io/todo-web/ --prod --env=mockapi --aot --build-optimizer",
     "demo-build": "npm-run-all demo-prod_build tools-demo-add_version",
     "demo-deploy": "gh-pages -d dist",
     "demo-gh_pages": "npm-run-all demo-build demo-deploy",
