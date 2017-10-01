@@ -1,7 +1,7 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TodoProfileFrameRoutes } from './profile-frame.routes';
-import { ProfileFrameModule } from 'rucken';
+import { ProfileFrameModule } from '@rucken/web';
 
 @NgModule({
   imports: [

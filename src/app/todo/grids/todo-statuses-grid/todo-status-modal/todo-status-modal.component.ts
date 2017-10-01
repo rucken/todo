@@ -1,15 +1,9 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild
-} from '@angular/core';
-import { TodoStatus } from './../../../shared/models/todo-status.model';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { BaseResourceModalComponent } from '@rucken/web';
+import { TextInputComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
-import { AccountService } from 'rucken';
-import { BaseResourceModalComponent } from 'rucken';
-import { TextInputComponent } from 'rucken';
+
+import { TodoStatus } from './../../../shared/models/todo-status.model';
 
 @Component({
   selector: 'todo-status-modal',

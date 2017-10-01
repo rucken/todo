@@ -2,7 +2,8 @@ import { TodoProjectsGridModule } from '../todo-projects-grid.module';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { TodoProjectsListModalComponent } from './todo-projects-list-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, SharedModule } from 'rucken';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule } from '@rucken/web';
 
 @NgModule({
   imports: [

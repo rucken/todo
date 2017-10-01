@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoProjectsGridComponent } from './todo-projects-grid.component';
-import { GridSearchPanelModule, SharedModule, ConfirmModalModule, GridRowButtonsModule, TableColumnModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '@rucken/core';
+import { ConfirmModalModule, GridRowButtonsModule, GridSearchPanelModule, TableColumnModule } from '@rucken/web';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { TodoProjectModalModule } from './todo-project-modal/todo-project-modal.module';
+import { TodoProjectsGridComponent } from './todo-projects-grid.component';
 
 @NgModule({
   imports: [

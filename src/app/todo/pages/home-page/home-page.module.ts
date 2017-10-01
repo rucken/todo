@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoHomePageComponent } from './home-page.component';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '@rucken/core';
+import { PageHeaderModule } from '@rucken/web';
+
+import { TodoHomePageComponent } from './home-page.component';
 import { TodoHomePageRoutes } from './home-page.routes';
-import { PageHeaderModule, SharedModule } from 'rucken';
 
 @NgModule({
   imports: [

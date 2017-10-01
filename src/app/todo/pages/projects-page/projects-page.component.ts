@@ -1,12 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService, EndpointStatusEnum, translate, SharedService } from 'rucken';
-import { AppService } from 'rucken';
-import { BasePageComponent } from 'rucken';
+import { AccountService, EndpointStatusEnum, SharedService, translate } from '@rucken/core';
+import { AppService } from '@rucken/core';
+import { BasePageComponent } from '@rucken/web';
+
+import { TodoChangesGridComponent } from '../../grids/todo-changes-grid/todo-changes-grid.component';
 import { TodoProjectsGridComponent } from '../../grids/todo-projects-grid/todo-projects-grid.component';
 import { TodoTasksGridComponent } from '../../grids/todo-tasks-grid/todo-tasks-grid.component';
-import { TodoChangesGridComponent } from '../../grids/todo-changes-grid/todo-changes-grid.component';
 import { TodoProject } from '../../shared/models/todo-project.model';
 import { TodoTask } from '../../shared/models/todo-task.model';
 

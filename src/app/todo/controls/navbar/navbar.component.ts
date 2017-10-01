@@ -1,12 +1,10 @@
 import { Component, ComponentFactoryResolver } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import {
-  AdminPageComponent, AppService, AuthModalComponent, NavbarComponent,
-  AccountService, User, ConfirmModalComponent, SharedService
-} from 'rucken';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AccountService, AppService, SharedService } from '@rucken/core';
+import { AuthModalComponent, ConfirmModalComponent, NavbarComponent } from '@rucken/web';
+
 import { TodoRoutes } from '../../../app.routes';
-import * as _ from 'lodash';
 
 @Component({
   selector: 'todo-navbar',

@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
-import { TodoTask } from './../../../shared/models/todo-task.model';
-import { User, BaseResourceModalComponent } from 'rucken';
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { BaseResourceModalComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
-import { TodoTasksGridComponent } from '../todo-tasks-grid.component';
+
 import { ShortTodoProject } from '../../../shared/models/short-todo-project.model';
+import { TodoTasksGridComponent } from '../todo-tasks-grid.component';
+import { TodoTask } from './../../../shared/models/todo-task.model';
 
 @Component({
   selector: 'todo-tasks-list-modal',

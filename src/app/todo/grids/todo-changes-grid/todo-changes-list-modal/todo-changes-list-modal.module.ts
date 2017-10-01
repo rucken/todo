@@ -1,8 +1,10 @@
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule } from '@rucken/web';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 import { TodoChangesGridModule } from '../todo-changes-grid.module';
-import { NgModule, ModuleWithProviders } from '@angular/core';
 import { TodoChangesListModalComponent } from './todo-changes-list-modal.component';
-import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, SharedModule } from 'rucken';
 
 @NgModule({
   imports: [

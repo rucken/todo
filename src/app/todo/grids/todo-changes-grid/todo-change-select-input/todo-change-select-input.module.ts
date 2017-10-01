@@ -1,9 +1,12 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoChangeSelectInputComponent } from './todo-change-select-input.component';
-import { ModalModule, TooltipModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, SharedModule, TextInputModule, SelectInputModule} from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule, SelectInputModule, TextInputModule } from '@rucken/web';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/ng2-bootstrap';
+
 import { TodoChangesListModalModule } from '../todo-changes-list-modal/todo-changes-list-modal.module';
+import { TodoChangeSelectInputComponent } from './todo-change-select-input.component';
 
 @NgModule({
   imports: [

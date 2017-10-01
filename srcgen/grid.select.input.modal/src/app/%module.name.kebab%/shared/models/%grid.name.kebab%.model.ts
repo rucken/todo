@@ -1,4 +1,4 @@
-import { BaseResourceModel, translate } from 'rucken';
+import { BaseResourceModel, translate } from '@rucken/core';
 
 export class <%=grid.name.camel%> extends BaseResourceModel {
   static titles: any = {

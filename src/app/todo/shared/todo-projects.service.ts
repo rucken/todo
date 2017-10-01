@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
+
+import { Injectable } from '@angular/core';
+import { BaseRepositoryService, RepositoryHelper } from '@rucken/core';
+import { Subject } from 'rxjs/Subject';
+
 import { TodoProject } from './models/todo-project.model';
-import { BaseRepositoryService, RepositoryHelper } from 'rucken';
-import { HttpHelper } from 'rucken';
-import { EndpointHelper } from 'rucken';
+
 @Injectable()
 export class TodoProjectsService extends BaseRepositoryService {
   items$: Subject<TodoProject[]>;

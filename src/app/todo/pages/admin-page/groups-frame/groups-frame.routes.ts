@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { GroupsFrameComponent, translate } from 'rucken';
+import { translate } from '@rucken/core';
+import { GroupsFrameComponent } from '@rucken/web';
 
 export const TodoGroupsFrameRoutes: Routes = [
   {

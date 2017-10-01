@@ -1,4 +1,6 @@
-import { ThemesPageComponent, translate } from 'rucken';
+import { translate } from '@rucken/core';
+import { ThemesPageComponent } from '@rucken/web';
+
 export const TodoThemesPageRoutes = [{
   path: '',
   pathMatch: 'full',

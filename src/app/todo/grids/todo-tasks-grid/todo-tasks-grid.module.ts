@@ -1,8 +1,10 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoTasksGridComponent } from './todo-tasks-grid.component';
-import { GridSearchPanelModule, TableColumnModule, GridRowButtonsModule, ConfirmModalModule, SharedModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { SharedModule } from '@rucken/core';
+import { ConfirmModalModule, GridRowButtonsModule, GridSearchPanelModule, TableColumnModule } from '@rucken/web';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
+
 import { TodoTaskModalModule } from './todo-task-modal/todo-task-modal.module';
+import { TodoTasksGridComponent } from './todo-tasks-grid.component';
 
 
 @NgModule({

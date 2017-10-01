@@ -1,4 +1,5 @@
-import { BaseResourceModel, translate, User } from 'rucken';
+import { BaseResourceModel, translate, User } from '@rucken/core';
+
 import { TodoStatus } from './todo-status.model';
 
 export class TodoProject extends BaseResourceModel {

@@ -1,9 +1,16 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { TodoChangeModalComponent } from './todo-change-modal.component';
-import { ModalModule } from 'ngx-bootstrap';
-import { ContentTypeSelectInputModule, FooterButtonsModule, UserSelectInputModule, UsersListModalModule } from 'rucken';
-import { TextInputModule, SharedModule } from 'rucken';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from '@rucken/core';
+import {
+    ContentTypeSelectInputModule,
+    FooterButtonsModule,
+    TextInputModule,
+    UserSelectInputModule,
+    UsersListModalModule,
+} from '@rucken/web';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { TodoChangeModalComponent } from './todo-change-modal.component';
 
 @NgModule({
   imports: [

@@ -1,5 +1,7 @@
+import { translate } from '@rucken/core';
+
 import { TodoProjectsPageComponent } from './projects-page.component';
-import { translate } from 'rucken';
+
 export const TodoProjectsPageRoutes = [{
   path: '',
   pathMatch: 'full',

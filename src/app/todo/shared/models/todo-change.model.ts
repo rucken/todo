@@ -1,6 +1,7 @@
+import { BaseResourceModel, ContentType, translate, User } from '@rucken/core';
 
-import { BaseResourceModel, ContentType, translate, User } from 'rucken';
 import { ShortTodoProject } from './short-todo-project.model';
+
 
 export class TodoChange extends BaseResourceModel {
   static titles: any = {

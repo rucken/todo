@@ -1,14 +1,10 @@
 import { Routes } from '@angular/router';
+
+import { TodoAccountPageRoutes } from './todo/pages/account-page/account-page.routes';
+import { TodoAdminPageRoutes } from './todo/pages/admin-page/admin-page.routes';
 import { TodoHomePageRoutes } from './todo/pages/home-page/home-page.routes';
 import { TodoProjectsPageRoutes } from './todo/pages/projects-page/projects-page.routes';
 import { TodoThemesPageRoutes } from './todo/pages/themes-page/themes-page.routes';
-import { TodoAdminPageRoutes } from './todo/pages/admin-page/admin-page.routes';
-import { TodoAccountPageRoutes } from './todo/pages/account-page/account-page.routes';
-import { TodoHomePageModule } from './todo/pages/home-page/home-page.module';
-import { TodoProjectsPageModule } from './todo/pages/projects-page/projects-page.module';
-import { TodoThemesPageModule } from './todo/pages/themes-page/themes-page.module';
-import { TodoAdminPageModule } from './todo/pages/admin-page/admin-page.module';
-import { TodoAccountPageModule } from './todo/pages/account-page/account-page.module';
 
 export const TodoRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },

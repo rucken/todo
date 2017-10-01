@@ -1,4 +1,4 @@
-import { SelectInputModule, FooterButtonsModule, TextInputModule, SharedModule } from 'rucken';
+import { SelectInputModule, FooterButtonsModule, TextInputModule, SharedModule } from '@rucken/core';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.name.camel%>SelectInputComponent } from './<%=grid.name.kebab%>-select-input.component';
 import { ModalModule, TooltipModule } from 'ngx-bootstrap';

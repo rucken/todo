@@ -1,15 +1,15 @@
-import { SelectInputComponent } from 'rucken';
-import { TodoProject } from '../../../shared/models/todo-project.model';
-import { Component, Input, EventEmitter, Output, ViewChild, ElementRef, ComponentFactoryResolver } from '@angular/core';
-import { TodoProjectsListModalComponent } from '../todo-projects-list-modal/todo-projects-list-modal.component';
-import { AppService } from 'rucken';
-import { AccountService } from 'rucken';
-import { TodoProjectsService } from '../../../shared/todo-projects.service';
-import { User } from 'rucken';
-import { BaseResourceSelectInputConfig } from 'rucken';
-import { BaseResourceSelectInputComponent } from 'rucken';
+import { Component, ComponentFactoryResolver, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '@rucken/core';
+import { AccountService } from '@rucken/core';
+import { User } from '@rucken/core';
+import { BaseResourceSelectInputConfig } from '@rucken/web';
+import { BaseResourceSelectInputComponent } from '@rucken/web';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
+
+import { TodoProject } from '../../../shared/models/todo-project.model';
+import { TodoProjectsService } from '../../../shared/todo-projects.service';
+import { TodoProjectsListModalComponent } from '../todo-projects-list-modal/todo-projects-list-modal.component';
 
 @Component({
   selector: 'todo-project-select-input',

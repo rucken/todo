@@ -7,9 +7,10 @@ import {
 } from '@angular/core';
 import { <%=grid.name.camel%> } from './../../../shared/models/<%=grid.name.kebab%>.model';
 import { ModalDirective } from 'ngx-bootstrap';
-import { AccountService } from 'rucken';
-import { User, BaseResourceModalComponent } from 'rucken';
-import { TextInputComponent } from 'rucken';
+import { AccountService } from '@rucken/core';
+import { BaseResourceModalComponent } from '@rucken/web';
+import { User } from '@rucken/core';
+import { TextInputComponent } from '@rucken/web';
 
 @Component({
   selector: '<%=grid.name.kebab%>-modal',

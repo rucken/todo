@@ -1,18 +1,15 @@
-import { User } from 'rucken';
-import { Subscription } from 'rxjs/Rx';
-import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild, ElementRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { User } from '@rucken/core';
+import { AccountService } from '@rucken/core';
+import { AppService } from '@rucken/core';
+import { ConfirmModalComponent } from '@rucken/web';
+import { BaseResourcesGridComponent } from '@rucken/web';
+
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
+import { TodoChangesService } from '../../shared/todo-changes.service';
 import { TodoChange } from './../../shared/models/todo-change.model';
 import { TodoChangeModalComponent } from './todo-change-modal/todo-change-modal.component';
-import { ConfirmModalComponent } from 'rucken';
-import { TodoChangesService } from '../../shared/todo-changes.service';
-import { AppService } from 'rucken';
-import { AccountService } from 'rucken';
-import { EndpointStatusEnum } from 'rucken';
-import { MetaModel } from 'rucken';
-import { BaseResourcesGridComponent } from 'rucken';
-import { TranslateService } from '@ngx-translate/core';
-import { TodoProject } from '../../shared/models/todo-project.model';
-import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
 
 @Component({
   selector: 'todo-changes-grid',

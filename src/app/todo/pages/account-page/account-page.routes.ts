@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { AccountPageComponent, translate } from 'rucken';
+import { translate } from '@rucken/core';
+import { AccountPageComponent } from '@rucken/web';
 import { TodoProfileFrameRoutes } from './profile-frame/profile-frame.routes';
 import { TodoProfileFrameModule } from './profile-frame/profile-frame.module';
 

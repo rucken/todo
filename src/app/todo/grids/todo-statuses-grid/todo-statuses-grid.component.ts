@@ -1,17 +1,16 @@
-import { User } from 'rucken';
-import { Subscription } from 'rxjs/Rx';
-import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild, ElementRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '@rucken/core';
+import { AccountService } from '@rucken/core';
+import { User } from '@rucken/core';
+import { ConfirmModalComponent } from '@rucken/web';
+import { BaseResourcesGridComponent } from '@rucken/web';
+
+import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
+import { TodoStatusesService } from '../../shared/todo-statuses.service';
 import { TodoStatus } from './../../shared/models/todo-status.model';
 import { TodoStatusModalComponent } from './todo-status-modal/todo-status-modal.component';
-import { ConfirmModalComponent } from 'rucken';
-import { TodoStatusesService } from '../../shared/todo-statuses.service';
-import { AppService } from 'rucken';
-import { AccountService } from 'rucken';
-import { EndpointStatusEnum } from 'rucken';
-import { MetaModel } from 'rucken';
-import { BaseResourcesGridComponent } from 'rucken';
-import { TranslateService } from '@ngx-translate/core';
-import { ShortTodoProject } from '../../shared/models/short-todo-project.model';
+
 @Component({
   selector: 'todo-statuses-grid',
   templateUrl: './todo-statuses-grid.component.html',

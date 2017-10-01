@@ -1,16 +1,11 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  Output,
-  ViewChild
-} from '@angular/core';
-import { TodoProject } from './../../../shared/models/todo-project.model';
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { BaseResourceModalComponent } from '@rucken/web';
+import { TextInputComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
-import { BaseResourceModalComponent } from 'rucken';
-import { TextInputComponent } from 'rucken';
+
 import { TodoStatusesGridComponent } from '../../todo-statuses-grid/todo-statuses-grid.component';
 import { TodoUsersGridComponent } from '../../todo-users-grid/todo-users-grid.component';
+import { TodoProject } from './../../../shared/models/todo-project.model';
 
 @Component({
   selector: 'todo-project-modal',

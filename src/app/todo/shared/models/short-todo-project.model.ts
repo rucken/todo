@@ -1,4 +1,4 @@
-import { BaseResourceModel, translate, User } from 'rucken';
+import { BaseResourceModel, translate } from '@rucken/core';
 
 export class ShortTodoProject extends BaseResourceModel {
   static titles: any = {
