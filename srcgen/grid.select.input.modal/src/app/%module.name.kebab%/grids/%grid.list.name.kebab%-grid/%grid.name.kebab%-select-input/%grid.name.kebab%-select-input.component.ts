@@ -44,7 +44,7 @@ export class <%=grid.name.camel%>SelectInputComponent extends BaseResourceSelect
     public translateService: TranslateService,
     public config: BaseResourceSelectInputConfig
   ) {
-    super(sanitizer, translateService, config);
+    super(translateService, config);
     this.cachedResourcesService = <%=grid.list.name.lower.camel%>Service.createCache();
   }
   get account(): User {

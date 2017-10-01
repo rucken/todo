@@ -1,7 +1,8 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.name.camel%>ModalComponent } from './<%=grid.name.kebab%>-modal.component';
 import { ModalModule } from 'ngx-bootstrap';
-import { FooterButtonsModule, TextInputModule, SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/core';
+import { FooterButtonsModule, TextInputModule } from '@rucken/web';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({

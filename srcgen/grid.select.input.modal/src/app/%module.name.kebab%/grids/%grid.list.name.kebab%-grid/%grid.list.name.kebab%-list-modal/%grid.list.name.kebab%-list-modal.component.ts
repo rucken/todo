@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ViewChild, ElementRef } from '@angular/core';
 import { <%=grid.name.camel%> } from './../../../shared/models/<%=grid.name.kebab%>.model';
 import { BaseResourceModalComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap';
