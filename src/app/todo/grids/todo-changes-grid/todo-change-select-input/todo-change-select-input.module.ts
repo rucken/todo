@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule, SelectInputModule, TextInputModule } from '@rucken/web';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { TooltipModule } from 'ngx-bootstrap/ng2-bootstrap';

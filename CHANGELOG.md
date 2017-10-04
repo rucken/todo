@@ -1,3 +1,13 @@
+<a name="0.1.9"></a>
+## [0.1.9](https://github.com/rucken/todo-web/compare/0.1.8...0.1.9) (2017-10-04)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies and refactor code for new version of rucken ([ff1bc0b](https://github.com/rucken/todo-web/commit/ff1bc0b))
+
+
+
 <a name="0.1.8"></a>
 ## [0.1.8](https://github.com/rucken/todo-web/compare/0.1.7...0.1.8) (2017-10-01)
 

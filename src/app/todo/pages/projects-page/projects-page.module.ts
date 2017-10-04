@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { PageHeaderModule, PageSubHeaderModule } from '@rucken/web';
 
 import { TodoChangesGridModule } from '../../grids/todo-changes-grid/todo-changes-grid.module';
