@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { GridSearchPanelModule, PipesModule } from '@rucken/web';
 import { GridRowButtonsModule, TableColumnModule } from '@rucken/web';
 import { ConfirmModalModule } from '@rucken/web';

@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { TodoNavbarComponent } from './navbar.component';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { ConfirmModalModule, AuthModalModule } from '@rucken/web';
 import { CollapseModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';

@@ -1,4 +1,4 @@
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { SelectInputModule, FooterButtonsModule, TextInputModule } from '@rucken/web';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.name.camel%>SelectInputComponent } from './<%=grid.name.kebab%>-select-input.component';

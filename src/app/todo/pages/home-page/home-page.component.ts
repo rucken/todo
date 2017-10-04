@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AccountService, SharedService } from '@rucken/core';
+import { AccountService } from '@rucken/core';
 import { AppService } from '@rucken/core';
-import { BasePageComponent } from '@rucken/web';
+import { BasePageComponent, SharedService } from '@rucken/web';
 
 @Component({
   selector: 'todo-home-page',

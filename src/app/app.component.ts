@@ -1,8 +1,8 @@
 import { Component, ComponentFactoryResolver, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { AppService, RuckenCoreRuI18n, SharedService, translate } from '@rucken/core';
-import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n } from '@rucken/web';
+import { AppService, RuckenCoreRuI18n, translate } from '@rucken/core';
+import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n, SharedService } from '@rucken/web';
 import * as _ from 'lodash';
 
 import { RuckenTodoRuI18n } from './todo/i18n/ru.i18n';

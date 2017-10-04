@@ -5,37 +5,37 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import {
-    AccountService,
-    AppService,
-    EndpointHelper,
-    HttpHelper,
-    RepositoryHelper,
-    RuckenCoreServices,
-    SharedModule,
-    ThemesService,
+  AccountService,
+  AppService,
+  EndpointHelper,
+  HttpHelper,
+  RepositoryHelper,
+  RuckenCoreServices,
+  ThemesService,
 } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import {
-    AlertModalModule,
-    AuthHttpFactory,
-    AuthModalModule,
-    BaseResourceSelectInputConfig,
-    RuckenWebServices,
-    SelectInputConfig,
-    TableColumnConfig,
-    TextInputConfig,
-    WebAccountService,
-    WebAppService,
-    WebThemesService,
+  AlertModalModule,
+  AuthHttpFactory,
+  AuthModalModule,
+  BaseResourceSelectInputConfig,
+  RuckenWebServices,
+  SelectInputConfig,
+  TableColumnConfig,
+  TextInputConfig,
+  WebAccountService,
+  WebAppService,
+  WebThemesService,
 } from '@rucken/web';
 import { AuthHttp } from 'angular2-jwt';
 import { LaddaModule } from 'angular2-ladda';
 import {
-    ComponentLoaderFactory,
-    PaginationConfig,
-    PopoverConfig,
-    PositioningService,
-    TabsetConfig,
-    TooltipConfig,
+  ComponentLoaderFactory,
+  PaginationConfig,
+  PopoverConfig,
+  PositioningService,
+  TabsetConfig,
+  TooltipConfig,
 } from 'ngx-bootstrap';
 
 import { TodoAppComponent } from './app.component';

@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.list.name.camel%>GridComponent } from './<%=grid.list.name.kebab%>-grid.component';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { GridSearchPanelModule, TableColumnModule, GridRowButtonsModule, ConfirmModalModule } from '@rucken/web';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { <%=grid.name.camel%>ModalModule } from './<%=grid.name.kebab%>-modal/<%=grid.name.kebab%>-modal.module';

@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { SharedModule } from '@rucken/core';
+import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule } from '@rucken/web';
 import { ModalModule } from 'ngx-bootstrap';
 
