@@ -1,3 +1,16 @@
+<a name="0.1.10"></a>
+## [0.1.10](https://github.com/rucken/todo-web/compare/0.1.9...0.1.10) (2017-10-13)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies ([306b1dc](https://github.com/rucken/todo-web/commit/306b1dc))
+* **scripts:** Add ignore AppModule from index.ts ([f9ffcba](https://github.com/rucken/todo-web/commit/f9ffcba))
+* **scripts:** Add modules to index.ts ([92e88dd](https://github.com/rucken/todo-web/commit/92e88dd))
+* **select-input:** Fix import TooltipModule ([38e751b](https://github.com/rucken/todo-web/commit/38e751b))
+
+
+
 <a name="0.1.9"></a>
 ## [0.1.9](https://github.com/rucken/todo-web/compare/0.1.8...0.1.9) (2017-10-04)
 
