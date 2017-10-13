@@ -53,8 +53,14 @@ recursive(scanPath, ['!*.ts', '*node_modules*'], function (err, files) {
                     exportEntities[entities[e]].push(className);
                   }
                 } else {
-                  if (entities[e] !== 'module' && className.indexOf('Shared') === -1) {
-                    exportEntities[entities[e]].push(className);
+                  if (className.indexOf('Shared') === -1) {
+                    if (entities[e] !== 'module') {
+                      exportEntities[entities[e]].push(className);
+                    } else {
+                      if (className.indexOf('AppModule') === -1 && className.indexOf('PageModule') === -1 && className.indexOf('FrameModule') === -1) {
+                        exportEntities[entities[e]].push(className + '.forRoot()');
+                      }
+                    }
                   }
                 }
               }
