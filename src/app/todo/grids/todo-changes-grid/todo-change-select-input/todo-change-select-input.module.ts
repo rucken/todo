@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule, SelectInputModule, TextInputModule } from '@rucken/web';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { TooltipModule } from 'ngx-bootstrap/ng2-bootstrap';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { TodoChangesListModalModule } from '../todo-changes-list-modal/todo-changes-list-modal.module';
 import { TodoChangeSelectInputComponent } from './todo-change-select-input.component';
