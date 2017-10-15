@@ -4,25 +4,25 @@ import { Injectable } from '@angular/core';
 import { BaseRepositoryService, RepositoryHelper } from '@rucken/core';
 import { Subject } from 'rxjs/Subject';
 
-import { TodoTask } from './models/todo-task.model';
+import { TodoStatus } from './../models/todo-status.model';
 
 @Injectable()
-export class TodoTasksService extends BaseRepositoryService {
-  items$: Subject<TodoTask[]>;
-  items: TodoTask[];
+export class TodoStatusesService extends BaseRepositoryService {
+  items$: Subject<TodoStatus[]>;
+  items: TodoStatus[];
   apiUrl: string;
 
   constructor(public repositoryHelper: RepositoryHelper) {
     super(repositoryHelper);
-    this.pluralName = 'todo_tasks';
-    this.name = 'todo_task';
+    this.pluralName = 'todo_statuses';
+    this.name = 'todo_status';
     this.apiUrl = `${repositoryHelper.apiUrl}/${this.pluralName}`;
-    this.items$ = <Subject<TodoTask[]>>new Subject();
+    this.items$ = <Subject<TodoStatus[]>>new Subject();
   }
   transformModel(item: any) {
-    return new TodoTask(item);
+    return new TodoStatus(item);
   }
   newCache() {
-    return new TodoTasksService(this.repositoryHelper);
+    return new TodoStatusesService(this.repositoryHelper);
   }
 }

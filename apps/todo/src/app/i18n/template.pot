@@ -37,6 +37,9 @@ msgstr ""
 msgid "Themes"
 msgstr ""
 
+msgid "Not access"
+msgstr ""
+
 msgid "Language"
 msgstr ""
 

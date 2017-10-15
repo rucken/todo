@@ -4,10 +4,10 @@ import { TodoChangesGridComponent } from './grids/todo-changes-grid/todo-changes
 export { TodoChangesGridComponent } from './grids/todo-changes-grid/todo-changes-grid.component';
 import { TodoChangesGridModule } from './grids/todo-changes-grid/todo-changes-grid.module';
 export { TodoChangesGridModule } from './grids/todo-changes-grid/todo-changes-grid.module';
-import { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
-export { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
 import { TodoChangeModalComponent } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.component';
 export { TodoChangeModalComponent } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.component';
+import { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
+export { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
 import { TodoChangeSelectInputComponent } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.component';
 export { TodoChangeSelectInputComponent } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.component';
 import { TodoChangeSelectInputModule } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.module';

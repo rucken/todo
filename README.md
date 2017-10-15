@@ -28,7 +28,7 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - For scaffold grid, update manually `./srcgen/grid.select.input.modal.json`
 - run `npm run make-grid`
 - reset changes on `./srcgen/grid.select.input.modal.json`
-- add custom code in generated files `./src/app/todo/grids/[grid]` and `./src/app/todo/shared/[service and model]`
+- add custom code in generated files `./libs/web/src/grids/[grid]` and `./libs/core/src/shared/[service and model]`
 
 ## Quick links
 
