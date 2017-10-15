@@ -1,0 +1,34 @@
+{
+    "name": "@rucken/todo-web",
+    "version": "0.1.10",
+    "description": "Base components, services and ui for todo entities for application maked on Angular4+",
+    "keywords": [
+        "ngx",
+        "angular4",
+        "i18n",
+        "shared",
+        "components",
+        "rucken",
+        "todo",
+        "web"
+    ],
+    "peerDependencies": {
+        "@angular/common": "*",
+        "@angular/compiler": "*",
+        "@angular/core": "*",
+        "@angular/forms": "*",
+        "@angular/router": "*",
+        "@ngui/auto-complete": "*",
+        "angular2-ladda": "*",
+        "angular2-text-mask": "*"
+    },
+    "dependencies": {
+        "@types/lodash": "*",
+        "@ngx-translate/core": "*",
+        "angular2-jwt": "*",
+        "lodash": "*",
+        "ngx-bootstrap": "*",
+        "text-mask-addons": "*",
+        "@rucken/core": "*"
+    }
+}

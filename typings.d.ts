@@ -9,12 +9,6 @@ declare const ENV: string;
 // google code-prettify
 declare const PR: any;
 
-declare module jasmine {
-  interface Matchers {
-    toHaveCssClass(expected: any): boolean;
-  }
-}
-
 /* SystemJS module definition */
 declare var module: NodeModule;
 interface NodeModule {

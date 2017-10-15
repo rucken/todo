@@ -1,0 +1,68 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Id"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Is public"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "Updated at"
+msgstr ""
+
+msgid "Project"
+msgstr ""
+
+msgid "Content type"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Data ID"
+msgstr ""
+
+msgid "Changes"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "Wrong json data"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Todo statuses"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Statuses"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Open at"
+msgstr ""
+
+msgid "Close at"
+msgstr ""
+
+msgid "Date range"
+msgstr ""
