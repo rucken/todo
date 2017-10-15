@@ -5,8 +5,9 @@
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
+      "name": "todo",
+      "root": "./apps/todo/src",
+      "outDir": "./apps/todo/dist",
       "assets": [
         "assets",
         "favicon.ico"
@@ -16,10 +17,9 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/ladda/css/ladda.scss",
+        "../../../node_modules/ladda/css/ladda.scss",
         "styles.scss"
       ],
       "scripts": [],
@@ -37,6 +37,10 @@
     }
   },
   "lint": [
+    {
+      "files": "apps/todo/src/**/*.ts",
+      "project": "apps/todo/src/tsconfig.json"
+    },
     {
       "project": "src/tsconfig.aot.json"
     },

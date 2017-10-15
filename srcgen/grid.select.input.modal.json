@@ -6,33 +6,33 @@
     },
     "module": {
         "name": {
-            "kebab": "todo"
+            "kebab": "@rucken/todo"
         }
     },
     "grid": {
         "list": {
             "name": {
-                "kebab": "todo-statuses",
-                "camel": "TodoStatuses",
+                "kebab": "todo-states",
+                "camel": "TodoStates",
                 "lower": {
-                    "camel": "todoStatuses"
+                    "camel": "todoStates"
                 },
-                "caption": "Todo statuses",
-                "snake": "todo_statuses"
+                "caption": "Todo states",
+                "snake": "todo_states"
             }
         },
         "name": {
-            "kebab": "todo-status",
-            "camel": "TodoStatus",
+            "kebab": "todo-state",
+            "camel": "TodoState",
             "lower": {
-                "camel": "todoStatus"
+                "camel": "todoState"
             },
-            "caption": "Todo status",
-            "snake": "todo_status"
+            "caption": "Todo state",
+            "snake": "todo_state"
         },
         "item": {
             "name": {
-                "caption": "todo status"
+                "caption": "todo state"
             }
         },
         "table": {

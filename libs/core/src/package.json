@@ -1,0 +1,29 @@
+{
+    "name": "@rucken/todo-core",
+    "main": "index.js",
+    "version": "0.2.0",
+    "description": "Core with base class and todo entities for application maked on Angular4+",
+    "keywords": [
+        "ngx",
+        "angular4",
+        "i18n",
+        "shared",
+        "services",
+        "models",
+        "rucken",
+        "todo",
+        "core"
+    ],
+    "peerDependencies": {
+        "@angular/common": "*",
+        "@angular/compiler": "*",
+        "@angular/core": "*"
+    },
+    "dependencies": {
+        "@rucken/core": "*",
+        "@types/lodash": "*",
+        "angular2-jwt": "*",
+        "lodash": "*",
+        "moment": "*"
+    }
+}
