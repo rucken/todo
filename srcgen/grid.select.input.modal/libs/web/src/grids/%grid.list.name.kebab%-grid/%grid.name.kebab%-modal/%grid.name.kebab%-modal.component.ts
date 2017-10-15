@@ -5,8 +5,8 @@ import {
   Output,
   ViewChild
 } from '@angular/core';
-import { <%=grid.name.camel%> } from './../../../shared/models/<%=grid.name.kebab%>.model';
-import { ModalDirective } from 'ngx-bootstrap';
+import { <%=grid.name.camel%> } from '<%=module.name.kebab%>-core';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 import { AccountService } from '@rucken/core';
 import { BaseResourceModalComponent } from '@rucken/web';
 import { User } from '@rucken/core';

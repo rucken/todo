@@ -1,10 +1,10 @@
 import { User } from '@rucken/core';
 import { Subscription } from 'rxjs/Rx';
 import { Component, Input, Output, EventEmitter, ComponentFactoryResolver, ViewChild, ElementRef } from '@angular/core';
-import { <%=grid.name.camel%> } from './../../shared/models/<%=grid.name.kebab%>.model';
+import { <%=grid.name.camel%> } from '<%=module.name.kebab%>-core';
 import { <%=grid.name.camel%>ModalComponent } from './<%=grid.name.kebab%>-modal/<%=grid.name.kebab%>-modal.component';
 import { ConfirmModalComponent } from '@rucken/web';
-import { <%=grid.list.name.camel%>Service } from '../../shared/<%=grid.list.name.kebab%>.service';
+import { <%=grid.list.name.camel%>Service } from '<%=module.name.kebab%>-core';
 import { AppService } from '@rucken/core';
 import { AccountService } from '@rucken/core';
 import { MetaModel } from '@rucken/core';

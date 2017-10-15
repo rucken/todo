@@ -84,7 +84,7 @@
     "deploy": "npm-run-all app-todo:github_deploy",
     "start": "npm-run-all app-todo:start-mockapi",
     "make-grid_run": "srcgen -t grid.select.input.modal -f ./srcgen/grid.select.input.modal.json",
-    "make-grid": "npm-run-all make-grid_run tools-prepare"
+    "make-grid": "npm-run-all make-grid_run libs:tools-prepare"
   },
   "private": true,
   "dependencies": {

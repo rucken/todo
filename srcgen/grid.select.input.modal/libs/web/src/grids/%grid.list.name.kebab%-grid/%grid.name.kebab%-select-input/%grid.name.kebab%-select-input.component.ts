@@ -1,10 +1,10 @@
 import { SelectInputComponent } from '@rucken/web';
-import { <%=grid.name.camel%> } from '../../../shared/models/<%=grid.name.kebab%>.model';
+import { <%=grid.name.camel%> } from '<%=module.name.kebab%>-core';
 import { Component, Input, EventEmitter, Output, ViewChild, ElementRef, ComponentFactoryResolver } from '@angular/core';
 import { <%=grid.list.name.camel%>ListModalComponent } from '../<%=grid.list.name.kebab%>-list-modal/<%=grid.list.name.kebab%>-list-modal.component';
 import { AppService } from '@rucken/core';
 import { AccountService } from '@rucken/core';
-import { <%=grid.list.name.camel%>Service } from '../../../shared/<%=grid.list.name.kebab%>.service';
+import { <%=grid.list.name.camel%>Service } from '<%=module.name.kebab%>-core';
 import { User } from '@rucken/core';
 import { BaseResourceSelectInputConfig } from '@rucken/web';
 import { BaseResourceSelectInputComponent } from '@rucken/web';
