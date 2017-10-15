@@ -27,7 +27,7 @@ import {
   WebAppService,
   WebThemesService,
 } from '@rucken/web';
-import { SharedModule } from '@rucken/web';
+import { HomeGuardService, SharedModule } from '@rucken/web';
 import { AuthHttp } from 'angular2-jwt';
 import { LaddaModule } from 'angular2-ladda';
 import {
@@ -42,6 +42,7 @@ import {
 import { TodoAppComponent } from './app.component';
 import { TodoRoutes } from './app.routes';
 import { TodoNavbarModule } from './controls/navbar/navbar.module';
+import { TodoHomeGuardService } from './shared/guards/home-guard.service';
 import { TodoEndpointHelper } from './shared/helpers/endpoint.helper';
 import { TodoHttpHelper } from './shared/helpers/http.helper';
 
@@ -85,7 +86,8 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     { provide: AuthHttp, useFactory: AuthHttpFactory.create, deps: [Http, RequestOptions] },
     { provide: RepositoryHelper, useClass: RepositoryHelper },
     { provide: EndpointHelper, useClass: TodoEndpointHelper },
-    { provide: HttpHelper, useClass: TodoHttpHelper }
+    { provide: HttpHelper, useClass: TodoHttpHelper },
+    { provide: HomeGuardService, useClass: TodoHomeGuardService }
   ],
   bootstrap: [TodoAppComponent]
 })

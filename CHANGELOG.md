@@ -1,3 +1,18 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/rucken/todo-web/compare/0.1.10...0.2.0) (2017-10-15)
+
+
+### Bug Fixes
+
+* **srcgen:** Update grid files generator for new folders structure ([886b928](https://github.com/rucken/todo-web/commit/886b928))
+
+
+### Features
+
+* **refactor:** Update and change files and folders ([b0cb981](https://github.com/rucken/todo-web/commit/b0cb981))
+
+
+
 <a name="0.1.10"></a>
 ## [0.1.10](https://github.com/rucken/todo-web/compare/0.1.9...0.1.10) (2017-10-13)
 
