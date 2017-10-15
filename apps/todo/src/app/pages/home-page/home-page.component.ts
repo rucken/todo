@@ -22,6 +22,6 @@ export class TodoHomePageComponent extends BasePageComponent {
   ) {
     super(accountService, app, translateService, activatedRoute, router, sharedService);
     const readme = require('html-loader!markdown-loader!./../../../../../../README.md');
-    this.readme = readme.replace('<h1 id="rucken">rucken-todo</h1>', '');
+    this.readme = readme.replace('<h1 id="rucken-todo">rucken-todo</h1>', '');
   }
 }
