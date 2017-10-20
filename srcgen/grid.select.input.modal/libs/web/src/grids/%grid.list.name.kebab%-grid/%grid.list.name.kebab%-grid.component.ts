@@ -37,7 +37,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     public translateService: TranslateService
   ) {
     super();
-    this.cachedResourcesService = <%=grid.list.name.lower.camel%>Service.createCache();
+    this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
   get account(): User {
     return this.accountService.account;

@@ -42,7 +42,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     public translateService: TranslateService
   ) {
     super();
-    this.cachedResourcesService = todoStatusesService.createCache();
+    this.cachedResourcesService = this.todoStatusesService.createCache();
   }
   get account(): User {
     return this.accountService.account;

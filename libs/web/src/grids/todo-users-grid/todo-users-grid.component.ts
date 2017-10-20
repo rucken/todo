@@ -37,7 +37,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     public translateService: TranslateService
   ) {
     super();
-    this.cachedResourcesService = usersService.createCache();
+    this.cachedResourcesService = this.usersService.createCache();
   }
   get account(): User | any {
     return this.accountService.account;
