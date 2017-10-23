@@ -47,9 +47,6 @@ export class <%=grid.name.camel%>SelectInputComponent extends BaseResourceSelect
     super(translateService, config);
     this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
-  get account(): User {
-    return this.accountService.account;
-  }
   onLookup() {
     const itemModal: <%=grid.list.name.camel%>ListModalComponent =
       this.app.modals(this.resolver).create(<%=grid.list.name.camel%>ListModalComponent);

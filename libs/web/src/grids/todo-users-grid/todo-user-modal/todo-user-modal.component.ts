@@ -18,8 +18,6 @@ export class TodoUserModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  account: any | User = null;
-  @Input()
   item: any | User = new User();
   @Input()
   modelMeta: any = User.meta();

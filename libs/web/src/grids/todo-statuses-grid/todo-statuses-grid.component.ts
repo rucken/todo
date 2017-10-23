@@ -44,9 +44,6 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     super();
     this.cachedResourcesService = this.todoStatusesService.createCache();
   }
-  get account(): User {
-    return this.accountService.account;
-  }
   get readonly() {
     return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-status', 'change_todo-status', 'delete_todo-status']);
   }

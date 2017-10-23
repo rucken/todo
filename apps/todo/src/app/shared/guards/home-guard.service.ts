@@ -7,6 +7,8 @@ import { AuthGuardService } from '@rucken/web';
 
 @Injectable()
 export class TodoHomeGuardService extends AuthGuardService {
+  // todo: remove after update rucken
+  firstHomeActivated = true;
   constructor(
     protected accountService: AccountService,
     protected router: Router,
@@ -16,7 +18,7 @@ export class TodoHomeGuardService extends AuthGuardService {
     super(accountService, router, app, translateService);
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    if (this.accountService.account && route.data.name && route.data.name === 'home') {
+    if (this.accountService.account && route.data.name && route.data.name === 'home' && this.firstHomeActivated) {
       let founded = false;
       if (!founded && this.accountService.account.checkPermissions(['read_projects-page'])) {
         founded = true;
@@ -35,6 +37,8 @@ export class TodoHomeGuardService extends AuthGuardService {
           this.translateService.instant('Not access')
         );
         return false;
+      } else {
+        this.firstHomeActivated = false;
       }
     }
     return true;
