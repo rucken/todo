@@ -1,5 +1,7 @@
+import 'rxjs/add/operator/takeUntil';
+
 import { Component, ComponentFactoryResolver, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService, RuckenCoreRuI18n, translate } from '@rucken/core';
 import { RuckenTodoCoreRuI18n } from '@rucken/todo-core';
@@ -39,7 +41,7 @@ export class TodoAppComponent extends BaseAppComponent {
   ) {
     super(viewContainerRef, app, resolver, translateService, sharedService);
 
-    router.events.subscribe((evt) => {
+    router.events.takeUntil(this.destroyed$).subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
         document.body.scrollTop = 0;
       }

@@ -26,8 +26,6 @@ export class <%=grid.name.camel%>ModalComponent extends BaseResourceModalCompone
   focusElement: TextInputComponent;
 
   @Input()
-  account: User = null;
-  @Input()
   item: any | <%=grid.name.camel%> = new <%=grid.name.camel%>();
   @Input()
   modelMeta: any = <%=grid.name.camel%>.meta();

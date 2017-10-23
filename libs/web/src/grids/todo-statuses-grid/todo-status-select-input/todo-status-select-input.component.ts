@@ -57,9 +57,6 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
     this.cachedResourcesService.ignoreCache = true;
     this.cachedResourcesService.loadAll('', filter);
   }
-  get account(): User {
-    return this.accountService.account;
-  }
   onLookup() {
     const itemModal: TodoStatusesListModalComponent =
       this.app.modals(this.resolver).create(TodoStatusesListModalComponent);

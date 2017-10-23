@@ -1,3 +1,14 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/rucken/todo-web/compare/0.2.0...0.2.1) (2017-10-20)
+
+
+### Bug Fixes
+
+* **home-page:** Add PipesModule ([2a4e754](https://github.com/rucken/todo-web/commit/2a4e754))
+* **web:** Update and add guard to frames ([a850406](https://github.com/rucken/todo-web/commit/a850406))
+
+
+
 <a name="0.2.0"></a>
 # [0.2.0](https://github.com/rucken/todo-web/compare/0.1.10...0.2.0) (2017-10-15)
 

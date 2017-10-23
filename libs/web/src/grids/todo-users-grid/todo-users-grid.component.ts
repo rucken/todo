@@ -39,9 +39,6 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     super();
     this.cachedResourcesService = this.usersService.createCache();
   }
-  get account(): User | any {
-    return this.accountService.account;
-  }
   get readonly() {
     return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_user', 'change_user']);
   }

@@ -41,9 +41,6 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     super();
     this.cachedResourcesService = this.todoChangesService.createCache();
   }
-  get account(): User {
-    return this.accountService.account;
-  }
   get readonly() {
     return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-change', 'change_todo-change', 'delete_todo-change']);
   }
