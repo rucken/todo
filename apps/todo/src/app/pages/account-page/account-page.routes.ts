@@ -8,7 +8,8 @@ export const children = [
   {
     path: 'profile',
     data: TodoProfileFrameRoutes[0].data,
-    loadChildren: './profile-frame/profile-frame.module#TodoProfileFrameModule'
+    loadChildren: './profile-frame/profile-frame.module#TodoProfileFrameModule',
+    canActivate: [AuthGuardService]
   }
 ];
 export const TodoAccountPageRoutes: Routes = [

@@ -42,10 +42,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     public translateService: TranslateService
   ) {
     super();
-    this.cachedResourcesService = todoStatusesService.createCache();
-  }
-  get account(): User {
-    return this.accountService.account;
+    this.cachedResourcesService = this.todoStatusesService.createCache();
   }
   get readonly() {
     return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-status', 'change_todo-status', 'delete_todo-status']);

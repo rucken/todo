@@ -4,10 +4,10 @@ import { TodoChangesGridComponent } from './grids/todo-changes-grid/todo-changes
 export { TodoChangesGridComponent } from './grids/todo-changes-grid/todo-changes-grid.component';
 import { TodoChangesGridModule } from './grids/todo-changes-grid/todo-changes-grid.module';
 export { TodoChangesGridModule } from './grids/todo-changes-grid/todo-changes-grid.module';
-import { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
-export { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
 import { TodoChangeModalComponent } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.component';
 export { TodoChangeModalComponent } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.component';
+import { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
+export { TodoChangeModalModule } from './grids/todo-changes-grid/todo-change-modal/todo-change-modal.module';
 import { TodoChangeSelectInputComponent } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.component';
 export { TodoChangeSelectInputComponent } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.component';
 import { TodoChangeSelectInputModule } from './grids/todo-changes-grid/todo-change-select-input/todo-change-select-input.module';
@@ -32,10 +32,10 @@ import { TodoProjectsListModalComponent } from './grids/todo-projects-grid/todo-
 export { TodoProjectsListModalComponent } from './grids/todo-projects-grid/todo-projects-list-modal/todo-projects-list-modal.component';
 import { TodoProjectsListModalModule } from './grids/todo-projects-grid/todo-projects-list-modal/todo-projects-list-modal.module';
 export { TodoProjectsListModalModule } from './grids/todo-projects-grid/todo-projects-list-modal/todo-projects-list-modal.module';
-import { TodoStatusesGridComponent } from './grids/todo-statuses-grid/todo-statuses-grid.component';
-export { TodoStatusesGridComponent } from './grids/todo-statuses-grid/todo-statuses-grid.component';
 import { TodoStatusesGridModule } from './grids/todo-statuses-grid/todo-statuses-grid.module';
 export { TodoStatusesGridModule } from './grids/todo-statuses-grid/todo-statuses-grid.module';
+import { TodoStatusesGridComponent } from './grids/todo-statuses-grid/todo-statuses-grid.component';
+export { TodoStatusesGridComponent } from './grids/todo-statuses-grid/todo-statuses-grid.component';
 import { TodoStatusModalComponent } from './grids/todo-statuses-grid/todo-status-modal/todo-status-modal.component';
 export { TodoStatusModalComponent } from './grids/todo-statuses-grid/todo-status-modal/todo-status-modal.component';
 import { TodoStatusModalModule } from './grids/todo-statuses-grid/todo-status-modal/todo-status-modal.module';

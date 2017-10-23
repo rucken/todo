@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
-import { <%=grid.name.camel%> } from './models/<%=grid.name.kebab%>.model';
+import { <%=grid.name.camel%> } from './../models/<%=grid.name.kebab%>.model';
 import { BaseRepositoryService, RepositoryHelper } from '@rucken/core';
 import { HttpHelper } from '@rucken/core';
 import { EndpointHelper } from '@rucken/core';

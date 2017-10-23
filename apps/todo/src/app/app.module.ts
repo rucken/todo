@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Http, HttpModule, RequestOptions } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import {
   AccountService,
@@ -64,7 +64,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     AuthModalModule.forRoot(),
     TranslateModule.forRoot(),
     SharedModule.forRoot(),
-    RouterModule.forRoot(TodoRoutes, { useHash: true })
+    RouterModule.forRoot(TodoRoutes, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [
     ComponentLoaderFactory,

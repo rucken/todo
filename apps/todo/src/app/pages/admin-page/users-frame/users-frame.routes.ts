@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { translate } from '@rucken/core';
-import { UsersFrameComponent } from '@rucken/web';
+import { UsersFrameComponent, AuthGuardService } from '@rucken/web';
 
 export const TodoUsersFrameRoutes: Routes = [
   {
@@ -10,6 +10,7 @@ export const TodoUsersFrameRoutes: Routes = [
       name: 'users',
       title: translate('Users'),
       visible: true
-    }
+    },
+    canActivate: [AuthGuardService]
   }
 ];

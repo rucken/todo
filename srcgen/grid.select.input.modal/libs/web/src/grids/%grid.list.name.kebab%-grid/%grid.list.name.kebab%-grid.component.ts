@@ -37,10 +37,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     public translateService: TranslateService
   ) {
     super();
-    this.cachedResourcesService = <%=grid.list.name.lower.camel%>Service.createCache();
-  }
-  get account(): User {
-    return this.accountService.account;
+    this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
   get readonly() {
     return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>', 'change_<%=grid.name.kebab%>', 'delete_<%=grid.name.kebab%>']);

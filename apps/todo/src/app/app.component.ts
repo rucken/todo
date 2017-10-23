@@ -1,5 +1,7 @@
+import 'rxjs/add/operator/takeUntil';
+
 import { Component, ComponentFactoryResolver, ViewContainerRef, ViewEncapsulation } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService, RuckenCoreRuI18n, translate } from '@rucken/core';
 import { RuckenTodoCoreRuI18n } from '@rucken/todo-core';
@@ -28,7 +30,6 @@ export class TodoAppComponent extends BaseAppComponent {
     title: translate('English'),
     dic: null
   }];
-  pleaseWaitVisible = false;
 
   constructor(
     public viewContainerRef: ViewContainerRef,
@@ -40,24 +41,9 @@ export class TodoAppComponent extends BaseAppComponent {
   ) {
     super(viewContainerRef, app, resolver, translateService, sharedService);
 
-    router.events.subscribe((evt) => {
-      if (evt instanceof NavigationStart) {
-        if (window['showPleaseWait']) {
-          this.pleaseWaitVisible = true;
-          setTimeout(() => {
-            if (!this.pleaseWaitVisible) {
-              return;
-            }
-            window['showPleaseWait'](this.translateService.instant('Loading...'));
-          }, 500);
-        }
-      }
+    router.events.takeUntil(this.destroyed$).subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
-        this.pleaseWaitVisible = false;
         document.body.scrollTop = 0;
-        if (window && window['loading_screen'] && window['loading_screen'].finish !== false) {
-          window['loading_screen'].finish();
-        }
       }
     });
   }
@@ -65,7 +51,6 @@ export class TodoAppComponent extends BaseAppComponent {
     super.init();
     if (window && window['loading_screen'] && window['loading_screen'].finish !== false) {
       window['loading_screen'].finish();
-      this.pleaseWaitVisible = false;
     }
   }
 }

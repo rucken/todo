@@ -45,9 +45,6 @@ export class TodoChangeSelectInputComponent extends BaseResourceSelectInputCompo
     super(translateService, config);
     this.cachedResourcesService = todoChangesService.createCache();
   }
-  get account(): User {
-    return this.accountService.account;
-  }
   onLookup() {
     const itemModal: TodoChangesListModalComponent =
       this.app.modals(this.resolver).create(TodoChangesListModalComponent);

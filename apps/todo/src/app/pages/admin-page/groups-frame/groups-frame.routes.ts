@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { translate } from '@rucken/core';
-import { GroupsFrameComponent } from '@rucken/web';
+import { GroupsFrameComponent, AuthGuardService } from '@rucken/web';
 
 export const TodoGroupsFrameRoutes: Routes = [
   {
@@ -10,6 +10,7 @@ export const TodoGroupsFrameRoutes: Routes = [
       name: 'groups',
       title: translate('Groups'),
       visible: true
-    }
+    },
+    canActivate: [AuthGuardService]
   }
 ];

@@ -9,12 +9,14 @@ export const children = [
   {
     path: 'users',
     loadChildren: './users-frame/users-frame.module#TodoUsersFrameModule',
-    data: TodoUsersFrameRoutes[0].data
+    data: TodoUsersFrameRoutes[0].data,
+    canActivate: [AuthGuardService]
   },
   {
     path: 'groups',
     loadChildren: './groups-frame/groups-frame.module#TodoGroupsFrameModule',
-    data: TodoGroupsFrameRoutes[0].data
+    data: TodoGroupsFrameRoutes[0].data,
+    canActivate: [AuthGuardService]
   }
 ];
 export const TodoAdminPageRoutes: Routes = [

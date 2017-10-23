@@ -4,9 +4,6 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Loading..."
-msgstr ""
-
 msgid "Russian"
 msgstr ""
 
@@ -31,10 +28,16 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+msgid "Loading..."
+msgstr ""
+
 msgid "Projects"
 msgstr ""
 
 msgid "Themes"
+msgstr ""
+
+msgid "Not access"
 msgstr ""
 
 msgid "Language"

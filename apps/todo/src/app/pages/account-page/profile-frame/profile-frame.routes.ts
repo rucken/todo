@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { translate } from '@rucken/core';
-import { ProfileFrameComponent } from '@rucken/web';
+import { ProfileFrameComponent, AuthGuardService } from '@rucken/web';
 
 export const TodoProfileFrameRoutes: Routes = [
   {
@@ -10,6 +10,7 @@ export const TodoProfileFrameRoutes: Routes = [
       name: 'profile',
       title: translate('Profile'),
       visible: true
-    }
+    },
+    canActivate: [AuthGuardService]
   }
 ];
