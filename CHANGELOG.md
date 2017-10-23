@@ -1,3 +1,8 @@
+<a name="0.2.2"></a>
+## [0.2.2](https://github.com/rucken/todo-web/compare/0.2.1...0.2.2) (2017-10-23)
+
+
+
 <a name="0.2.1"></a>
 ## [0.2.1](https://github.com/rucken/todo-web/compare/0.2.0...0.2.1) (2017-10-20)
 
