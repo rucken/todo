@@ -1,3 +1,13 @@
+<a name="0.2.3"></a>
+## [0.2.3](https://github.com/rucken/todo-web/compare/0.2.2...0.2.3) (2017-10-28)
+
+
+### Bug Fixes
+
+* **permissions:** Move check permissions from getter to value, for speed up ui ([b8f7c88](https://github.com/rucken/todo-web/commit/b8f7c88))
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/rucken/todo-web/compare/0.2.1...0.2.2) (2017-10-23)
 
