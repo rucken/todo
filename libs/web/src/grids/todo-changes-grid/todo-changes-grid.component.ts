@@ -42,7 +42,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     this.cachedResourcesService = this.todoChangesService.createCache();
   }
   get readonly() {
-    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-change', 'change_todo-change', 'delete_todo-change']);
+    return this.hardReadonly || !(this.accessToAdd || this.accessToChange || this.accessToDelete);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -51,7 +51,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     this.modalIsOpened = true;
     const itemModal: TodoChangeModalComponent = this.app.modals(this.resolver).create(TodoChangeModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_todo-change']);
+    itemModal.readonly = this.hardReadonly || !this.accessToAdd;
     itemModal.text = this.translateService.instant('Create');
     itemModal.title = this.translateService.instant('Create new todo change');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
@@ -68,7 +68,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
     this.modalIsOpened = true;
     const itemModal: TodoChangeModalComponent = this.app.modals(this.resolver).create(TodoChangeModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['change_todo-change']);
+    itemModal.readonly = this.hardReadonly || !this.accessToChange;
     itemModal.text = this.translateService.instant('Save');
     itemModal.title = this.translateService.instant('Edit todo change');
     if (itemModal.readonly) {

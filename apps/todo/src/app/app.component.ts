@@ -8,9 +8,13 @@ import { RuckenTodoCoreRuI18n } from '@rucken/todo-core';
 import { RuckenTodoWebRuI18n } from '@rucken/todo-web';
 import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n, SharedService } from '@rucken/web';
 import * as _ from 'lodash';
+import { defineLocale, getSetGlobalLocale } from 'ngx-bootstrap/bs-moment';
+import { enGb, ru } from 'ngx-bootstrap/locale';
 
 import { RuckenTodoRuI18n } from './i18n/ru.i18n';
 
+defineLocale('ru', ru);
+defineLocale('en', enGb);
 
 @Component({
   selector: 'todo-app-root',
@@ -40,7 +44,6 @@ export class TodoAppComponent extends BaseAppComponent {
     public sharedService: SharedService
   ) {
     super(viewContainerRef, app, resolver, translateService, sharedService);
-
     router.events.takeUntil(this.destroyed$).subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
         document.body.scrollTop = 0;
