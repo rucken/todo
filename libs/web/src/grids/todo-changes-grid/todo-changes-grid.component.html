@@ -2,7 +2,7 @@
   <div class="app-grid__toolbar--header">
     <div class="row">
       <div class="col-md-3">
-        <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && account && account.checkPermissions(['add_todo-change'])">
+        <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && accessToAdd">
 					<span class="fa fa-plus"></span> {{ 'Create' | translate }}
 				</button>
       </div>
@@ -34,13 +34,13 @@
         <th class="app-grid__table__col-createdAt" style="width: 160px;">
           <table-column [title]="modelMeta.titles.createdAt" name="createdAt" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && account && account.checkPermissions(['change_todo-change','delete_todo-change'])"
+        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)"
           translate>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngIf="statusListMessage">
-        <td class="app-grid__table__col-status-message" [attr.colspan]="6+(hardReadonly !== true && account.checkPermissions(['change_todo-change','delete_todo-change'])?1:0)">
+        <td class="app-grid__table__col-status-message" [attr.colspan]="6+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
           {{statusListMessage | translate}}
         </td>
       </tr>
@@ -52,9 +52,9 @@
         <td class="app-grid__table__col-data" [innerHtml]="item.data | safeHtml"></td>
         <td class="app-grid__table__col-user">{{item.userAsString}}</td>
         <td class="app-grid__table__col-createdAt">{{item.createdAtAsString}}</td>
-        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && account && account.checkPermissions(['change_todo-change','delete_todo-change'])">
-          <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && account && account.checkPermissions(['change_todo-change'])"
-            [showRemove]="hardReadonly !== true && account && account.checkPermissions(['delete_todo-change'])"></grid-row-buttons>
+        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
+          <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && accessToChange"
+            [showRemove]="hardReadonly !== true && accessToDelete"></grid-row-buttons>
         </td>
       </tr>
     </tbody>

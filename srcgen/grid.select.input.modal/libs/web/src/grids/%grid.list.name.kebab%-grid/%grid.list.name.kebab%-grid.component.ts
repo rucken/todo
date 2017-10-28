@@ -40,7 +40,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
   get readonly() {
-    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>', 'change_<%=grid.name.kebab%>', 'delete_<%=grid.name.kebab%>']);
+    return this.hardReadonly || !(this.accessToAdd || this.accessToChange || this.accessToDelete);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -49,7 +49,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     this.modalIsOpened = true;
     const itemModal: any | <%=grid.name.camel%>ModalComponent = this.app.modals(this.resolver).create(<%=grid.name.camel%>ModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_<%=grid.name.kebab%>']);
+    itemModal.readonly = this.hardReadonly || !this.accessToAdd;
     itemModal.text = this.translateService.instant('Create');
     itemModal.title = this.translateService.instant('Create new <%=grid.item.name.caption%>');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
@@ -65,7 +65,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     this.modalIsOpened = true;
     const itemModal: any | <%=grid.name.camel%>ModalComponent = this.app.modals(this.resolver).create(<%=grid.name.camel%>ModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['change_<%=grid.name.kebab%>']);
+    itemModal.readonly = this.hardReadonly || !this.accessToChange;
     itemModal.text = this.translateService.instant('Save');
     itemModal.title = this.translateService.instant('Edit <%=grid.item.name.caption%>');
     if (itemModal.readonly) {

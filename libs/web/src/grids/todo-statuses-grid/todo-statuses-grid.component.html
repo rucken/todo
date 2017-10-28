@@ -5,7 +5,7 @@
         <h4>{{modelMeta.titles.statuses | translate}}</h4>
       </div>
       <div class="col-sm-4">
-        <button type="button" class="btn btn-success pull-right" aria-label="Append" (click)="showCreateModal()" *ngIf="hardReadonly !== true && account && account.checkPermissions(['add_todo-status'])">
+        <button type="button" class="btn btn-success pull-right" aria-label="Append" (click)="showCreateModal()" *ngIf="hardReadonly !== true && accessToAdd">
 					<span class="fa fa-plus"></span> {{ 'Append' | translate }}
 				</button>
       </div>
@@ -14,7 +14,7 @@
   <div class="app-grid__toolbar--header" *ngIf="headerType==='basic'">
     <div class="row">
       <div class="col-md-3">
-        <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && account && account.checkPermissions(['add_todo-status'])">
+        <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && accessToAdd">
 					<span class="fa fa-plus"></span> {{ 'Create' | translate }}
 				</button>
       </div>
@@ -31,22 +31,22 @@
         <th class="app-grid__table__col-title">
           <table-column [title]="modelMeta.titles.title" name="title" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && account && account.checkPermissions(['change_todo-status','delete_todo-status'])"
+        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)"
           translate>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngIf="statusListMessage">
-        <td class="app-grid__table__col-status-message" [attr.colspan]="1+(hardReadonly !== true && account.checkPermissions(['change_todo-status','delete_todo-status'])?1:0)">
+        <td class="app-grid__table__col-status-message" [attr.colspan]="1+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
           {{statusListMessage | translate}}
         </td>
       </tr>
       <tr *ngFor="let item of items | slice:0:meta.perPage" (click)="selectItem(item, $event)" [ngClass]="{'info':isSelectedItem(item)}"
         (dblclick)="showEditModal(item)" [hidden]="statusListMessage">
         <td class="app-grid__table__col-title">{{item.title}}</td>
-        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && account && account.checkPermissions(['change_todo-status','delete_todo-status'])">
-          <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && account && account.checkPermissions(['change_todo-status'])"
-            [showRemove]="hardReadonly !== true && account && account.checkPermissions(['delete_todo-status'])"></grid-row-buttons>
+        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
+          <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && accessToChange"
+            [showRemove]="hardReadonly !== true && accessToDelete"></grid-row-buttons>
         </td>
       </tr>
     </tbody>

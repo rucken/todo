@@ -39,8 +39,15 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     super();
     this.cachedResourcesService = this.usersService.createCache();
   }
+  initAccesses(contentType?: string) {
+    this.accessToRead = true;
+    this.accessToManage = this.checkPermissions(['manage_todo-project']);
+    this.accessToAdd = this.accessToManage ? this.accessToManage : this.checkPermissions(['add_user']);
+    this.accessToChange = this.accessToManage ? this.accessToManage : this.checkPermissions(['change_user']);
+    this.accessToDelete = this.accessToManage ? this.accessToManage : this.checkPermissions(['change_todo-project']);
+  }
   get readonly() {
-    return this.hardReadonly || !this.account || !this.account.checkPermissions(['add_user', 'change_user']);
+    return this.hardReadonly || !(this.accessToAdd || this.accessToChange);
   }
   showCreateModal() {
     if (this.modalIsOpened) {
@@ -49,7 +56,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     this.modalIsOpened = true;
     const itemModal: TodoUserModalComponent = this.app.modals(this.resolver).create(TodoUserModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['add_user']);
+    itemModal.readonly = this.hardReadonly || !this.accessToAdd;
     itemModal.text = this.translateService.instant('Append');
     itemModal.title = this.translateService.instant('Append new user to project');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
@@ -65,7 +72,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     this.modalIsOpened = true;
     const itemModal: TodoUserModalComponent = this.app.modals(this.resolver).create(TodoUserModalComponent);
     itemModal.account = this.accountService.account;
-    itemModal.readonly = this.hardReadonly || !this.account || !this.account.checkPermissions(['change_user']);
+    itemModal.readonly = this.hardReadonly || !this.accessToChange;
     itemModal.text = this.translateService.instant('Save');
     itemModal.title = this.translateService.instant('Edit user');
     if (itemModal.readonly) {
