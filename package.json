@@ -1,6 +1,6 @@
 {
   "name": "rucken-todo",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
   "maintainers": [
@@ -112,8 +112,8 @@
     "@angular/router": "^4.4.5",
     "@ngui/auto-complete": "^0.16.0",
     "@ngx-translate/core": "^8.0.0",
-    "@rucken/core": "^1.22.1",
-    "@rucken/web": "^1.22.1",
+    "@rucken/core": "^1.22.2",
+    "@rucken/web": "^1.22.2",
     "@types/jasmine": "2.6.2",
     "@types/lodash": "^4.14.80",
     "@types/marked": "0.3.0",
