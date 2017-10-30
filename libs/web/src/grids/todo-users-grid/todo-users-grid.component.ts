@@ -133,6 +133,6 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     const filter: any = {};
     filter.project = this.project && this.project.pk ? this.project.pk : null;
     this.cachedResourcesService.ignoreCache = ignoreCache;
-    this.cachedResourcesService.loadAll(this.searchText, filter);
+    this.searchWithMockedItems(filter);
   }
 }
