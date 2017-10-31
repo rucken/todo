@@ -27,8 +27,7 @@ export class TodoNavbarComponent extends NavbarComponent {
   ) {
     super(accountService, app, translateService, activatedRoute, router, resolver, sharedService);
   }
-  init() {
-    super.init();
+  initRoutes() {
     this.childrenRoutes = TodoRoutes;
   }
 }
