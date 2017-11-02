@@ -109,7 +109,7 @@
     "@angular/http": "^4.4.5",
     "@angular/platform-browser": "^4.4.5",
     "@angular/platform-browser-dynamic": "^4.4.5",
-    "@angular/router": "^4.4.5",
+    "@angular/router": "^5.0.0",
     "@ngui/auto-complete": "^0.16.0",
     "@ngx-translate/core": "^8.0.0",
     "@rucken/core": "^1.22.2",
