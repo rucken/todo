@@ -27,6 +27,9 @@ export class TodoHomeGuardService extends AuthGuardService {
     this.accessToReadAccountPage = this.accountService.checkPermissions(['read_account-page']);
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    if (this.accessToReadAccountPage === undefined) {
+      this.initAccesses();
+    }
     if (this.accountService.account && route.data.name && route.data.name === 'home' && this.firstHomeActivated) {
       let founded = false;
       if (!founded && this.accessToReadProjectsPage) {
