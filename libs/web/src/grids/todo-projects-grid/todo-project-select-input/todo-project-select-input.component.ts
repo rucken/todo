@@ -1,12 +1,8 @@
-import { Component, ComponentFactoryResolver, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { AppService } from '@rucken/core';
-import { AccountService } from '@rucken/core';
-import { User } from '@rucken/core';
+import { Component, ComponentFactoryResolver, EventEmitter, Injector, Input, Output, ViewChild } from '@angular/core';
+import { translate } from '@rucken/core';
 import { TodoProject } from '@rucken/todo-core';
 import { TodoProjectsService } from '@rucken/todo-core';
 import { BaseResourceSelectInputComponent } from '@rucken/web';
-import { BaseResourceSelectInputConfig } from '@rucken/web';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
 
 import { TodoProjectsListModalComponent } from '../todo-projects-list-modal/todo-projects-list-modal.component';
@@ -34,24 +30,22 @@ export class TodoProjectSelectInputComponent extends BaseResourceSelectInputComp
   items: TodoProject[];
   cachedResourcesService: TodoProjectsService;
 
+  todoProjectsService: TodoProjectsService;
+
   constructor(
-    public app: AppService,
-    public accountService: AccountService,
-    public todoProjectsService: TodoProjectsService,
-    public resolver: ComponentFactoryResolver,
-    public translateService: TranslateService,
-    public config: BaseResourceSelectInputConfig
+    public injector: Injector,
+    public resolver: ComponentFactoryResolver
   ) {
-    super(translateService, config);
-    this.cachedResourcesService = todoProjectsService.createCache();
+    super(injector);
+    this.todoProjectsService = injector.get(TodoProjectsService);
+    this.cachedResourcesService = this.todoProjectsService.createCache();
   }
   onLookup() {
     const itemModal: TodoProjectsListModalComponent =
       this.app.modals(this.resolver).create(TodoProjectsListModalComponent);
     itemModal.hardReadonly = this.hardReadonly;
-    itemModal.account = this.account;
-    itemModal.text = this.translateService.instant('Select');
-    itemModal.title = this.translateService.instant('Todo projects');
+    itemModal.okTitle = translate('Select');
+    itemModal.title = translate('Todo projects');
     itemModal.onOk.subscribe(($event: any) => {
       this.value = itemModal.item;
       if (this.inputElement) {

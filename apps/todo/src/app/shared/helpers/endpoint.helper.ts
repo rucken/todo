@@ -1,13 +1,10 @@
-import { Injectable } from '@angular/core';
-import { EndpointHelper, HttpHelper } from '@rucken/core';
+import { Injectable, Injector } from '@angular/core';
+import { EndpointHelper } from '@rucken/core';
 
 import { environment } from './../../../environments/environment';
 
 @Injectable()
 export class TodoEndpointHelper extends EndpointHelper {
-  constructor(public httpHelper: HttpHelper) {
-    super(httpHelper);
-  }
   get apiUrl() {
     return environment.apiUrl;
   }

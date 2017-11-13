@@ -1,7 +1,7 @@
 import 'rxjs/add/operator/map';
 
-import { Injectable } from '@angular/core';
-import { BaseRepositoryService, RepositoryHelper } from '@rucken/core';
+import { Injectable, Injector } from '@angular/core';
+import { BaseRepositoryService } from '@rucken/core';
 import { Subject } from 'rxjs/Subject';
 
 import { TodoChange } from './../models/todo-change.model';
@@ -12,17 +12,19 @@ export class TodoChangesService extends BaseRepositoryService {
   items: TodoChange[];
   apiUrl: string;
 
-  constructor(public repositoryHelper: RepositoryHelper) {
-    super(repositoryHelper);
+  constructor(
+    public injector: Injector
+  ) {
+    super(injector);
     this.pluralName = 'todo_changes';
     this.name = 'todo_change';
-    this.apiUrl = `${repositoryHelper.apiUrl}/${this.pluralName}`;
+    this.apiUrl = `${this.repositoryHelper.apiUrl}/${this.pluralName}`;
     this.items$ = <Subject<TodoChange[]>>new Subject();
   }
   transformModel(item: any) {
     return new TodoChange(item);
   }
   newCache() {
-    return new TodoChangesService(this.repositoryHelper);
+    return new TodoChangesService(this.injector);
   }
 }
