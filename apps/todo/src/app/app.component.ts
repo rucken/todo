@@ -1,14 +1,13 @@
 import 'rxjs/add/operator/takeUntil';
 
-import { Component, ComponentFactoryResolver, ViewContainerRef, ViewEncapsulation } from '@angular/core';
+import { Component, ComponentFactoryResolver, Injector, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { AppService, RuckenCoreRuI18n, translate } from '@rucken/core';
+import { RuckenCoreRuI18n, translate } from '@rucken/core';
 import { RuckenTodoCoreRuI18n } from '@rucken/todo-core';
 import { RuckenTodoWebRuI18n } from '@rucken/todo-web';
-import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n, SharedService } from '@rucken/web';
+import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n } from '@rucken/web';
 import * as _ from 'lodash';
-import { defineLocale, getSetGlobalLocale } from 'ngx-bootstrap/bs-moment';
+import { defineLocale } from 'ngx-bootstrap/bs-moment';
 import { enGb, ru } from 'ngx-bootstrap/locale';
 
 import { RuckenTodoRuI18n } from './i18n/ru.i18n';
@@ -36,14 +35,12 @@ export class TodoAppComponent extends BaseAppComponent {
   }];
 
   constructor(
+    public injector: Injector,
     public viewContainerRef: ViewContainerRef,
-    public app: AppService,
     public resolver: ComponentFactoryResolver,
-    public translateService: TranslateService,
-    public router: Router,
-    public sharedService: SharedService
+    public router: Router
   ) {
-    super(viewContainerRef, app, resolver, translateService, sharedService);
+    super(injector, viewContainerRef, resolver);
     router.events.takeUntil(this.destroyed$).subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
         document.body.scrollTop = 0;

@@ -1,8 +1,14 @@
-import { Component, ComponentFactoryResolver, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { User } from '@rucken/core';
-import { AccountService } from '@rucken/core';
-import { AppService } from '@rucken/core';
+import {
+  Component,
+  ComponentFactoryResolver,
+  ElementRef,
+  EventEmitter,
+  Injector,
+  Input,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import { translate, User } from '@rucken/core';
 import { UsersService } from '@rucken/core';
 import { TodoProject } from '@rucken/todo-core';
 import { ConfirmModalComponent } from '@rucken/web';
@@ -29,16 +35,17 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
   selectedItems: User[] | any[];
   cachedResourcesService: UsersService;
 
+  usersService: UsersService;
+
   constructor(
-    public usersService: UsersService,
-    public accountService: AccountService,
-    public app: AppService,
-    public resolver: ComponentFactoryResolver,
-    public translateService: TranslateService
+    public injector: Injector,
+    public resolver: ComponentFactoryResolver
   ) {
-    super();
+    super(injector);
+    this.usersService = injector.get(UsersService);
     this.cachedResourcesService = this.usersService.createCache();
   }
+
   initAccesses(contentType?: string) {
     this.accessToRead = true;
     this.accessToManage = this.checkPermissions(['manage_todo-project']);
@@ -55,15 +62,17 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     }
     this.modalIsOpened = true;
     const itemModal: TodoUserModalComponent = this.app.modals(this.resolver).create(TodoUserModalComponent);
-    itemModal.account = this.accountService.account;
     itemModal.readonly = this.hardReadonly || !this.accessToAdd;
-    itemModal.text = this.translateService.instant('Append');
-    itemModal.title = this.translateService.instant('Append new user to project');
+    itemModal.okTitle = translate('Append');
+    itemModal.title = translate('Append new user to project');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new User();
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      itemModal.okInProcessFromStatus(status)
+    );
   }
   showEditModal(item: any | User) {
     if (this.modalIsOpened) {
@@ -71,18 +80,20 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     }
     this.modalIsOpened = true;
     const itemModal: TodoUserModalComponent = this.app.modals(this.resolver).create(TodoUserModalComponent);
-    itemModal.account = this.accountService.account;
     itemModal.readonly = this.hardReadonly || !this.accessToChange;
-    itemModal.text = this.translateService.instant('Save');
-    itemModal.title = this.translateService.instant('Edit user');
+    itemModal.okTitle = translate('Save');
+    itemModal.title = translate('Edit user');
     if (itemModal.readonly) {
-      itemModal.title = this.translateService.instant('User info');
+      itemModal.title = translate('User info');
     }
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new User(item);
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      itemModal.okInProcessFromStatus(status)
+    );
   }
   showRemoveModal(item: any | User) {
     if (this.modalIsOpened) {
@@ -91,12 +102,15 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     this.modalIsOpened = true;
     const confirm: ConfirmModalComponent = this.app.modals(this.resolver).create(ConfirmModalComponent);
     confirm.size = 'md';
-    confirm.title = this.translateService.instant('Remove');
-    confirm.message = this.translateService.instant('Are you sure you want to remove a user from project?');
+    confirm.title = translate('Remove');
+    confirm.message = translate('Are you sure you want to remove a user from project ? ');
     confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      confirm.okInProcessFromStatus(status)
+    );
   }
   save(itemModal: TodoUserModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(

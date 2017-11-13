@@ -1,16 +1,13 @@
 import 'rxjs/add/operator/takeUntil';
 
-import { Component, ViewChild } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-import { AccountService, EndpointStatusEnum, translate } from '@rucken/core';
-import { AppService } from '@rucken/core';
+import { Component, Injector, ViewChild } from '@angular/core';
+import { EndpointStatusEnum, translate } from '@rucken/core';
 import { TodoTask } from '@rucken/todo-core';
 import { TodoProject } from '@rucken/todo-core';
 import { TodoProjectsGridComponent } from '@rucken/todo-web';
 import { TodoTasksGridComponent } from '@rucken/todo-web';
 import { TodoChangesGridComponent } from '@rucken/todo-web';
-import { BasePageComponent, SharedService } from '@rucken/web';
+import { BasePageComponent } from '@rucken/web';
 
 @Component({
   selector: 'todo-projects-page',
@@ -26,16 +23,6 @@ export class TodoProjectsPageComponent extends BasePageComponent {
   @ViewChild('todoChangesGrid')
   todoChangesGrid: TodoChangesGridComponent;
 
-  constructor(
-    public accountService: AccountService,
-    public app: AppService,
-    public translateService: TranslateService,
-    public activatedRoute: ActivatedRoute,
-    public router: Router,
-    public sharedService: SharedService
-  ) {
-    super(accountService, app, translateService, activatedRoute, router, sharedService);
-  }
   init() {
     super.init();
     this.todoProjectsGrid.cachedResourcesService.changeStatusList$.takeUntil(this.destroyed$).subscribe(

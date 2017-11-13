@@ -11,6 +11,7 @@ import { BaseResourceSelectInputComponent } from '@rucken/web';
 import { TranslateService } from '@ngx-translate/core';
 import { TooltipDirective } from 'ngx-bootstrap/tooltip';
 import { DomSanitizer } from '@angular/platform-browser';
+import { translate } from '@rucken/core';
 
 @Component({
   selector: '<%=grid.name.kebab%>-select-input',
@@ -34,26 +35,22 @@ export class <%=grid.name.camel%>SelectInputComponent extends BaseResourceSelect
 
   items: any[] | <%=grid.name.camel%>[] = [];
   cachedResourcesService: <%=grid.list.name.camel%>Service;
-
+  
   constructor(
-    public app: AppService,
-    public accountService: AccountService,
-    public <%=grid.list.name.lower.camel%>Service: <%=grid.list.name.camel%>Service,
-    public resolver: ComponentFactoryResolver,
-    public sanitizer: DomSanitizer,
-    public translateService: TranslateService,
-    public config: BaseResourceSelectInputConfig
+    public injector: Injector,
+    public resolver: ComponentFactoryResolver
   ) {
-    super(translateService, config);
+    super(injector);
+    this.<%=grid.list.name.lower.camel%>Service = injector.get(<%=grid.list.name.camel%>Service);
     this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
+
   onLookup() {
     const itemModal: <%=grid.list.name.camel%>ListModalComponent =
       this.app.modals(this.resolver).create(<%=grid.list.name.camel%>ListModalComponent);
     itemModal.hardReadonly = this.hardReadonly;
-    itemModal.account = this.account;
-    itemModal.text = this.translateService.instant('Select');
-    itemModal.title = this.translateService.instant('<%=grid.list.name.caption%>');
+    itemModal.okTitle = translate('Select');
+    itemModal.title = translate('<%=grid.list.name.caption%>');
     itemModal.onOk.subscribe(($event: any) => {
       this.value = itemModal.item;
       if (this.inputElement) {

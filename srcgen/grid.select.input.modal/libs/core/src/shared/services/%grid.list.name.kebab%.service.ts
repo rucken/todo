@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Injector } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import { <%=grid.name.camel%> } from './../models/<%=grid.name.kebab%>.model';
@@ -11,17 +11,19 @@ export class <%=grid.list.name.camel%>Service extends BaseRepositoryService {
   items: <%=grid.name.camel%>[];
   apiUrl: string;
 
-  constructor(public repositoryHelper: RepositoryHelper) {
-    super(repositoryHelper);
+  constructor(
+    public injector: Injector
+  ) {
+    super(injector);
     this.pluralName = '<%=grid.list.name.snake%>';
     this.name = '<%=grid.name.snake%>';
-    this.apiUrl = `${repositoryHelper.apiUrl}/${this.pluralName}`;
+    this.apiUrl = `${this.repositoryHelper.apiUrl}/${this.pluralName}`;
     this.items$ = <Subject<<%=grid.name.camel%>[]>>new Subject();
   }
   transformModel(item: any) {
     return new <%=grid.name.camel%>(item);
   }
   newCache() {
-    return new <%=grid.list.name.camel%>Service(this.repositoryHelper);
+    return new <%=grid.list.name.camel%>Service(this.injector);
   }
 }

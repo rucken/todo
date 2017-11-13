@@ -10,6 +10,7 @@ import { AccountService } from '@rucken/core';
 import { MetaModel } from '@rucken/core';
 import { BaseResourcesGridComponent  } from '@rucken/web';
 import { TranslateService } from '@ngx-translate/core';
+import { translate } from '@rucken/core';
 
 @Component({
   selector: '<%=grid.list.name.kebab%>-grid',
@@ -29,16 +30,17 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
   selectedItems: any[] | <%=grid.name.camel%>[];
   cachedResourcesService: <%=grid.list.name.camel%>Service;
 
+  <%=grid.list.name.lower.camel%>Service: <%=grid.list.name.camel%>Service;
+  
   constructor(
-    public <%=grid.list.name.lower.camel%>Service: <%=grid.list.name.camel%>Service,
-    public accountService: AccountService,
-    public app: AppService,
-    public resolver: ComponentFactoryResolver,
-    public translateService: TranslateService
+    public injector: Injector,
+    public resolver: ComponentFactoryResolver
   ) {
-    super();
+    super(injector);
+    this.<%=grid.list.name.lower.camel%>Service = injector.get(<%=grid.list.name.camel%>Service);
     this.cachedResourcesService = this.<%=grid.list.name.lower.camel%>Service.createCache();
   }
+  
   get readonly() {
     return this.hardReadonly || !(this.accessToAdd || this.accessToChange || this.accessToDelete);
   }
@@ -48,15 +50,17 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     }
     this.modalIsOpened = true;
     const itemModal: any | <%=grid.name.camel%>ModalComponent = this.app.modals(this.resolver).create(<%=grid.name.camel%>ModalComponent);
-    itemModal.account = this.accountService.account;
     itemModal.readonly = this.hardReadonly || !this.accessToAdd;
-    itemModal.text = this.translateService.instant('Create');
-    itemModal.title = this.translateService.instant('Create new <%=grid.item.name.caption%>');
+    itemModal.okTitle = translate('Create');
+    itemModal.title = translate('Create new <%=grid.item.name.caption%>');
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new <%=grid.name.camel%>();
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      itemModal.okInProcessFromStatus(status)
+    );
   }
   showEditModal(item: any | <%=grid.name.camel%>) {
     if (this.modalIsOpened) {
@@ -64,18 +68,20 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     }
     this.modalIsOpened = true;
     const itemModal: any | <%=grid.name.camel%>ModalComponent = this.app.modals(this.resolver).create(<%=grid.name.camel%>ModalComponent);
-    itemModal.account = this.accountService.account;
     itemModal.readonly = this.hardReadonly || !this.accessToChange;
-    itemModal.text = this.translateService.instant('Save');
-    itemModal.title = this.translateService.instant('Edit <%=grid.item.name.caption%>');
+    itemModal.okTitle = translate('Save');
+    itemModal.title = translate('Edit <%=grid.item.name.caption%>');
     if (itemModal.readonly) {
-      itemModal.title = this.translateService.instant('<%=grid.name.caption%> info');
+      itemModal.title = translate('<%=grid.name.caption%> info');
     }
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new <%=grid.name.camel%>(item);
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      itemModal.okInProcessFromStatus(status)
+    );
   }
   showRemoveModal(item: any | <%=grid.name.camel%>) {
     if (this.modalIsOpened) {
@@ -84,12 +90,15 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     this.modalIsOpened = true;
     const confirm: ConfirmModalComponent = this.app.modals(this.resolver).create(ConfirmModalComponent);
     confirm.size = 'md';
-    confirm.title = this.translateService.instant('Remove');
-    confirm.message = this.translateService.instant('Are you sure you want to remove a <%=grid.item.name.caption%>?');
+    confirm.title = translate('Remove');
+    confirm.message = translate('Are you sure you want to remove a <%=grid.item.name.caption%>?');
     confirm.onOk.subscribe(($event: any) => this.remove($event));
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();
+    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+      confirm.okInProcessFromStatus(status)
+    );
   }
   save(itemModal: any | <%=grid.name.camel%>ModalComponent) {
     this.cachedResourcesService.save(itemModal.item).subscribe(

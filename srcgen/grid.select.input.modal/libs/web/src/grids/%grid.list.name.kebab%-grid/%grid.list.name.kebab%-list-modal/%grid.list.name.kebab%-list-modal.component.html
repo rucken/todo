@@ -9,11 +9,11 @@
         <h4 class="modal-title">{{title | translate}}</h4>
       </div>
       <div class="modal-body">
-        <<%=grid.list.name.kebab%>-grid #<%=grid.list.name.lower.camel%> (onEnter)="ok()" [onEnterEnabled]="true" (onSelectItems)="select<%=grid.name.camel%>($event)"
+        <<%=grid.list.name.kebab%>-grid #<%=grid.list.name.lower.camel%> (onSelectItems)="select<%=grid.name.camel%>($event)"
         [hardReadonly]="hardReadonly" #focusElement></<%=grid.list.name.kebab%>-grid>
       </div>
       <div class="modal-footer">
-        <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="text" closeTitle="{{'Close'|translate}}"
+        <footer-buttons (onClose)="close()" (onOk)="ok()" [readonly]="readonly" [okTitle]="okTitle" closeTitle="{{'Close'|translate}}"
           okBtnClass="btn-success" [okInProcess]="okInProcess"></footer-buttons>
       </div>
     </div>
