@@ -1,3 +1,18 @@
+<a name="0.2.5"></a>
+# [0.2.5](https://github.com/rucken/todo-web/compare/0.2.4...0.2.5) (2017-11-13)
+
+
+### Bug Fixes
+
+* **navbar:** Move init route to initRoutes method ([b5dc067](https://github.com/rucken/todo-web/commit/b5dc067))
+
+
+### Features
+
+* Update dependencies and refactor code for it ([f125e12](https://github.com/rucken/todo-web/commit/f125e12))
+
+
+
 <a name="0.2.4"></a>
 ## [0.2.4](https://github.com/rucken/todo-web/compare/0.2.3...0.2.4) (2017-10-30)
 
