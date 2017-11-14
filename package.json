@@ -114,7 +114,7 @@
     "@ngx-translate/core": "^8.0.0",
     "@rucken/core": "^1.25.1",
     "@rucken/web": "^1.25.1",
-    "@types/jasmine": "2.6.3",
+    "@types/jasmine": "2.8.0",
     "@types/lodash": "^4.14.85",
     "@types/marked": "0.3.0",
     "@types/node": "^8.0.51",
