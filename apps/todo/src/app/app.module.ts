@@ -1,34 +1,32 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Http, HttpModule, RequestOptions } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import {
-  AccountService,
   AppService,
   EndpointHelper,
   HttpHelper,
   RepositoryHelper,
   RuckenCoreServices,
   ThemesService,
+  TokenService,
 } from '@rucken/core';
 import { RuckenTodoCoreServices } from '@rucken/todo-core';
 import {
   AlertModalModule,
-  AuthHttpFactory,
   AuthModalModule,
   BaseResourceSelectInputConfig,
   RuckenWebServices,
   SelectInputConfig,
   TableColumnConfig,
   TextInputConfig,
-  WebAccountService,
   WebAppService,
   WebThemesService,
+  WebTokenService,
 } from '@rucken/web';
 import { HomeGuardService, SharedModule } from '@rucken/web';
-import { AuthHttp } from 'angular2-jwt';
 import { LaddaModule } from 'angular2-ladda';
 import {
   ComponentLoaderFactory,
@@ -53,7 +51,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     LaddaModule.forRoot({
       style: 'expand-left',
       spinnerColor: 'white',
@@ -82,8 +80,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     TableColumnConfig,
     { provide: ThemesService, useClass: WebThemesService },
     { provide: AppService, useClass: WebAppService },
-    { provide: AccountService, useClass: WebAccountService },
-    { provide: AuthHttp, useFactory: AuthHttpFactory.create, deps: [Http, RequestOptions] },
+    { provide: TokenService, useClass: WebTokenService },
     { provide: RepositoryHelper, useClass: RepositoryHelper },
     { provide: EndpointHelper, useClass: TodoEndpointHelper },
     { provide: HttpHelper, useClass: TodoHttpHelper },
