@@ -2,7 +2,7 @@
 [![Build Status][travis-image]][travis-url]
 
 
-Base components, services and ui for todo entities for application maked on Angular4+ [demo](https://rucken.github.io/todo-web) [source](https://github.com/rucken/todo-web)
+Base components, services and ui for todo entities for application maked on Angular5+ [demo](https://rucken.github.io/todo-web) [source](https://github.com/rucken/todo-web)
 
 ## License
 

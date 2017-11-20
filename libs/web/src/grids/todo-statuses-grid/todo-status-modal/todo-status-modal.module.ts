@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule, TextInputModule } from '@rucken/web';
-import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { TodoStatusModalComponent } from './todo-status-modal.component';
 

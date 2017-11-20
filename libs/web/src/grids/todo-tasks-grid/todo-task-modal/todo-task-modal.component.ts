@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core
 import { TodoTask } from '@rucken/todo-core';
 import { BaseResourceModalComponent } from '@rucken/web';
 import { TextInputComponent } from '@rucken/web';
-import { ModalDirective } from 'ngx-bootstrap';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'todo-task-modal',

@@ -1,4 +1,4 @@
-import 'rxjs/add/operator/takeUntil';
+import { takeUntil } from 'rxjs/operators';
 
 import { Component, Injector, ViewChild } from '@angular/core';
 import { EndpointStatusEnum, translate } from '@rucken/core';
@@ -25,7 +25,7 @@ export class TodoProjectsPageComponent extends BasePageComponent {
 
   init() {
     super.init();
-    this.todoProjectsGrid.cachedResourcesService.changeStatusList$.takeUntil(this.destroyed$).subscribe(
+    this.todoProjectsGrid.cachedResourcesService.changeStatusList$.pipe(takeUntil(this.destroyed$)).subscribe(
       (status: EndpointStatusEnum) => {
         if (status === EndpointStatusEnum.Loading) {
           this.todoTasksGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
@@ -34,7 +34,7 @@ export class TodoProjectsPageComponent extends BasePageComponent {
         }
       }
     );
-    this.todoTasksGrid.cachedResourcesService.changeStatusList$.takeUntil(this.destroyed$).subscribe(
+    this.todoTasksGrid.cachedResourcesService.changeStatusList$.pipe(takeUntil(this.destroyed$)).subscribe(
       (status: EndpointStatusEnum) => {
         if (status === EndpointStatusEnum.Loading) {
           this.todoChangesGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
@@ -43,7 +43,7 @@ export class TodoProjectsPageComponent extends BasePageComponent {
         }
       }
     );
-    this.todoProjectsGrid.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(
+    this.todoProjectsGrid.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe(
       (status: EndpointStatusEnum) => {
         if (status === EndpointStatusEnum.Ok) {
           this.todoTasksGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,
@@ -52,7 +52,7 @@ export class TodoProjectsPageComponent extends BasePageComponent {
         }
       }
     );
-    this.todoTasksGrid.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(
+    this.todoTasksGrid.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe(
       (status: EndpointStatusEnum) => {
         if (status === EndpointStatusEnum.Ok) {
           this.todoChangesGrid.cachedResourcesService.setStatusList(EndpointStatusEnum.Loading,

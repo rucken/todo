@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { TodoChange } from '@rucken/todo-core';
 import { BaseResourceModalComponent } from '@rucken/web';
-import { ModalDirective } from 'ngx-bootstrap';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 import { TodoChangesGridComponent } from '../todo-changes-grid.component';
 

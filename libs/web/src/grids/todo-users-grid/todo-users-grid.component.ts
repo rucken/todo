@@ -13,6 +13,7 @@ import { UsersService } from '@rucken/core';
 import { TodoProject } from '@rucken/todo-core';
 import { ConfirmModalComponent } from '@rucken/web';
 import { BaseResourcesGridComponent } from '@rucken/web';
+import { takeUntil } from 'rxjs/operators';
 
 import { TodoUserModalComponent } from './todo-user-modal/todo-user-modal.component';
 
@@ -70,7 +71,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     itemModal.item = new User();
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       itemModal.okInProcessFromStatus(status)
     );
   }
@@ -91,7 +92,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     itemModal.item = new User(item);
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       itemModal.okInProcessFromStatus(status)
     );
   }
@@ -108,7 +109,7 @@ export class TodoUsersGridComponent extends BaseResourcesGridComponent {
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       confirm.okInProcessFromStatus(status)
     );
   }

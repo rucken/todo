@@ -2,7 +2,8 @@ import { SharedModule } from '@rucken/web';
 import { SelectInputModule, FooterButtonsModule, TextInputModule } from '@rucken/web';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { <%=grid.name.camel%>SelectInputComponent } from './<%=grid.name.kebab%>-select-input.component';
-import { ModalModule, TooltipModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { FormsModule } from '@angular/forms';
 import { <%=grid.list.name.camel%>ListModalModule } from '../<%=grid.list.name.kebab%>-list-modal/<%=grid.list.name.kebab%>-list-modal.module';
 

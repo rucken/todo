@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader, TranslateFakeLoader } from '@ngx-translate/core';
 import {
   AppService,
   EndpointHelper,
@@ -57,11 +57,12 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
       spinnerColor: 'white',
       spinnerLines: 12
     }),
+    TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useClass: TranslateFakeLoader }
+    }),
+    SharedModule.forRoot(),
     AlertModalModule.forRoot(),
     TodoNavbarModule.forRoot(),
-    AuthModalModule.forRoot(),
-    TranslateModule.forRoot(),
-    SharedModule.forRoot(),
     RouterModule.forRoot(TodoRoutes, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   providers: [

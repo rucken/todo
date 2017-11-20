@@ -1,6 +1,6 @@
 import { Injectable, Injector } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/map';
+import { map} from 'rxjs/operators';
 import { <%=grid.name.camel%> } from './../models/<%=grid.name.kebab%>.model';
 import { BaseRepositoryService, RepositoryHelper } from '@rucken/core';
 import { HttpHelper } from '@rucken/core';
