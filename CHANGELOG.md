@@ -1,3 +1,19 @@
+<a name="0.3.0"></a>
+# [0.3.0](https://github.com/rucken/todo-web/compare/0.2.5...0.3.0) (2017-11-20)
+
+
+### Bug Fixes
+
+* **home-guard:** Allow home page ([3377e7c](https://github.com/rucken/todo-web/commit/3377e7c))
+
+
+### Features
+
+* **http:** Change HttpModule to HttpClientModule ([c32a9e5](https://github.com/rucken/todo-web/commit/c32a9e5))
+* **update:** Update dependencies and all sources for Angular 5.0.2 ([8adbe04](https://github.com/rucken/todo-web/commit/8adbe04))
+
+
+
 <a name="0.2.5"></a>
 # [0.2.5](https://github.com/rucken/todo-web/compare/0.2.4...0.2.5) (2017-11-13)
 

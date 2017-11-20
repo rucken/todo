@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@
 import { ShortTodoProject } from '@rucken/todo-core';
 import { TodoTask } from '@rucken/todo-core';
 import { BaseResourceModalComponent } from '@rucken/web';
-import { ModalDirective } from 'ngx-bootstrap';
+import { ModalDirective } from 'ngx-bootstrap/modal';
 
 import { TodoTasksGridComponent } from './../todo-tasks-grid.component';
 

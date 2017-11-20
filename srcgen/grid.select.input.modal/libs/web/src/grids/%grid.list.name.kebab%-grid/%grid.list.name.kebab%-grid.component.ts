@@ -11,6 +11,7 @@ import { MetaModel } from '@rucken/core';
 import { BaseResourcesGridComponent  } from '@rucken/web';
 import { TranslateService } from '@ngx-translate/core';
 import { translate } from '@rucken/core';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: '<%=grid.list.name.kebab%>-grid',
@@ -58,7 +59,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     itemModal.item = new <%=grid.name.camel%>();
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       itemModal.okInProcessFromStatus(status)
     );
   }
@@ -79,7 +80,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     itemModal.item = new <%=grid.name.camel%>(item);
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       itemModal.okInProcessFromStatus(status)
     );
   }
@@ -96,7 +97,7 @@ export class <%=grid.list.name.camel%>GridComponent extends BaseResourcesGridCom
     confirm.onClose.subscribe(() => this.focus());
     this.selectedItems = [item];
     confirm.modal.show();
-    this.cachedResourcesService.changeStatusItem$.takeUntil(this.destroyed$).subscribe(status =>
+    this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>
       confirm.okInProcessFromStatus(status)
     );
   }

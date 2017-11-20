@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule } from '@rucken/web';
-import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { TodoStatusesGridModule } from '../todo-statuses-grid.module';
 import { TodoStatusesListModalComponent } from './todo-statuses-list-modal.component';

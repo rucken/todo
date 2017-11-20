@@ -1,4 +1,4 @@
-import 'rxjs/add/operator/takeUntil';
+import { takeUntil } from 'rxjs/operators';
 
 import { Component, ComponentFactoryResolver, Injector, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
@@ -41,7 +41,7 @@ export class TodoAppComponent extends BaseAppComponent {
     public router: Router
   ) {
     super(injector, viewContainerRef, resolver);
-    router.events.takeUntil(this.destroyed$).subscribe((evt) => {
+    router.events.pipe(takeUntil(this.destroyed$)).subscribe((evt) => {
       if (evt instanceof NavigationEnd) {
         document.body.scrollTop = 0;
       }

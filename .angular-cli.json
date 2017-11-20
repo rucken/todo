@@ -50,7 +50,6 @@
   },
   "lint": [
     {
-      "files": "apps/todo/src/**/*.ts",
       "project": "apps/todo/src/tsconfig.json"
     },
     {

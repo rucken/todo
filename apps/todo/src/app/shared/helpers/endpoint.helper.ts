@@ -1,4 +1,4 @@
-import { Injectable, Injector } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { EndpointHelper } from '@rucken/core';
 
 import { environment } from './../../../environments/environment';

@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@rucken/web';
 import { FooterButtonsModule, TextInputModule } from '@rucken/web';
-import { ModalModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { TodoStatusesGridModule } from '../../todo-statuses-grid/todo-statuses-grid.module';
 import { TodoUsersGridModule } from '../../todo-users-grid/todo-users-grid.module';

@@ -2,7 +2,7 @@
 [![Build Status][travis-image]][travis-url]
 
 
-Core with base class and todo entities for application maked on Angular4+ [demo](https://rucken.github.io/todo-web) [source](https://github.com/rucken/todo-web)
+Core with base class and todo entities for application maked on Angular5+ [demo](https://rucken.github.io/todo-web) [source](https://github.com/rucken/todo-web)
 
 ## License
 
