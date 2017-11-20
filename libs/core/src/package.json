@@ -1,7 +1,7 @@
 {
     "name": "@rucken/todo-core",
     "main": "index.js",
-    "version": "0.2.5",
+    "version": "0.3.0",
     "description": "Core with base class and todo entities for application maked on Angular5+",
     "keywords": [
         "ngx",
