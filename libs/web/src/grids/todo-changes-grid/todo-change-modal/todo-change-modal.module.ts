@@ -2,11 +2,11 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '@rucken/web';
 import {
-    ContentTypeSelectInputModule,
-    FooterButtonsModule,
-    TextInputModule,
-    UserSelectInputModule,
-    UsersListModalModule,
+  ContentTypeSelectInputModule,
+  FooterButtonsModule,
+  TextInputModule,
+  UserSelectInputModule,
+  UsersListModalModule,
 } from '@rucken/web';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
