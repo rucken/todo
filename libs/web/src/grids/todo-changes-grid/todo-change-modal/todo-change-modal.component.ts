@@ -5,7 +5,7 @@ import { BaseResourceModalComponent } from '@rucken/web';
 import { ModalDirective } from 'ngx-bootstrap/modal';
 
 import {
-    TodoProjectSelectInputComponent,
+  TodoProjectSelectInputComponent,
 } from '../../todo-projects-grid/todo-project-select-input/todo-project-select-input.component';
 
 @Component({
