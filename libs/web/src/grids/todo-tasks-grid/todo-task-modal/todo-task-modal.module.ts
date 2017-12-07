@@ -5,7 +5,7 @@ import { FooterButtonsModule, TextInputModule } from '@rucken/web';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
 import {
-    TodoStatusSelectInputModule,
+  TodoStatusSelectInputModule,
 } from '../../todo-statuses-grid/todo-status-select-input/todo-status-select-input.module';
 import { TodoTaskModalComponent } from './todo-task-modal.component';
 

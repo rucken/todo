@@ -1,3 +1,13 @@
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/rucken/todo-web/compare/0.3.0...0.3.1) (2017-12-07)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies for Angular 5.1.0 ([ad58510](https://github.com/rucken/todo-web/commit/ad58510))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/rucken/todo-web/compare/0.2.5...0.3.0) (2017-11-20)
 
