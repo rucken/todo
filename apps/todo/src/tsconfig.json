@@ -1,48 +1,13 @@
 {
+  "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "importHelpers": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "noEmitHelpers": false,
-    "noImplicitAny": true,
-    "declaration": true,
-    "skipLibCheck": true,
-    "stripInternal": true,
-    "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "newLine": "LF",
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "suppressImplicitAnyIndexErrors": true,
-    "types": [
-      "jasmine",
-      "webpack"
-    ],
-    "mapRoot": "./",
-    "module": "es6",
-    "moduleResolution": "node",
-    "outDir": "../temp/out-tsc",
-    "target": "es5",
-    "typeRoots": [
-      "../../node_modules/@types"
-    ]
+    "outDir": "../../../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",
+    "types": []
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts",
-    "**/*.e2e-spec.ts",
-    "node_modules",
-    "**/*/node_modules",
-    "../../libs/**/tmp",
-    "../../apps/**/tmp",
-    "../../libs/**/dist",
-    "../../apps/**/dist",
-    "../../libs/**/.tmp",
-    "../../apps/**/.tmp"
+    "**/*.spec.ts"
   ]
 }

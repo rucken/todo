@@ -31,7 +31,7 @@ export class TodoHomeGuardService extends AuthGuardService {
       this.initAccesses();
     }
     if (this.accountService.account && route.data.name && route.data.name === 'home' && this.firstHomeActivated) {
-      let founded = false;
+      /*let founded = false;
       if (!founded && this.accessToReadProjectsPage) {
         founded = true;
         this.router.navigate(['/projects']);
@@ -51,7 +51,7 @@ export class TodoHomeGuardService extends AuthGuardService {
         return false;
       } else {
         this.firstHomeActivated = false;
-      }
+      }*/
     }
     return true;
   }
