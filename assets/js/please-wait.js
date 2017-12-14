@@ -97,6 +97,9 @@ var __bind = function (fn, me) { return function () { return fn.apply(me, argume
       if (this.options.backgroundColor != null) {
         this._loadingElem.style.backgroundColor = this.options.backgroundColor;
       }
+      if (this.options.template && !options.logo) {
+        this.options.template = this.options.template.replace('<img class=\'pg-loading-logo\'></img>', '');
+      }
       this._loadingElem.innerHTML = this.options.template;
       this._loadingHtmlElem = this._loadingElem.getElementsByClassName("pg-loading-html")[0];
       if (this._loadingHtmlElem != null) {
@@ -104,7 +107,7 @@ var __bind = function (fn, me) { return function () { return fn.apply(me, argume
       }
       this._readyToShowLoadingHtml = false;
       this._logoElem = this._loadingElem.getElementsByClassName("pg-loading-logo")[0];
-      if (this._logoElem != null) {
+      if (this._logoElem != null && options.logo) {
         this._logoElem.src = this.options.logo;
       }
       removeClass("pg-loaded", document.body);
