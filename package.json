@@ -1,6 +1,6 @@
 {
   "name": "rucken-todo",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "author": "EndyKaufman <admin@site15.ru>",
   "maintainers": [
@@ -52,8 +52,8 @@
     "ng": "ng",
     "lint": "ng lint",
     "format": "tsfmt -r",
-    "clear": "node ./node_modules/@rucken/cli/bin/rucken commands clear",
-    "prepare": "node ./node_modules/@rucken/cli/bin/rucken commands prepare",
+    "clear": "node ./node_modules/@rucken/cli/bin/rucken clear",
+    "prepare": "node ./node_modules/@rucken/cli/bin/rucken prepare",
     "test": "npm-run-all lint app:build-full_prod",
     "e2e": "ng e2e --app=todo --preserve-symlinks",
     "build": "npm-run-all app:build-full_prod",
