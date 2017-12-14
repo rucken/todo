@@ -1,3 +1,18 @@
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/rucken/todo-web/compare/0.3.1...0.4.0) (2017-12-14)
+
+
+### Bug Fixes
+
+* **tsconfig:** Return old tsconfig files for libs ([e3958e9](https://github.com/rucken/todo-web/commit/e3958e9))
+
+
+### Features
+
+* **refactor:** Update dependencies and refactor sources for it ([32cc0ca](https://github.com/rucken/todo-web/commit/32cc0ca))
+
+
+
 <a name="0.3.1"></a>
 ## [0.3.1](https://github.com/rucken/todo-web/compare/0.3.0...0.3.1) (2017-12-07)
 

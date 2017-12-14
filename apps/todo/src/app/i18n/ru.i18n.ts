@@ -1,4 +1,4 @@
-export const RuckenTodoRuI18n = {
+export const TodoRuI18n = {
   '': {
     'project-id-version': '',
     'pot-creation-date': '',

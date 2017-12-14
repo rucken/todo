@@ -1,5 +1,3 @@
-import { takeUntil } from 'rxjs/operators';
-
 import { Component, ComponentFactoryResolver, Injector, ViewContainerRef, ViewEncapsulation } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { RuckenCoreRuI18n, translate } from '@rucken/core';
@@ -9,14 +7,15 @@ import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n } from '@rucken/
 import * as _ from 'lodash';
 import { defineLocale } from 'ngx-bootstrap/bs-moment';
 import { enGb, ru } from 'ngx-bootstrap/locale';
+import { takeUntil } from 'rxjs/operators';
 
-import { RuckenTodoRuI18n } from './i18n/ru.i18n';
+import { TodoRuI18n } from './i18n/ru.i18n';
 
 defineLocale('ru', ru);
 defineLocale('en', enGb);
 
 @Component({
-  selector: 'todo-app-root',
+  selector: 'todo-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   entryComponents: [AlertModalComponent],
@@ -27,7 +26,7 @@ export class TodoAppComponent extends BaseAppComponent {
   languages = [{
     code: 'ru',
     title: translate('Russian'),
-    dic: _.merge(RuckenCoreRuI18n, RuckenWebRuI18n, RuckenTodoCoreRuI18n, RuckenTodoWebRuI18n, RuckenTodoRuI18n)
+    dic: _.merge(RuckenCoreRuI18n, RuckenWebRuI18n, RuckenTodoCoreRuI18n, RuckenTodoWebRuI18n, TodoRuI18n)
   }, {
     code: 'en',
     title: translate('English'),

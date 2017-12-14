@@ -1,9 +1,9 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { TranslateModule, TranslateLoader, TranslateFakeLoader } from '@ngx-translate/core';
+import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {
   AppService,
   EndpointHelper,
@@ -16,7 +16,6 @@ import {
 import { RuckenTodoCoreServices } from '@rucken/todo-core';
 import {
   AlertModalModule,
-  AuthModalModule,
   BaseResourceSelectInputConfig,
   RuckenWebServices,
   SelectInputConfig,
@@ -29,6 +28,7 @@ import {
 import { HomeGuardService, SharedModule } from '@rucken/web';
 import { LaddaModule } from 'angular2-ladda';
 import {
+  BsLocaleService,
   ComponentLoaderFactory,
   PaginationConfig,
   PopoverConfig,
@@ -72,6 +72,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     PaginationConfig,
     TabsetConfig,
     PopoverConfig,
+    BsLocaleService,
     RuckenCoreServices,
     RuckenWebServices,
     RuckenTodoCoreServices,

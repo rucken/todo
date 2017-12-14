@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
-    "importHelpers": true,
     "outDir": "../dist",
     "target": "es5",
-    "module": "es2015",
+    "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "inlineSources": true,
-    "noEmitHelpers": false,
     "noImplicitAny": true,
     "declaration": true,
     "skipLibCheck": false,
@@ -19,11 +17,9 @@
     "noUnusedParameters": false,
     "newLine": "LF",
     "lib": [
-      "dom",
-      "es6"
-    ],
-    "types": [
-      "jasmine"
+      "es5",
+      "es6",
+      "dom"
     ],
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
@@ -35,7 +31,6 @@
     "**/*/node_modules"
   ],
   "files": [
-    "../../../typings.d.ts",
     "./index.ts"
   ],
   "angularCompilerOptions": {
