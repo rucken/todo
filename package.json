@@ -89,7 +89,7 @@
     "tslib": "^1.8.1"
   },
   "devDependencies": {
-    "@angular/cli": "1.6.1",
+    "@angular/cli": "1.6.2",
     "@angular/compiler-cli": "^5.1.1",
     "@angular/language-service": "^5.1.1",
     "@types/jasmine": "~2.8.2",
