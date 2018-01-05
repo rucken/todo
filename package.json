@@ -115,7 +115,7 @@
     "conventional-commits-detector": "^0.1.1",
     "conventional-recommended-bump": "^1.1.0",
     "gh-pages": "^1.1.0",
-    "html-loader": "0.5.1",
+    "html-loader": "0.5.4",
     "lite-server": "^2.3.0",
     "markdown-loader": "^2.0.1"
   }
