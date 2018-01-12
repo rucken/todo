@@ -26,7 +26,6 @@ import {
   WebTokenService,
 } from '@rucken/web';
 import { HomeGuardService, SharedModule } from '@rucken/web';
-import { LaddaModule } from 'angular2-ladda';
 import {
   BsLocaleService,
   ComponentLoaderFactory,
@@ -52,11 +51,6 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    LaddaModule.forRoot({
-      style: 'expand-left',
-      spinnerColor: 'white',
-      spinnerLines: 12
-    }),
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateFakeLoader }
     }),
