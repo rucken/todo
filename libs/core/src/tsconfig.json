@@ -21,16 +21,16 @@
       "es6",
       "dom"
     ],
+    "types": [
+      "jasmine"
+    ],
     "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "../../../node_modules/@types/"
     ]
   },
-  "exclude": [
-    "node_modules",
-    "**/*/node_modules"
-  ],
   "files": [
+    "../../../typings.d.ts",
     "./index.ts"
   ],
   "angularCompilerOptions": {

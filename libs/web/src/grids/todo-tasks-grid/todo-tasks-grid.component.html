@@ -1,5 +1,5 @@
-<div class="app-grid todo-tasks-grid" *ngIf="account">
-  <div class="app-grid__toolbar--header">
+<div class="grid todo-tasks-grid" *ngIf="account">
+  <div class="grid__toolbar--header">
     <div class="row">
       <div class="col-md-3">
         <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && accessToAdd">
@@ -13,40 +13,40 @@
       </div>
     </div>
   </div>
-  <table class="app-grid__table table table-bordered table-hover">
+  <table class="grid__table table table-bordered table-hover">
     <thead>
       <tr>
-        <th class="app-grid__table__col-title">
+        <th class="grid__table__col-title">
           <table-column [title]="modelMeta.titles.title" name="title" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-dateRange">
+        <th class="grid__table__col-dateRange">
           <table-column [title]="modelMeta.titles.dateRange" name="dateRange" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-status">
+        <th class="grid__table__col-status">
           <table-column [title]="modelMeta.titles.status" name="status" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)" translate>Actions</th>
+        <th class="grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)" translate>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngIf="statusListMessage">
-        <td class="app-grid__table__col-status-message" [attr.colspan]="3+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
+        <td class="grid__table__col-status-message" [attr.colspan]="3+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
           {{statusListMessage | translate}}
         </td>
       </tr>
       <tr *ngFor="let item of items | slice:0:meta.perPage" (click)="selectItem(item, $event)" [ngClass]="{'info':isSelectedItem(item)}"
         (dblclick)="showEditModal(item)" [hidden]="statusListMessage">
-        <td class="app-grid__table__col-title">{{item.title}}</td>
-        <td class="app-grid__table__col-dateRange">{{item.dateRangeAsString}}</td>
-        <td class="app-grid__table__col-status">{{item.statusAsString}}</td>
-        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
+        <td class="grid__table__col-title">{{item.title}}</td>
+        <td class="grid__table__col-dateRange">{{item.dateRangeAsString}}</td>
+        <td class="grid__table__col-status">{{item.statusAsString}}</td>
+        <td class="grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
           <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && accessToChange"
             [showRemove]="hardReadonly !== true && accessToDelete"></grid-row-buttons>
         </td>
       </tr>
     </tbody>
   </table>
-  <div class="app-grid__toolbar--footer" [hidden]="statusListMessage">
+  <div class="grid__toolbar--footer" [hidden]="statusListMessage">
     <div class="row">
       <div class="col-md-3">
       </div>

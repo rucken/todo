@@ -1,3 +1,14 @@
+<a name="0.4.1"></a>
+## [0.4.1](https://github.com/rucken/todo-web/compare/0.4.0...0.4.1) (2018-01-12)
+
+
+### Bug Fixes
+
+* **selects:** Change select grids inputs for new ngx-bootstrap components ([fd6062a](https://github.com/rucken/todo-web/commit/fd6062a))
+* **styles:** Remove custom styles like "app-grid-...." and others ([8b85b95](https://github.com/rucken/todo-web/commit/8b85b95))
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/rucken/todo-web/compare/0.3.1...0.4.0) (2017-12-14)
 

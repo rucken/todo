@@ -1,5 +1,5 @@
-<div class="app-grid todo-changes-grid" *ngIf="account">
-  <div class="app-grid__toolbar--header">
+<div class="grid todo-changes-grid" *ngIf="account">
+  <div class="grid__toolbar--header">
     <div class="row">
       <div class="col-md-3">
         <button type="button" class="btn btn-primary" aria-label="Create" (click)="showCreateModal()" *ngIf="hardReadonly !== true && accessToAdd">
@@ -13,53 +13,53 @@
       </div>
     </div>
   </div>
-  <table class="app-grid__table table table-bordered table-hover">
+  <table class="grid__table table table-bordered table-hover">
     <thead>
       <tr>
-        <th class="app-grid__table__col-contentType" style="width: 180px;">
+        <th class="grid__table__col-contentType" style="width: 180px;">
           <table-column [title]="modelMeta.titles.contentType" name="contentType" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-dataAction" style="width: 120px;">
+        <th class="grid__table__col-dataAction" style="width: 120px;">
           <table-column [title]="modelMeta.titles.action" name="action" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-dataId" style="width: 70px;">
+        <th class="grid__table__col-dataId" style="width: 70px;">
           <table-column [title]="modelMeta.titles.dataId" name="dataId" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-data">
+        <th class="grid__table__col-data">
           <table-column [title]="modelMeta.titles.data" name="data" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-user" style="width: 160px;">
+        <th class="grid__table__col-user" style="width: 160px;">
           <table-column [title]="modelMeta.titles.user" name="user" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-createdAt" style="width: 160px;">
+        <th class="grid__table__col-createdAt" style="width: 160px;">
           <table-column [title]="modelMeta.titles.createdAt" name="createdAt" [(columns)]="columns"></table-column>
         </th>
-        <th class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)"
+        <th class="grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)"
           translate>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngIf="statusListMessage">
-        <td class="app-grid__table__col-status-message" [attr.colspan]="6+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
+        <td class="grid__table__col-status-message" [attr.colspan]="6+(hardReadonly !== true && (accessToChange || accessToDelete)?1:0)">
           {{statusListMessage | translate}}
         </td>
       </tr>
       <tr *ngFor="let item of items | slice:0:meta.perPage" (click)="selectItem(item, $event)" [ngClass]="{'info':isSelectedItem(item)}"
         (dblclick)="showEditModal(item)" [hidden]="statusListMessage">
-        <td class="app-grid__table__col-contentType">{{item.contentTypeAsString}}</td>
-        <td class="app-grid__table__col-dataAction">{{item.action}}</td>
-        <td class="app-grid__table__col-dataId">{{item.dataId}}</td>
-        <td class="app-grid__table__col-data" [innerHtml]="item.data | safeHtml"></td>
-        <td class="app-grid__table__col-user">{{item.userAsString}}</td>
-        <td class="app-grid__table__col-createdAt">{{item.createdAtAsString}}</td>
-        <td class="app-grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
+        <td class="grid__table__col-contentType">{{item.contentTypeAsString}}</td>
+        <td class="grid__table__col-dataAction">{{item.action}}</td>
+        <td class="grid__table__col-dataId">{{item.dataId}}</td>
+        <td class="grid__table__col-data" [innerHtml]="item.data | safeHtml"></td>
+        <td class="grid__table__col-user">{{item.userAsString}}</td>
+        <td class="grid__table__col-createdAt">{{item.createdAtAsString}}</td>
+        <td class="grid__table__col-action" *ngIf="hardReadonly !== true && (accessToChange || accessToDelete)">
           <grid-row-buttons (onEdit)="showEditModal(item)" (onRemove)="showRemoveModal(item)" [showEdit]="hardReadonly !== true && accessToChange"
             [showRemove]="hardReadonly !== true && accessToDelete"></grid-row-buttons>
         </td>
       </tr>
     </tbody>
   </table>
-  <div class="app-grid__toolbar--footer" [hidden]="statusListMessage">
+  <div class="grid__toolbar--footer" [hidden]="statusListMessage">
     <div class="row">
       <div class="col-md-3">
       </div>
