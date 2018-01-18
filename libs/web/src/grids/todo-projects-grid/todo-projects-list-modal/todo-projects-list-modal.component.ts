@@ -29,7 +29,7 @@ export class TodoProjectsListModalComponent extends BaseResourceModalComponent {
   modelMeta: any = TodoProject.meta();
 
   selectTodoProject(items: TodoProject[]) {
-    this.item = items[0];
+    this.item = items ? items[0] : null;
     this.items = items;
   }
 }
