@@ -5,14 +5,17 @@ import { RuckenTodoCoreRuI18n } from '@rucken/todo-core';
 import { RuckenTodoWebRuI18n } from '@rucken/todo-web';
 import { AlertModalComponent, BaseAppComponent, RuckenWebRuI18n } from '@rucken/web';
 import * as _ from 'lodash';
-import { defineLocale } from 'ngx-bootstrap/bs-moment';
-import { enGb, ru } from 'ngx-bootstrap/locale';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { enGbLocale, ruLocale } from 'ngx-bootstrap/locale';
 import { takeUntil } from 'rxjs/operators';
 
 import { TodoRuI18n } from './i18n/ru.i18n';
 
-defineLocale('ru', ru);
-defineLocale('en', enGb);
+import { PLATFORM_ID, Inject } from '@angular/core';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
+
+defineLocale('ru', ruLocale);
+defineLocale('en', enGbLocale);
 
 @Component({
   selector: 'todo-root',
@@ -23,7 +26,7 @@ defineLocale('en', enGb);
 })
 export class TodoAppComponent extends BaseAppComponent {
 
-  languages = [{
+  languages: any = [{
     code: 'ru',
     title: translate('Russian'),
     dic: _.merge(RuckenCoreRuI18n, RuckenWebRuI18n, RuckenTodoCoreRuI18n, RuckenTodoWebRuI18n, TodoRuI18n)
@@ -34,22 +37,19 @@ export class TodoAppComponent extends BaseAppComponent {
   }];
 
   constructor(
+    @Inject(PLATFORM_ID) public platformId: Object,
     public injector: Injector,
     public viewContainerRef: ViewContainerRef,
     public resolver: ComponentFactoryResolver,
     public router: Router
   ) {
     super(injector, viewContainerRef, resolver);
-    router.events.pipe(takeUntil(this.destroyed$)).subscribe((evt) => {
-      if (evt instanceof NavigationEnd) {
-        document.body.scrollTop = 0;
-      }
-    });
-  }
-  init() {
-    super.init();
-    if (window && window['loading_screen'] && window['loading_screen'].finish !== false) {
-      window['loading_screen'].finish();
+    if (isPlatformBrowser(this.platformId)) {
+      router.events.pipe(takeUntil(this.destroyed$)).subscribe((evt) => {
+        if (evt instanceof NavigationEnd) {
+          document.body.scrollTop = 0;
+        }
+      });
     }
   }
 }

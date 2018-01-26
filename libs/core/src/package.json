@@ -14,13 +14,13 @@
         "core"
     ],
     "peerDependencies": {
-        "@angular/common": "^5.2.0",
-        "@angular/compiler": "^5.2.0",
-        "@angular/core": "^5.2.0"
+        "@angular/common": "5.2.2",
+        "@angular/compiler": "5.2.2",
+        "@angular/core": "5.2.2"
     },
     "dependencies": {
-        "@rucken/core": "^1.30.1",
-        "@types/lodash": "*",
+        "@rucken/core": "^1.30.4",
+        "@types/lodash": "^4.14.96",
         "angular2-jwt": "*",
         "lodash": "^4.17.4",
         "moment": "*"

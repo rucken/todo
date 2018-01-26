@@ -7,7 +7,7 @@
     {
       "name": "todo",
       "root": "./apps/todo/src",
-      "outDir": "./apps/todo/dist",
+      "outDir": "./apps/todo/dist/browser",
       "assets": [
         "assets",
         "favicon.ico"
@@ -16,11 +16,37 @@
       "main": "main.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
-      "tsconfig": "tsconfig.app.json",
+      "tsconfig": "tsconfig.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "",
+      "prefix": "app",
       "styles": [
-        "../../../node_modules/ladda/css/ladda.scss",
+        "styles.scss"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts",
+        "mockapi": "environments/environment.mockapi.ts"
+      }
+    },
+    {
+      "name": "todo-server",
+      "platform": "server",
+      "root": "./apps/todo/src",
+      "outDir": "./apps/todo/dist/server",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.server.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.server.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
         "styles.scss"
       ],
       "scripts": [],

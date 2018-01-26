@@ -25,7 +25,7 @@ export class TodoProjectModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  item: TodoProject = new TodoProject();
+  item: any | TodoProject = new TodoProject();
   @Input()
   modelMeta: any = TodoProject.meta();
   @Output()
@@ -42,7 +42,7 @@ export class TodoProjectModalComponent extends BaseResourceModalComponent {
     this.statusesGrid.search();
   }
   ok() {
-    this.item.users = this.usersGrid.mockedItems;
+    this.item.users = this.usersGrid.mockedItems ? this.usersGrid.mockedItems : [];
     this.item.statuses = this.statusesGrid.mockedItems;
     return super.ok();
   }

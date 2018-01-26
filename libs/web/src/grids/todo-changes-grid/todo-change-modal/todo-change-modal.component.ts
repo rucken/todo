@@ -23,7 +23,7 @@ export class TodoChangeModalComponent extends BaseResourceModalComponent {
   focusElement: TodoProjectSelectInputComponent;
 
   @Input()
-  item: TodoChange = new TodoChange();
+  item: any | TodoChange = new TodoChange();
   @Input()
   modelMeta: any = TodoChange.meta();
   @Output()

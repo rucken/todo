@@ -37,7 +37,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
   @Input()
   project?: ShortTodoProject;
   modelMeta: any = TodoStatus.meta();
-  items: TodoStatus[];
+  items: any[] | TodoStatus[];
   selectedItems: TodoStatus[];
   cachedResourcesService: TodoStatusesService;
 
@@ -67,7 +67,7 @@ export class TodoStatusesGridComponent extends BaseResourcesGridComponent {
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoStatus();
-    itemModal.item.project = this.project;
+    itemModal.item.project = this.project as ShortTodoProject;
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
     this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>

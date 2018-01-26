@@ -31,7 +31,7 @@ export class TodoProject extends BaseResourceModel {
   description: string;
   isPublic: boolean;
   users: User[];
-  statuses: TodoStatus[];
+  statuses?: TodoStatus[];
   createdAt: Date;
   updatedAt: Date;
 

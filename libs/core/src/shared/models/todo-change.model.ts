@@ -31,12 +31,12 @@ export class TodoChange extends BaseResourceModel {
   ];
 
   id: number;
-  project: ShortTodoProject;
-  contentType: ContentType;
+  project?: ShortTodoProject;
+  contentType?: ContentType;
   action: string;
   dataId: string;
   data: string;
-  user: User;
+  user?: User;
   createdAt: Date;
   updatedAt: Date;
 
@@ -52,9 +52,9 @@ export class TodoChange extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoChange.meta());
-    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
-    this.contentType = obj.contentType ? new ContentType(obj.contentType) : null;
-    this.user = obj.user ? new User(obj.user) : null;
+    this.project = obj.project ? new ShortTodoProject(obj.project) : undefined;
+    this.contentType = obj.contentType ? new ContentType(obj.contentType) : undefined;
+    this.user = obj.user ? new User(obj.user) : undefined;
   }
   format() {
     const result = this.formatByFields(TodoChange.meta());

@@ -48,7 +48,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     TodoAppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'todo' }),
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -57,7 +57,7 @@ import { TodoHttpHelper } from './shared/helpers/http.helper';
     SharedModule.forRoot(),
     AlertModalModule.forRoot(),
     TodoNavbarModule.forRoot(),
-    RouterModule.forRoot(TodoRoutes, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(TodoRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' })
   ],
   providers: [
     ComponentLoaderFactory,

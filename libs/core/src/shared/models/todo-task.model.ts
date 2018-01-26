@@ -31,10 +31,10 @@ export class TodoTask extends BaseResourceModel {
   ];
 
   id: number;
-  project: ShortTodoProject;
+  project?: ShortTodoProject;
   title: string;
   description: string;
-  status: TodoStatus;
+  status?: TodoStatus;
   openAt: Date;
   closeAt: Date;
   createdAt: Date;
@@ -52,8 +52,8 @@ export class TodoTask extends BaseResourceModel {
   }
   parse(obj: any) {
     this.parseByFields(obj, TodoTask.meta());
-    this.status = obj.status ? new TodoStatus(obj.status) : null;
-    this.project = obj.project ? new ShortTodoProject(obj.project) : null;
+    this.status = obj.status ? new TodoStatus(obj.status) : undefined;
+    this.project = obj.project ? new ShortTodoProject(obj.project) : undefined;
   }
   format() {
     const result = this.formatByFields(TodoTask.meta());

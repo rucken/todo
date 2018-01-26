@@ -18,7 +18,7 @@ export class TodoTaskModalComponent extends BaseResourceModalComponent {
   focusElement: TextInputComponent;
 
   @Input()
-  item: TodoTask = new TodoTask();
+  item: any | TodoTask = new TodoTask();
   @Input()
   modelMeta: any = TodoTask.meta();
   @Output()

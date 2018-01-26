@@ -28,8 +28,8 @@ export class TodoTasksListModalComponent extends BaseResourceModalComponent {
   @Output()
   onOk: EventEmitter<TodoTasksListModalComponent> = new EventEmitter<TodoTasksListModalComponent>();
 
-  item: TodoTask = new TodoTask();
-  items: TodoTask[] = [];
+  item: any | TodoTask = new TodoTask();
+  items: any[] | TodoTask[] = [];
   modelMeta: any = TodoTask.meta();
 
   selectTodoTask(items: TodoTask[]) {

@@ -23,7 +23,7 @@ export class TodoProjectsGridComponent extends BaseResourcesGridComponent {
   focusElement: ElementRef;
 
   modelMeta: any = TodoProject.meta();
-  items: TodoProject[];
+  items: any[] | TodoProject[];
   selectedItems: TodoProject[];
   cachedResourcesService: TodoProjectsService;
 
