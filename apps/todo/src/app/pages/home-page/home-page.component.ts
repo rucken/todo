@@ -1,12 +1,12 @@
 import { Component, Injector } from '@angular/core';
-import { BasePageComponent } from '@rucken/web';
+import { HomePageComponent } from '@rucken/web';
 
 @Component({
   selector: 'todo-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-export class TodoHomePageComponent extends BasePageComponent {
+export class TodoHomePageComponent extends HomePageComponent {
 
   afterCreate() {
     super.afterCreate();
