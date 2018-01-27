@@ -34,7 +34,7 @@ export class TodoChangesGridComponent extends BaseResourcesGridComponent {
   focusElement: ElementRef;
 
   modelMeta: any = TodoChange.meta();
-  items: TodoChange[];
+  items: any[] | TodoChange[];
   selectedItems: TodoChange[];
   cachedResourcesService: TodoChangesService;
 

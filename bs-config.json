@@ -1,4 +1,4 @@
 {
   "port": 4201,
-  "server": { "baseDir": "./apps/todo/dist" }
+  "server": { "baseDir": "./apps/todo/dist/browser" }
 }

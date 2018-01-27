@@ -7,14 +7,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "inlineSources": true,
-    "noImplicitAny": true,
-    "declaration": true,
-    "skipLibCheck": false,
-    "stripInternal": true,
-    "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
     "newLine": "LF",
     "lib": [
       "es5",
@@ -24,13 +16,11 @@
     "types": [
       "jasmine"
     ],
-    "suppressImplicitAnyIndexErrors": true,
     "typeRoots": [
       "../../../node_modules/@types/"
     ]
   },
   "files": [
-    "../../../typings.d.ts",
     "./index.ts"
   ],
   "angularCompilerOptions": {

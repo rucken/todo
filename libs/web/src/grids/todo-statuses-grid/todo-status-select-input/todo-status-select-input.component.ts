@@ -31,7 +31,7 @@ export class TodoStatusSelectInputComponent extends BaseResourceSelectInputCompo
   @Output()
   modelChange: EventEmitter<TodoStatus> = new EventEmitter<TodoStatus>();
 
-  items: TodoStatus[];
+  items: any[] | TodoStatus[];
   cachedResourcesService: TodoStatusesService;
 
   todoProjectsService: TodoStatusesService;

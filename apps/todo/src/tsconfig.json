@@ -1,13 +1,29 @@
 {
-  "extends": "../../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../../out-tsc/app",
-    "baseUrl": "./",
-    "module": "es2015",
-    "types": []
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "newLine": "LF",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "types": [
+      "jasmine",
+      "webpack"
+    ],
+    "mapRoot": "./",
+    "module": "es6",
+    "moduleResolution": "node",
+    "outDir": "../.tmp",
+    "target": "es5",
+    "typeRoots": [
+      "../../node_modules/@types"
+    ]
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts"
+    "**/*.spec.ts",
+    "**/*.e2e-spec.ts"
   ]
 }

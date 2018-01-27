@@ -27,7 +27,7 @@ export class TodoProjectSelectInputComponent extends BaseResourceSelectInputComp
   @Output()
   modelChange: EventEmitter<TodoProject> = new EventEmitter<TodoProject>();
 
-  items: TodoProject[];
+  items: any[] | TodoProject[];
   cachedResourcesService: TodoProjectsService;
 
   todoProjectsService: TodoProjectsService;

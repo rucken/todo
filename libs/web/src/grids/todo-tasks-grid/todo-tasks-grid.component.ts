@@ -34,7 +34,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
   focusElement: ElementRef;
 
   modelMeta: any = TodoTask.meta();
-  items: TodoTask[];
+  items: any[] | TodoTask[];
   selectedItems: TodoTask[];
   cachedResourcesService: TodoTasksService;
 
@@ -64,7 +64,7 @@ export class TodoTasksGridComponent extends BaseResourcesGridComponent {
     itemModal.onOk.subscribe(($event: any) => this.save($event));
     itemModal.onClose.subscribe(() => this.focus());
     itemModal.item = new TodoTask();
-    itemModal.item.project = this.project;
+    itemModal.item.project = (this.project as ShortTodoProject);
     itemModal.modal.show();
     this.selectedItems = [itemModal.item];
     this.cachedResourcesService.changeStatusItem$.pipe(takeUntil(this.destroyed$)).subscribe((status: any) =>

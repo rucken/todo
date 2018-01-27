@@ -28,15 +28,15 @@ export class TodoStatusesListModalComponent extends BaseResourceModalComponent {
   @Output()
   onOk: EventEmitter<TodoStatusesListModalComponent> = new EventEmitter<TodoStatusesListModalComponent>();
 
-  item: TodoStatus;
-  items: TodoStatus[] = [];
+  item: any | TodoStatus;
+  items: any[] | TodoStatus[] = [];
   modelMeta: any = TodoStatus.meta();
 
   focus() {
     this.statuses.focus();
   }
   selectTodoStatus(items: TodoStatus[]) {
-    this.item = items[0];
+    this.item = items ? items[0] : null;
     this.items = items;
   }
 }

@@ -30,7 +30,7 @@ export class TodoTaskSelectInputComponent extends BaseResourceSelectInputCompone
   @Output()
   modelChange: EventEmitter<TodoTask> = new EventEmitter<TodoTask>();
 
-  items: TodoTask[];
+  items: any[] | TodoTask[];
   cachedResourcesService: TodoTasksService;
 
   todoTasksService: TodoTasksService;

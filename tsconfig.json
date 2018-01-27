@@ -1,19 +1,37 @@
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "noStrictGenericChecks": true,
+    "newLine": "LF",
     "lib": [
-      "es2017",
+      "es2016",
       "dom"
-    ]
+    ],
+    "outDir": "../.tmp",
+    "target": "es5",
+    "module": "commonjs",
+    "baseUrl": "",
+    "rootDir": "./",
+    "strict": true,
+    "paths": {
+      "@rucken/todo-core": [
+        "./libs/core/src/index.ts"
+      ],
+      "@rucken/todo-web": [
+        "./libs/web/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    "**/*/.tmp",
+    "**/*/dist"
+  ],
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
   }
 }
