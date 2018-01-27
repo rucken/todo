@@ -77,7 +77,7 @@
   },
   "lint": [
     {
-      "project": "./apps/todo/src/tsconfig.app.json",
+      "project": "./apps/todo/src/tsconfig.json",
       "exclude": "**/node_modules/**"
     },
     {
