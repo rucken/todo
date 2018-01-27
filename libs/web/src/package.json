@@ -1,6 +1,6 @@
 {
     "name": "@rucken/todo-web",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "Base components, services and ui for todo entities for application maked on Angular5+",
     "keywords": [
         "ngx",

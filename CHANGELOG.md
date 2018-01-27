@@ -1,3 +1,18 @@
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/rucken/todo-web/compare/0.4.1...0.5.0) (2018-01-27)
+
+
+### Bug Fixes
+
+* **modals:** Fix errors on get item from null array ([a989aa0](https://github.com/rucken/todo-web/commit/a989aa0))
+
+
+### Features
+
+* **ssr:** Update dependencies and add support SSR ([6ce4333](https://github.com/rucken/todo-web/commit/6ce4333))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/rucken/todo-web/compare/0.4.0...0.4.1) (2018-01-12)
 
