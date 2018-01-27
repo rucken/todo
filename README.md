@@ -1,7 +1,10 @@
 # rucken-todo
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/rucken/todo-web.svg)](https://greenkeeper.io/)
+[![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
+[![Gitter][gitter-image]][gitter-url]
+[![Join the chat at telegram][telegram-image]][telegram-url]
 
 
 A simple todo application demonstrating the basic usage of [rucken](https://github.com/rucken).
@@ -18,7 +21,7 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - run `npm run app:start-mockapi` to fire up dev server (backend on [mockapi.io](https://www.mockapi.io/))
 - Open browser to [`http://localhost:4200`](http://localhost:4200)
 
-## Run with with server side rendering
+## Run with server side rendering
 - run `npm run ssr:build-mockapi` to build application
 - run `npm run ssr:start` run with ssr (backend on [mockapi.io](https://www.mockapi.io/))
 
@@ -31,7 +34,7 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 
 [Demo](https://rucken.github.io/todo-web) - Demo application with mock data worked.
 
-[Demo (SSR)](https://rucken.herokuapp.com) - Demo application with server side rendering.
+[Demo (SSR)](https://rucken-todo.herokuapp.com) - Demo application with server side rendering.
 
 [Demo source](https://github.com/rucken/core/tree/master/apps/demo) - Source code of demo application.
 
@@ -49,3 +52,11 @@ MIT
 
 [travis-image]: https://travis-ci.org/rucken/todo-web.svg?branch=develop
 [travis-url]: https://travis-ci.org/rucken/todo-web
+[gitter-image]: https://img.shields.io/gitter/room/rucken/core.js.svg
+[gitter-url]: https://gitter.im/rucken/core
+[npm-image]: https://badge.fury.io/js/%40rucken%2Ftodo-web.svg
+[npm-url]: https://npmjs.org/package/@rucken/todo-web
+[dependencies-image]: https://david-dm.org/rucken/todo-web/status.svg
+[dependencies-url]: https://david-dm.org/rucken/todo-web
+[telegram-image]: https://img.shields.io/badge/chat-telegram-blue.svg?maxAge=2592000
+[telegram-url]: https://t.me/rucken
