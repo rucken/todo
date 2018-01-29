@@ -16,17 +16,23 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 - Make sure you have NPM installed version 3+
 - Open comand line in folder `rucken-todo`
 - run `npm install` to install project dependencies
-- run `npm run app:start-dev` to fire up dev server (backend on port: 5000)
-- run `npm run app:start-prod` to fire up prod server (backend on port: 5000)
-- run `npm run app:start-mockapi` to fire up dev server (backend on [mockapi.io](https://www.mockapi.io/))
+- run `npm run app:start-dev` to fire up dev server (backend on environment.apiUrl)
+- run `npm run app:start-prod` to fire up prod server (backend on environment.prod.apiUrl)
+- run `npm run app:start-mockapi` to fire up dev server (backend on environment.mockapi.apiUrl)
+- Open browser to [`http://localhost:4200`](http://localhost:4200)
+
+## Run with server side rendering (prod)
+- run `npm run ssr:build-prod` to build application
+- run `npm run ssr:start` run with ssr (backend on environment.prod.apiUrl)
 - Open browser to [`http://localhost:4200`](http://localhost:4200)
 
 ## Run with server side rendering
 - run `npm run ssr:build-mockapi` to build application
-- run `npm run ssr:start` run with ssr (backend on [mockapi.io](https://www.mockapi.io/))
+- run `npm run ssr:start` run with ssr (backend on environment.mockapi.apiUrl)
+- Open browser to [`http://localhost:4200`](http://localhost:4200)
 
 ## Build
-- run `npm run build` to build application
+- run `npm run build` to build libs and application
 
 ## Quick links
 

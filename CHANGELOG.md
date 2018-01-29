@@ -1,3 +1,13 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/rucken/todo-web/compare/0.5.0...0.5.1) (2018-01-29)
+
+
+### Bug Fixes
+
+* **deps:** Update dependencies ([451d4dc](https://github.com/rucken/todo-web/commit/451d4dc))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/rucken/todo-web/compare/0.4.1...0.5.0) (2018-01-27)
 
