@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor } from '@rucken/core';
-import { Change, ChangesConfig } from '@todo/core';
+import { Change, ChangesConfig } from '@rucken/todo-core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository } from 'ngx-repository';
 import { ChangesGridComponent } from '../changes-grid/changes-grid.component';

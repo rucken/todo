@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate, AccountService } from '@rucken/core';
 import { BaseEntityListComponent, MessageModalService } from '@rucken/web';
-import { Project, ProjectsConfig } from '@todo/core';
+import { Project, ProjectsConfig } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, PaginationMeta } from 'ngx-repository';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';

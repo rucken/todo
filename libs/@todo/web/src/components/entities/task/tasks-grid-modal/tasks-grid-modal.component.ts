@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { Task } from '@todo/core';
+import { Task } from '@rucken/todo-core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BaseEntityListModalComponent } from '@rucken/web';
 import { TasksGridComponent } from '../tasks-grid/tasks-grid.component';

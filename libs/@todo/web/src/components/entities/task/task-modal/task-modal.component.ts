@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { BasePromptFormModalComponent } from '@rucken/web';
-import { Task } from '@todo/core';
+import { Task } from '@rucken/todo-core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({

@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, User, UsersConfig, translate } from '@rucken/core';
 import { MessageModalService, UserModalComponent, UsersGridComponent, UsersGridModalComponent } from '@rucken/web';
-import { Project } from '@todo/core';
+import { Project } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, PaginationMeta, ProviderActionEnum } from 'ngx-repository';
 

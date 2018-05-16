@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor } from '@rucken/core';
-import { StatusWithProject, StatusesConfig } from '@todo/core';
+import { StatusWithProject, StatusesConfig } from '@rucken/todo-core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository } from 'ngx-repository';
 import { StatusesGridComponent } from '../statuses-grid/statuses-grid.component';

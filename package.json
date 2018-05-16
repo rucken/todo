@@ -32,7 +32,7 @@
     }
   ],
   "scripts": {
-    "libs:build": "node ./node_modules/@rucken/cli/bin/rucken commands build ~~lib @todo/core link ~~lib @todo/core build ~~lib @todo/web --verbose",
+    "libs:build": "node ./node_modules/@rucken/cli/bin/rucken commands build ~~lib @rucken/todo-core link ~~lib @rucken/todo-core build ~~lib @rucken/todo-web --verbose",
     "libs:link": "node ./node_modules/@rucken/cli/bin/rucken commands link ~~lib",
     "libs:link-npm": "node ./node_modules/@rucken/cli/bin/rucken commands link-npm ~~lib",
     "libs:prepare": "node ./node_modules/@rucken/cli/bin/rucken prepare --lib",

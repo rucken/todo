@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { MessageModalService } from '@rucken/web';
-import { Project, StatusWithProject, StatusesConfig } from '@todo/core';
+import { Project, StatusWithProject, StatusesConfig } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository } from 'ngx-repository';
 import { StatusesGridModalComponent } from '../statuses-grid-modal/statuses-grid-modal.component';

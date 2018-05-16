@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StatusWithProject } from '@todo/core';
+import { StatusWithProject } from '@rucken/todo-core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BasePromptFormModalComponent } from '@rucken/web';
 

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
-import { Change, ChangesConfig } from '@todo/core';
+import { Change, ChangesConfig } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository } from 'ngx-repository';
 import { ChangesGridModalComponent } from '../changes-grid-modal/changes-grid-modal.component';

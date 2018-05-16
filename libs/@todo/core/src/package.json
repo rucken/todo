@@ -1,5 +1,5 @@
 {
-    "name": "@todo/core",
+    "name": "@rucken/todo-core",
     "version": "2.0.0",
     "description": "Core with base class and todo entities for application maked on Angular5+",
     "keywords": [
@@ -22,7 +22,7 @@
         "ngx-dynamic-form-builder": "*",
         "ngx-permissions": "*",
         "ngx-repository": "*",
-        "@todo/core": "*",
+        "@rucken/todo-core": "*",
         "@ngx-utils/cookies": "3.0.1",
         "@rucken/core": "^2.1.1",
         "@types/jsonwebtoken": "7.2.6",

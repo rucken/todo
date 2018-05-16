@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
 import { MessageModalService } from '@rucken/web';
-import { Project, Status, StatusesConfig } from '@todo/core';
+import { Project, Status, StatusesConfig } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, PaginationMeta, ProviderActionEnum } from 'ngx-repository';
 import { StatusModalComponent } from '../../status/status-modal/status-modal.component';

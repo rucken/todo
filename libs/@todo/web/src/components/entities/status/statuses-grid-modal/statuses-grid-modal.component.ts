@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { StatusWithProject, Project } from '@todo/core';
+import { StatusWithProject, Project } from '@rucken/todo-core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BaseEntityListModalComponent } from '@rucken/web';
 import { StatusesGridComponent } from '../statuses-grid/statuses-grid.component';

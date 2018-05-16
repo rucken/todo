@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { ErrorsExtractor, translate } from '@rucken/core';
-import { StatusWithProject, StatusesConfig, Project } from '@todo/core';
+import { StatusWithProject, StatusesConfig, Project } from '@rucken/todo-core';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { DynamicRepository, PaginationMeta } from 'ngx-repository';
 import { BaseEntityListComponent, MessageModalService, IEntityGridFilter } from '@rucken/web';
