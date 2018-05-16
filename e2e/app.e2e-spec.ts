@@ -1,10 +1,10 @@
-import { RuckenTodoPage } from './app.po';
+import { AppPage } from './app.po';
 
-describe('rucken-todo App', () => {
-  let page: RuckenTodoPage;
+describe('core App', () => {
+  let page: AppPage;
 
   beforeEach(() => {
-    page = new RuckenTodoPage();
+    page = new AppPage();
   });
 
   it('should display welcome message', () => {

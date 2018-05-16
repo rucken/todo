@@ -1,91 +1,76 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ModuleWithProviders, NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { TranslateFakeLoader, TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import {
-  AppService,
-  EndpointHelper,
-  HttpHelper,
-  RepositoryHelper,
-  RuckenCoreServices,
-  ThemesService,
-  TokenService,
-} from '@rucken/core';
-import { RuckenTodoCoreServices } from '@rucken/todo-core';
-import {
-  AlertModalModule,
-  BaseResourceSelectInputConfig,
-  RuckenWebServices,
-  SelectInputConfig,
-  TableColumnConfig,
-  TextInputConfig,
-  WebAppService,
-  WebThemesService,
-  WebTokenService,
-} from '@rucken/web';
-import { HomeGuardService, SharedModule } from '@rucken/web';
-import {
-  BsLocaleService,
-  ComponentLoaderFactory,
-  PaginationConfig,
-  PopoverConfig,
-  PositioningService,
-  TabsetConfig,
-  TooltipConfig,
-} from 'ngx-bootstrap';
+import { BrowserCookiesModule } from '@ngx-utils/cookies/browser';
+import { AccountConfig, AccountModule, ContentTypesConfig, ErrorsExtractor, GroupsConfig, LangModule, PermissionsConfig, RuckenCoreRuI18n, TokenModule, TransferHttpCacheModule, UsersConfig, translate } from '@rucken/core';
+import { AuthModalModule, NavbarModule, RuckenWebRuI18n, ThemesModule } from '@rucken/web';
+import { TodoCoreConfigs, TodoCoreRuI18n } from '@todo/core';
+import { TodoWebRuI18n } from '@todo/web';
+import { defineLocale } from 'ngx-bootstrap/chronos';
+import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
+import { enGbLocale, ruLocale } from 'ngx-bootstrap/locale';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { SharedModule } from '.';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
+import { AppRoutes } from './app.routes';
+import { TodoRuI18n } from './i18n/ru.i18n';
+import { CustomErrorHandler } from './shared/exceptions/error.handler';
 
-import { TodoAppComponent } from './app.component';
-import { TodoRoutes } from './app.routes';
-import { TodoNavbarModule } from './controls/navbar/navbar.module';
-import { TodoHomeGuardService } from './shared/guards/home-guard.service';
-import { TodoEndpointHelper } from './shared/helpers/endpoint.helper';
-import { TodoHttpHelper } from './shared/helpers/http.helper';
+defineLocale('ru', ruLocale);
+defineLocale('en', enGbLocale);
 
 @NgModule({
   declarations: [
-    TodoAppComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'todo' }),
-    FormsModule,
+    SharedModule,
     HttpClientModule,
-    TranslateModule.forRoot({
-      loader: { provide: TranslateLoader, useClass: TranslateFakeLoader }
+    BrowserModule.withServerTransition({ appId: 'todo' }),
+    TransferHttpCacheModule.forRoot(),
+    BrowserCookiesModule.forRoot(),
+    LangModule.forRoot({
+      languages: [{
+        title: translate('Russian'),
+        code: 'ru',
+        translations: [RuckenCoreRuI18n, RuckenWebRuI18n, TodoCoreRuI18n, TodoWebRuI18n, TodoRuI18n]
+      }, {
+        title: translate('English'),
+        code: 'en',
+        translations: []
+      }]
     }),
-    SharedModule.forRoot(),
-    AlertModalModule.forRoot(),
-    TodoNavbarModule.forRoot(),
-    RouterModule.forRoot(TodoRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' })
+    NgxPermissionsModule.forRoot(),
+    TokenModule.forRoot({
+      withoutTokenUrls: [
+        '/api/account/info',
+        '/api/account/login',
+        ...(environment.type === 'mockapi' ? ['/'] : [])
+      ]
+    }),
+    AccountModule.forRoot(),
+    ThemesModule.forRoot(),
+    RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }),
+    ModalModule.forRoot(),
+    AuthModalModule,
+    NavbarModule,
+    BsDatepickerModule.forRoot()
   ],
   providers: [
-    ComponentLoaderFactory,
-    PositioningService,
-    TooltipConfig,
-    PaginationConfig,
-    TabsetConfig,
-    PopoverConfig,
+    // { provide: ErrorHandler, useClass: CustomErrorHandler },
+    ErrorsExtractor,
+    AccountConfig,
+    GroupsConfig,
+    PermissionsConfig,
+    ContentTypesConfig,
+    UsersConfig,
     BsLocaleService,
-    RuckenCoreServices,
-    RuckenWebServices,
-    RuckenTodoCoreServices,
-    BaseResourceSelectInputConfig,
-    TextInputConfig,
-    SelectInputConfig,
-    TableColumnConfig,
-    { provide: ThemesService, useClass: WebThemesService },
-    { provide: AppService, useClass: WebAppService },
-    { provide: TokenService, useClass: WebTokenService },
-    { provide: RepositoryHelper, useClass: RepositoryHelper },
-    { provide: EndpointHelper, useClass: TodoEndpointHelper },
-    { provide: HttpHelper, useClass: TodoHttpHelper },
-    { provide: HomeGuardService, useClass: TodoHomeGuardService }
+    TodoCoreConfigs
   ],
-  bootstrap: [TodoAppComponent]
+  bootstrap: [AppComponent]
 })
-export class TodoAppModule {
-  static forRoot(): ModuleWithProviders {
-    return { ngModule: TodoAppModule };
-  }
+export class AppModule {
 }

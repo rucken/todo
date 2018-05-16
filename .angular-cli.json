@@ -1,13 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "rucken-todo"
+    "name": "todo"
   },
   "apps": [
     {
       "name": "todo",
-      "root": "./apps/todo/src",
-      "outDir": "./apps/todo/dist/browser",
+      "root": "apps/todo/src",
+      "outDir": "apps/todo/dist/browser",
       "assets": [
         "assets",
         "favicon.ico"
@@ -18,7 +18,7 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "",
       "styles": [
         "styles.scss"
       ],
@@ -27,7 +27,10 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
-        "mockapi": "environments/environment.mockapi.ts"
+        "mockapi": "environments/environment.mockapi.ts",
+        "server-dev": "environments/environment-server.ts",
+        "server-prod": "environments/environment-server.prod.ts",
+        "server-mockapi": "environments/environment-server.mockapi.ts"
       }
     },
     {
@@ -44,8 +47,7 @@
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.server.json",
-      "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "",
       "styles": [
         "styles.scss"
       ],
@@ -54,19 +56,22 @@
       "environments": {
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts",
-        "mockapi": "environments/environment.mockapi.ts"
+        "mockapi": "environments/environment.mockapi.ts",
+        "server-dev": "environments/environment-server.ts",
+        "server-prod": "environments/environment-server.prod.ts",
+        "server-mockapi": "environments/environment-server.mockapi.ts"
       }
     },
     {
-      "name": "@rucken/todo-core",
-      "root": "./libs/core/src",
-      "outDir": "./libs/core/dist",
+      "name": "@todo/core",
+      "root": "./libs/@todo/core/src",
+      "outDir": "./libs/@todo/core/dist",
       "appRoot": ""
     },
     {
-      "name": "@rucken/todo-web",
-      "root": "./libs/web/src",
-      "outDir": "./libs/web/dist",
+      "name": "@todo/web",
+      "root": "./libs/@todo/web/src",
+      "outDir": "./libs/@todo/web/dist",
       "appRoot": ""
     }
   ],
@@ -77,11 +82,11 @@
   },
   "lint": [
     {
-      "project": "./apps/todo/src/tsconfig.json",
+      "project": "apps/todo/src/tsconfig.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "project": "./apps/todo/src/tsconfig.spec.json",
+      "project": "apps/todo/src/tsconfig.spec.json",
       "exclude": "**/node_modules/**"
     },
     {
@@ -95,6 +100,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss"
+    "styleExt": "scss",
+    "component": {}
   }
 }

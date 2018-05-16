@@ -1,0 +1,5 @@
+<entity-grid-modal [title]="title" [yesTitle]="yesTitle" [readonly]="readonly" [noTitle]="noTitle" (yes)="onYesClick()" (no)="onNoClick()"
+  [processing]="processing">
+  <changes-grid [apiUrl]="apiUrl" #grid>
+  </changes-grid>
+</entity-grid-modal>

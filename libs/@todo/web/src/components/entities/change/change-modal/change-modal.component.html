@@ -1,0 +1,37 @@
+<form [formGroup]="form" novalidate>
+  <prompt-form-modal [title]="title" [message]="message" [noTitle]="noTitle" [yesTitle]="yesTitle" [readonly]="readonly" (no)="onNoClick()"
+    (yes)="onYesClick()" [data]="data" [processing]="processing">
+    <div class="row">
+      <div class="col-md-4">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="contentType" [title]="strings.contentType">
+          <input formControlName="contentType" [readonly]="readonly" />
+        </form-group>
+      </div>
+      <div class="col-md-4">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="method" [title]="strings.method">
+          <input formControlName="method" [readonly]="readonly" />
+        </form-group>
+      </div>
+      <div class="col-md-4">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="dataId" [title]="strings.dataId">
+          <input formControlName="dataId" [readonly]="readonly" />
+        </form-group>
+      </div>
+      <div class="col-md-12">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="data" [title]="strings.data">
+          <textarea formControlName="data" [readonly]="readonly" rows="10"></textarea>
+        </form-group>
+      </div>
+      <div class="col-md-6">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="user" [title]="strings.user">
+          <input formControlName="user" [readonly]="readonly" />
+        </form-group>
+      </div>
+      <div class="col-md-6">
+        <form-group [checkIsDirty]="checkIsDirty" [form]="form" name="createdAt" [title]="strings.createdAt">
+          <input formControlName="createdAt" bsDatepicker [isDisabled]="readonly" [readonly]="readonly" />
+        </form-group>
+      </div>
+    </div>
+  </prompt-form-modal>
+</form>
