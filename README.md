@@ -9,9 +9,8 @@
 
 A simple todo application demonstrating the basic usage of [rucken](https://github.com/rucken).
 
-
 ## Usage
-- Clone or fork this repository `git clone https://github.com/rucken/todo-web.git`
+- Clone or fork this repository `git clone https://github.com/rucken/todo.git`
 - Make sure you have [node.js](https://nodejs.org/) installed version 6+
 - Make sure you have NPM installed version 3+
 - Open comand line in folder `rucken-todo`
@@ -36,30 +35,20 @@ A simple todo application demonstrating the basic usage of [rucken](https://gith
 
 ## Quick links
 
-[Source](https://github.com/rucken/todo-web) - Source code.
+[Live demo](https://rucken.github.io/todo) [[source]](https://github.com/rucken/todo) - Demo application (backend: http://www.mockapi.io).
 
-[Demo](https://rucken.github.io/todo-web) - Demo application with mock data worked.
+[Live demo (SSR)](https://rucken-todo.herokuapp.com) [[source]](https://github.com/rucken/todo) - Demo application with server side rendering (backend: http://www.mockapi.io).
 
-[Demo (SSR)](https://rucken-todo.herokuapp.com) - Demo application with server side rendering.
-
-[Demo source](https://github.com/rucken/core/tree/master/apps/demo) - Source code of demo application.
-
-## Sample projects
-
-[Rucken: Todo](https://github.com/rucken/todo-web) - Simple todo application with: projects, tasks, statuses (backend: http://mockapi.io).
-
-[Rucken: Demo (NestJS)](https://github.com/rucken/core-nestjs) - Simple application demonstrating the basic usage of permissions with NestJS (JWT, PasswordHash, User, Group, Permission, ContentType) (backend: NestJS).
-
-[Rucken: Todo (Django)](https://github.com/rucken/todo-django) - Simple todo application with: auth, groups, permissions, projects, tasks, statuses (backend: Django + plugins).
+[Live demo (NestJS)](https://rucken-todo-nestjs.herokuapp.com) [[source]](https://github.com/rucken/todo-nestjs) - Demo application with live backend (backend: https://nestjs.com).
 
 ## License
 
 MIT
 
-[travis-image]: https://travis-ci.org/rucken/todo-web.svg?branch=develop
-[travis-url]: https://travis-ci.org/rucken/todo-web
-[gitter-image]: https://img.shields.io/gitter/room/rucken/core.js.svg
-[gitter-url]: https://gitter.im/rucken/core
+[travis-image]: https://travis-ci.org/rucken/todo.svg?branch=develop
+[travis-url]: https://travis-ci.org/rucken/todo
+[gitter-image]: https://img.shields.io/gitter/room/rucken/todo.js.svg
+[gitter-url]: https://gitter.im/rucken/todo
 [npm-image]: https://badge.fury.io/js/%40rucken%2Ftodo-web.svg
 [npm-url]: https://npmjs.org/package/@rucken/todo-web
 [dependencies-image]: https://david-dm.org/rucken/todo-web/status.svg

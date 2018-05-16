@@ -1,0 +1,6 @@
+<entity-grid [title]="title" [items]="repository.items$ | async" (selected)="onSelected($event)" [columns]="['contentType','method','dataId','data','user', 'createdAt','action']"
+  [readonly]="readonly" [strings]="strings" (create)="onCreateClick()" (update)="onUpdateClick($event)" (delete)="onDeleteClick($event)"
+  (view)="onViewClick($event)" (search)="onChangeFilter({searchText:$event})" (changeOrder)="onChangeFilter({sort:$event})"
+  [paginationMeta]="repository.paginationMeta$ | async" [enableCreate]="'add_change' | perm | async" [enableUpdate]="'change_change' | perm | async"
+  [enableDelete]="'delete_change' | perm | async" (changePage)="onChangePage($event)" [processing]="processing">
+</entity-grid>

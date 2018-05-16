@@ -1,0 +1,5 @@
+<entity-grid [title]="title" [items]="repository.items$ | async" (selected)="onSelected($event)" [readonly]="readonly" [columns]="['title', 'action']"
+  [strings]="strings" (delete)="onDeleteClick($event)" (appendFromGrid)="onCreateClick()" (view)="onViewClick($event)" (update)="onUpdateClick($event)"
+  [paginationMeta]="repository.paginationMeta$ | async" [enableAppendFromGrid]="'add_status' | perm | async" [enableUpdate]="'change_status' | perm | async"
+  [enableDelete]="'delete_status' | perm | async" (changePage)="onChangePage($event)" [processing]="processing">
+</entity-grid>
