@@ -1,8 +1,8 @@
 import { Component, OnDestroy, ViewChild, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AccountService } from '@rucken/core';
-import { Project, Task } from '@todo/core';
-import { ChangesGridComponent, ProjectsGridComponent, TasksGridComponent } from '@todo/web';
+import { Project, Task } from '@rucken/todo-core';
+import { ChangesGridComponent, ProjectsGridComponent, TasksGridComponent } from '@rucken/todo-web';
 import { plainToClass } from 'class-transformer';
 import { Subject } from 'rxjs/Subject';
 import { takeUntil } from 'rxjs/operators';

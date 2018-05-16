@@ -63,15 +63,15 @@
       }
     },
     {
-      "name": "@todo/core",
-      "root": "./libs/@todo/core/src",
-      "outDir": "./libs/@todo/core/dist",
+      "name": "@rucken/todo-core",
+      "root": "./libs/@rucken/todo-core/src",
+      "outDir": "./libs/@rucken/todo-core/dist",
       "appRoot": ""
     },
     {
-      "name": "@todo/web",
-      "root": "./libs/@todo/web/src",
-      "outDir": "./libs/@todo/web/dist",
+      "name": "@rucken/todo-web",
+      "root": "./libs/@rucken/todo-web/src",
+      "outDir": "./libs/@rucken/todo-web/dist",
       "appRoot": ""
     }
   ],

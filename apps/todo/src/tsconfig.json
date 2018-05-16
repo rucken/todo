@@ -9,11 +9,11 @@
       "node"
     ],
     "paths": {
-      "@todo/core": [
-        "../../../libs/@todo/core/src/index.ts"
+      "@rucken/todo-core": [
+        "../../../libs/@rucken/todo-core/src/index.ts"
       ],
-      "@todo/web": [
-        "../../../libs/@todo/web/src/index.ts"
+      "@rucken/todo-web": [
+        "../../../libs/@rucken/todo-web/src/index.ts"
       ]
     }
   },
