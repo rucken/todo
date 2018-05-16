@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/author/todo/compare/0.5.1...2.0.0) (2018-05-16)
+
+
+### Performance Improvements
+
+* Rewrite all project ([3d5dc7c](https://github.com/author/todo/commit/3d5dc7c))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/rucken/todo-web/compare/0.5.0...0.5.1) (2018-01-29)
 
