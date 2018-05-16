@@ -2,7 +2,7 @@
   "name": "todo",
   "version": "2.0.0",
   "license": "MIT",
-  "author": "Author <author@mail.mail>",
+  "author": "EndyKaufman <admin@site15.ru>",
   "engines": {
     "node": "8.11.x",
     "npm": "5.8.x"
@@ -10,12 +10,12 @@
   "private": true,
   "description": "Application on Rucken with Angular5+",
   "bugs": {
-    "url": "https://github.com/author/todo/issues"
+    "url": "https://github.com/rucken/todo/issues"
   },
-  "homepage": "https://github.com/author/todo",
+  "homepage": "https://github.com/rucken/todo",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/author/todo.git"
+    "url": "git+https://github.com/rucken/todo.git"
   },
   "keywords": [
     "rucken",
@@ -27,8 +27,8 @@
   ],
   "maintainers": [
     {
-      "name": "Author",
-      "email": "author@mail.mail"
+      "name": "EndyKaufman",
+      "email": "admin@site15.ru"
     }
   ],
   "scripts": {
@@ -68,7 +68,7 @@
     "ssr:full_start": "npm run ssr:build-dev && npm run ssr:start",
     "ssr:full_mockapi-start": "npm run ssr:build-mockapi && npm run ssr:start",
     "ssr:full_prod-start": "npm run ssr:build-mockapi && npm run ssr:start",
-    "gh:build-mockapi": "node ./node_modules/@angular/cli/bin/ng build --app=todo --preserve-symlinks --base-href https://author.github.io/todo/ --prod --env=mockapi --build-optimizer --no-sourcemap",
+    "gh:build-mockapi": "node ./node_modules/@angular/cli/bin/ng build --app=todo --preserve-symlinks --base-href https://rucken.github.io/todo/ --prod --env=mockapi --build-optimizer --no-sourcemap",
     "gh:build": "npm-run-all clear prepare format libs:build libs:link gh:build-mockapi",
     "gh:deploy": "cp-cli ./apps/todo/dist/browser/index.html ./apps/todo/dist/browser/404.html && gh-pages -d apps/todo/dist/browser",
     "format": "tsfmt -r",

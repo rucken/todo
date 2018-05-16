@@ -1,10 +1,10 @@
 <a name="2.0.0"></a>
-## [2.0.0](https://github.com/author/todo/compare/0.5.1...2.0.0) (2018-05-16)
+## [2.0.0](https://github.com/rucken/todo/compare/0.5.1...2.0.0) (2018-05-16)
 
 
 ### Performance Improvements
 
-* Rewrite all project ([3d5dc7c](https://github.com/author/todo/commit/3d5dc7c))
+* Rewrite all project ([3d5dc7c](https://github.com/rucken/todo/commit/3d5dc7c))
 
 
 

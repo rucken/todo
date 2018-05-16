@@ -1,5 +1,5 @@
-import { TodoCoreRuI18n } from './i18n/ru.i18n';
-export { TodoCoreRuI18n } from './i18n/ru.i18n';
+import { RuckenTodoCoreRuI18n } from './i18n/ru.i18n';
+export { RuckenTodoCoreRuI18n } from './i18n/ru.i18n';
 import { ChangesConfig } from './shared/configs/change.config';
 export { ChangesConfig } from './shared/configs/change.config';
 import { ProjectsConfig } from './shared/configs/project.config';
@@ -18,5 +18,5 @@ import { Status } from './shared/models/status';
 export { Status } from './shared/models/status';
 import { Task } from './shared/models/task';
 export { Task } from './shared/models/task';
-export const TodoCoreShareds: any[] = [TodoCoreRuI18n, Change, Project, StatusWithProject, Status, Task];
-export const TodoCoreConfigs: any[] = [ChangesConfig, ProjectsConfig, StatusesConfig, TasksConfig];
+export const RuckenTodoCoreShareds: any[] = [RuckenTodoCoreRuI18n, Change, Project, StatusWithProject, Status, Task];
+export const RuckenTodoCoreConfigs: any[] = [ChangesConfig, ProjectsConfig, StatusesConfig, TasksConfig];
