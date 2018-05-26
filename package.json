@@ -109,7 +109,7 @@
     "@types/jsonwebtoken": "7.2.6",
     "@types/luxon": "^0.5.2",
     "@types/object-path": "^0.9.29",
-    "core-js": "2.5.5",
+    "core-js": "2.5.7",
     "jsonwebtoken": "8.2.1",
     "luxon": "^1.2.0",
     "ngx-bootstrap": "2.0.5",
