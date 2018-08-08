@@ -102,7 +102,7 @@
     "@nguniversal/express-engine": "5.0.0",
     "@nguniversal/module-map-ngfactory-loader": "5.0.0",
     "@ngx-translate/core": "9.1.1",
-    "@ngx-utils/cookies": "3.0.1",
+    "@ngx-utils/cookies": "3.0.2",
     "@rucken/core": "^2.1.1",
     "@rucken/web": "^2.1.1",
     "@types/express": "4.11.1",
