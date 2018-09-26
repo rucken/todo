@@ -1,3 +1,4 @@
 #!/bin/bash
-npm publish ./libs/@rucken/todo-core/dist
-npm publish ./libs/@rucken/todo-web/dist
+npm publish ./dist/todo/core
+npm publish ./dist/todo/web
+read -p "Press any key to continue... " -n1 -s
