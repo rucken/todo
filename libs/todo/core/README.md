@@ -1,7 +1,6 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/rucken/todo.svg)](https://greenkeeper.io/)
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/rucken-todo/localized.svg)](https://crowdin.com/project/rucken-todo)
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
@@ -34,9 +33,9 @@ MIT
 [travis-url]: https://travis-ci.org/rucken/todo
 [gitter-image]: https://img.shields.io/gitter/room/rucken/todo.js.svg
 [gitter-url]: https://gitter.im/rucken/todo
-[npm-image]: https://badge.fury.io/js/%40rucken%todo.svg
-[npm-url]: https://npmjs.org/package/@rucken/todo
-[dependencies-image]: https://david-dm.org/rucken/todo/status.svg
-[dependencies-url]: https://david-dm.org/rucken/todo
+[npm-image]: https://badge.fury.io/js/%40rucken%todo-core.svg
+[npm-url]: https://npmjs.org/package/@rucken/todo-core
+[dependencies-image]: https://david-dm.org/rucken/todo-core/status.svg
+[dependencies-url]: https://david-dm.org/rucken/todo-core
 [telegram-image]: https://img.shields.io/badge/chat-telegram-blue.svg?maxAge=2592000
 [telegram-url]: https://t.me/rucken
