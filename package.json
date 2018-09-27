@@ -1,5 +1,5 @@
 {
-  "name": "todo",
+  "name": "rucken-todo",
   "version": "2.0.1",
   "engines": {
     "node": ">=10",
