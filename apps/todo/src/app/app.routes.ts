@@ -1,37 +1,47 @@
 import { Routes } from '@angular/router';
-import { AccountPageRoutes } from './components/pages/account-page/account-page.routes';
-import { AdminPageRoutes } from './components/pages/admin-page/admin-page.routes';
-import { HomePageRoutes } from './components/pages/home-page/home-page.routes';
-import { ThemesPageRoutes } from './components/pages/themes-page/themes-page.routes';
-import { ProjectsPageRoutes } from './components/pages/projects-page/projects-page.routes';
+import { AccountPageRoutes } from './pages/account-page/account-page.routes';
+import { AdminPageRoutes } from './pages/admin-page/admin-page.routes';
+import { EntitiesPageRoutes } from './pages/entities-page/entities-page.routes';
+import { HomePageRoutes } from './pages/home-page/home-page.routes';
+import { ProjectsPageRoutes } from './pages/projects-page/projects-page.routes';
+import { ThemesPageRoutes } from './pages/themes-page/themes-page.routes';
 
 export const AppRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   {
     path: 'home',
-    loadChildren: './components/pages/home-page/home-page.module#HomePageModule',
+    loadChildren: './pages/home-page/home-page.module#HomePageModule',
     data: HomePageRoutes[0].data
   },
   {
     path: 'projects',
-    loadChildren: './components/pages/projects-page/projects-page.module#ProjectsPageModule',
+    loadChildren:
+      './pages/projects-page/projects-page.module#ProjectsPageModule',
     data: ProjectsPageRoutes[0].data
   },
   {
+    path: 'entities',
+    loadChildren:
+      './pages/entities-page/entities-page.module#EntitiesPageModule',
+    data: EntitiesPageRoutes[0].data
+  },
+  {
     path: 'themes',
-    loadChildren: './components/pages/themes-page/themes-page.module#ThemesPageModule',
+    loadChildren: './pages/themes-page/themes-page.module#ThemesPageModule',
     data: ThemesPageRoutes[0].data
   },
   {
     path: 'account',
-    loadChildren: './components/pages/account-page/account-page.module#AccountPageModule',
-    canActivate: AccountPageRoutes[0].canActivate,
+    loadChildren: './pages/account-page/account-page.module#AccountPageModule',
     data: AccountPageRoutes[0].data
   },
   {
     path: 'admin',
-    loadChildren: './components/pages/admin-page/admin-page.module#AdminPageModule',
-    canActivate: AdminPageRoutes[0].canActivate,
+    loadChildren: './pages/admin-page/admin-page.module#AdminPageModule',
     data: AdminPageRoutes[0].data
   },
   {

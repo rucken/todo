@@ -2,74 +2,85 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
-import { BrowserCookiesModule } from '@ngx-utils/cookies/browser';
-import { AccountConfig, AccountModule, ContentTypesConfig, ErrorsExtractor, GroupsConfig, LangModule, PermissionsConfig, RuckenCoreRuI18n, TokenModule, TransferHttpCacheModule, UsersConfig, translate } from '@rucken/core';
-import { RuckenTodoCoreConfigs, RuckenTodoCoreRuI18n } from '@rucken/todo-core';
-import { RuckenTodoWebRuI18n } from '@rucken/todo-web';
-import { AuthModalModule, NavbarModule, RuckenWebRuI18n, ThemesModule } from '@rucken/web';
-import { defineLocale } from 'ngx-bootstrap/chronos';
+import {
+  AccountModule,
+  ErrorsExtractor,
+  LangModule,
+  PermissionsGuard,
+  TransferHttpCacheModule,
+  AuthModule,
+  entitiesProviders as coreEntitiesProviders
+} from '@rucken/core';
+import { entitiesProviders } from '@rucken/todo-core';
+import { AuthModalModule, NavbarModule, ThemesModule } from '@rucken/web';
 import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
-import { enGbLocale, ruLocale } from 'ngx-bootstrap/locale';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { CookieService } from 'ngx-cookie-service';
 import { NgxPermissionsModule } from 'ngx-permissions';
-import { SharedModule } from '.';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
-import { TodoRuI18n } from './i18n/ru.i18n';
-
-defineLocale('ru', ruLocale);
-defineLocale('en', enGbLocale);
+import { SharedModule } from './shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MetaModule, MetaLoader } from '@ngx-meta/core';
+import {
+  OauthProviders,
+  AppLangs,
+  AllRoutes,
+  OauthModalProviders,
+  appMetaFactory
+} from './app.config';
+import { TranslateService } from '@ngx-translate/core';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
+    RouterModule,
     SharedModule,
     HttpClientModule,
     BrowserModule.withServerTransition({ appId: 'todo' }),
     TransferHttpCacheModule.forRoot(),
-    BrowserCookiesModule.forRoot(),
-    LangModule.forRoot({
-      languages: [{
-        title: translate('Russian'),
-        code: 'ru',
-        translations: [RuckenCoreRuI18n, RuckenWebRuI18n, RuckenTodoCoreRuI18n, RuckenTodoWebRuI18n, TodoRuI18n]
-      }, {
-        title: translate('English'),
-        code: 'en',
-        translations: []
-      }]
-    }),
     NgxPermissionsModule.forRoot(),
-    TokenModule.forRoot({
-      withoutTokenUrls: [
-        '/api/account/info',
-        '/api/account/login',
-        ...(environment.type === 'mockapi' ? ['/'] : [])
-      ]
+    AuthModule.forRoot({
+      apiUri: environment.apiUrl,
+      oauth: {
+        providers: OauthProviders
+      }
     }),
-    AccountModule.forRoot(),
+    AccountModule.forRoot({
+      apiUri: environment.apiUrl
+    }),
+    LangModule.forRoot({
+      languages: AppLangs
+    }),
     ThemesModule.forRoot(),
-    RouterModule.forRoot(AppRoutes, { preloadingStrategy: PreloadAllModules, initialNavigation: 'enabled' }),
+    RouterModule.forRoot(AllRoutes, {
+      preloadingStrategy: PreloadAllModules,
+      initialNavigation: 'enabled'
+    }),
+    MetaModule.forRoot({
+      provide: MetaLoader,
+      useFactory: appMetaFactory,
+      deps: [TranslateService]
+    }),
     ModalModule.forRoot(),
-    AuthModalModule,
+    AuthModalModule.forRoot({
+      oauth: {
+        providers: OauthModalProviders
+      }
+    }),
     NavbarModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [
-    // { provide: ErrorHandler, useClass: CustomErrorHandler },
+    ...coreEntitiesProviders,
+    ...entitiesProviders,
+    CookieService,
     ErrorsExtractor,
-    AccountConfig,
-    GroupsConfig,
-    PermissionsConfig,
-    ContentTypesConfig,
-    UsersConfig,
     BsLocaleService,
-    RuckenTodoCoreConfigs
+    PermissionsGuard
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}
