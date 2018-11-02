@@ -95,7 +95,7 @@
     "@rucken/core": "^3.3.3",
     "@rucken/web": "^3.3.3",
     "@types/dotenv": "^4.0.3",
-    "@types/jsonwebtoken": "^7.2.8",
+    "@types/jsonwebtoken": "^8.3.0",
     "@types/luxon": "^1.2.2",
     "@types/node": "^10.11.2",
     "@types/object-path": "^0.9.29",
