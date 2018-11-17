@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/rucken/todo/compare/2.1.0...2.2.0) (2018-11-17)
+
+
+### Features
+
+* **deps:** Update dependencies ([e72db23](https://github.com/rucken/todo/commit/e72db23))
+
+
+
 <a name="2.1.0"></a>
 # [2.1.0](https://github.com/rucken/todo/compare/2.0.1...2.1.0) (2018-09-27)
 
