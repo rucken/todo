@@ -1,6 +1,6 @@
 {
   "name": "rucken-todo",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "engines": {
     "node": ">=10",
     "npm": ">=6.4.0"
