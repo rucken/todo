@@ -1,0 +1,7 @@
+<entity-grid
+    [bindIO]
+    [columns]="['title','range','status','action']"
+    [enableCreate]="'add_task' | perm:false | async"
+    [enableUpdate]="'change_task' | perm:false | async"
+    [enableDelete]="'delete_task' | perm:false | async">
+</entity-grid>

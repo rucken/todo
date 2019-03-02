@@ -1,0 +1,7 @@
+<entity-grid
+    [bindIO]
+    [columns]="['fullName', 'action']"
+    [enableCreate]="'change_project' | perm:false | async"
+    [enableUpdate]="false"
+    [enableDelete]="'change_project' | perm:false | async">
+</entity-grid>

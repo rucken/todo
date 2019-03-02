@@ -1,0 +1,69 @@
+<form
+    [formGroup]="form"
+    novalidate>
+    <prompt-form-modal [bindIO]>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group
+                    [bindIO]
+                    name="title"
+                    [title]="strings.title"
+                    focus>
+                    <input
+                        formControlName="title"
+                        [readonly]="readonly">
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group
+                    [bindIO]
+                    name="description"
+                    [title]="strings.description">
+                    <input
+                        formControlName="description"
+                        [readonly]="readonly">
+                </form-group>
+            </div>
+            <div class="col-md-4">
+                <form-group
+                    [bindIO]
+                    name="status"
+                    [title]="strings.status">
+                    <status-input
+                        (select)="form.get('status').setValue($event)"
+                        [project]="data.project"
+                        [readonly]="readonly"
+                        [apiUrl]="apiUrl">
+                        <input
+                            formControlName="status"
+                            [readonly]="readonly">
+                    </status-input>
+                </form-group>
+            </div>
+            <div class="col-md-4">
+                <form-group
+                    [bindIO]
+                    name="openAt"
+                    [title]="strings.openAt">
+                    <input
+                        formControlName="openAt"
+                        bsDatepicker
+                        [isDisabled]="readonly"
+                        [readonly]="readonly">
+                </form-group>
+            </div>
+            <div class="col-md-4">
+                <form-group
+                    [bindIO]
+                    name="closeAt"
+                    [title]="strings.closeAt">
+                    <input
+                        formControlName="closeAt"
+                        bsDatepicker
+                        [isDisabled]="readonly"
+                        [readonly]="readonly">
+                </form-group>
+            </div>
+        </div>
+    </prompt-form-modal>
+</form>

@@ -1,0 +1,8 @@
+<entity-grid
+    [bindIO]
+    [columns]="['title', 'action']"
+    (appendFromGrid)="onCreateClick()"
+    [enableCreate]="'add_status' | perm:false | async"
+    [enableUpdate]="'change_status' | perm:false | async"
+    [enableDelete]="'delete_status' | perm:false | async">
+</entity-grid>

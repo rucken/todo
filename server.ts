@@ -1,9 +1,9 @@
 const domino = require('domino');
 const fs = require('fs');
 const path = require('path');
-const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'todo-client', 'index.html')).toString();
+const template = fs.readFileSync(path.join(__dirname, '.', 'dist', 'demo-client', 'index.html')).toString();
 const win = domino.createWindow(template);
-const files = fs.readdirSync(`${process.cwd()}/dist/todo-server`);
+const files = fs.readdirSync(`${process.cwd()}/dist/demo-server`);
 import { enableProdMode } from '@angular/core';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { REQUEST, RESPONSE } from '@nguniversal/express-engine/tokens';
@@ -35,7 +35,7 @@ const { provideModuleMap } = require('@nguniversal/module-map-ngfactory-loader')
 
 const mainFiles = files.filter(file => file.startsWith('main'));
 const hash = mainFiles[0].split('.')[1];
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist/todo-server/main.${hash}`);
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require(`./dist/demo-server/main.${hash}`);
 
 config();
 
@@ -93,9 +93,9 @@ app.engine('html', ngExpressEngine({
 }));
 
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, '.', 'apps', 'todo', 'src'));
+app.set('views', path.join(__dirname, '.', 'apps', 'demo', 'src'));
 
-app.get('*.*', express.static(path.join(__dirname, '.', 'dist', 'todo-client')));
+app.get('*.*', express.static(path.join(__dirname, '.', 'dist', 'demo-client')));
 // app.get(ROUTES, express.static(path.join(__dirname, '.', 'static')));
 
 function ngApp(req, res) {
@@ -105,7 +105,7 @@ function ngApp(req, res) {
   // tslint:disable-next-line:no-console
   console.time(`GET: ${req.originalUrl}`);
   res.render(
-    '../../../dist/todo-client/index',
+    '../../../dist/demo-client/index',
     {
       req: req,
       res: res,
