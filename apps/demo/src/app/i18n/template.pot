@@ -110,6 +110,15 @@ msgstr ""
 msgid "Themes page"
 msgstr ""
 
+msgid "Update"
+msgstr ""
+
+msgid "Tasks of project"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
 msgid "Your session has expired, please re-login"
 msgstr ""
 
@@ -120,15 +129,6 @@ msgid "Todo"
 msgstr ""
 
 msgid "Core with Admin UI for web and native application maked on Angular7+"
-msgstr ""
-
-msgid "Update"
-msgstr ""
-
-msgid "Tasks of project"
-msgstr ""
-
-msgid "Close"
 msgstr ""
 
 msgid "Sign out"
