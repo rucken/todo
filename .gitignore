@@ -4,8 +4,11 @@
 .travis/*.key
 .travis/*.key.pub
 
+deploy
+
 # compiled output
 /dist
+/dist/rucken
 /tmp
 /out-tsc
 
@@ -42,5 +45,5 @@ testem.log
 .DS_Store
 Thumbs.db
 .env
-server.js
+
 *.local.ts
