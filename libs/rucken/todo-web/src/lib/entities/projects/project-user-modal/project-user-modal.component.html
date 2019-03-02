@@ -1,0 +1,39 @@
+<form
+    [formGroup]="form"
+    novalidate>
+    <prompt-form-modal [bindIO]>
+        <form-group
+            [bindIO]
+            name="username"
+            [title]="strings.username"
+            focus>
+            <input
+                formControlName="username"
+                [readonly]="readonly">
+        </form-group>
+        <form-group
+            [bindIO]
+            name="email"
+            [title]="strings.email">
+            <input
+                formControlName="email"
+                [readonly]="readonly">
+        </form-group>
+        <form-group
+            [bindIO]
+            name="firstName"
+            [title]="strings.firstName">
+            <input
+                formControlName="firstName"
+                [readonly]="readonly">
+        </form-group>
+        <form-group
+            [bindIO]
+            name="lastName"
+            [title]="strings.lastName">
+            <input
+                formControlName="lastName"
+                [readonly]="readonly">
+        </form-group>
+    </prompt-form-modal>
+</form>

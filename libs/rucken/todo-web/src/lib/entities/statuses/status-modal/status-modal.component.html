@@ -1,0 +1,23 @@
+<form
+    [formGroup]="form"
+    novalidate>
+    <prompt-form-modal [bindIO]>
+        <form-group
+            [bindIO]
+            name="name"
+            [title]="strings.name"
+            focus>
+            <input
+                formControlName="name"
+                [readonly]="readonly">
+        </form-group>
+        <form-group
+            [bindIO]
+            name="title"
+            [title]="strings.title">
+            <input
+                formControlName="title"
+                [readonly]="readonly">
+        </form-group>
+    </prompt-form-modal>
+</form>

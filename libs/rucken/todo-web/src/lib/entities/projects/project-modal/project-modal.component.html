@@ -1,0 +1,59 @@
+<form
+    [formGroup]="form"
+    novalidate>
+    <prompt-form-modal [bindIO]>
+        <div class="row">
+            <div class="col-md-6">
+                <form-group
+                    [bindIO]
+                    name="title"
+                    [title]="strings.title"
+                    focus>
+                    <input
+                        formControlName="title"
+                        [readonly]="readonly">
+                </form-group>
+                <form-group
+                    [bindIO]
+                    name="isPublic"
+                    [title]="false">
+                    <label>
+                        <input
+                            formControlName="isPublic"
+                            type="checkbox"
+                            [readonly]="readonly"
+                            [disableControl]="readonly">
+                        {{strings.isPublic | translate}}
+                    </label>
+                </form-group>
+            </div>
+            <div class="col-md-6">
+                <form-group
+                    [bindIO]
+                    name="description"
+                    [title]="strings.description">
+                    <input
+                        formControlName="description"
+                        [readonly]="readonly">
+                </form-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <project-statuses-grid
+                    formControlName="statuses"
+                    [project]="data"
+                    [readonly]="readonly"
+                    [title]="strings.statuses"
+                    [apiUrl]="apiUrl"></project-statuses-grid>
+            </div>
+            <div class="col-md-6">
+                <project-users-grid
+                    formControlName="users"
+                    [readonly]="readonly"
+                    [title]="strings.users"
+                    [apiUrl]="apiUrl"></project-users-grid>
+            </div>
+        </div>
+    </prompt-form-modal>
+</form>
