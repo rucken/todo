@@ -1,22 +1,22 @@
 msgid ""
 msgstr ""
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.1.1\n"
 "Last-Translator: \n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language-Team: \n"
 "Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
-msgid "Your session has expired, please re-login"
-msgstr "Ваша сессия истекла. Пожалуйста, авторизуйтесь снова, чтобы продолжить работу"
+msgid "Rucken: Todo"
+msgstr "Rucken: Список задач"
 
-msgid "No"
-msgstr "Нет"
+msgid "Core with UI for web todo application maked on Angular7+ based on Rucken template"
+msgstr "Ядро с пользовательским интерфейсом для веб-приложения \"Список задач\", созданного на Angular 7+ на основе шаблона Rucken"
 
 msgid "Russian"
 msgstr "Русский"
@@ -24,11 +24,17 @@ msgstr "Русский"
 msgid "English"
 msgstr "Английский"
 
-msgid "Todo"
-msgstr "Список задач"
+msgid "Demo users:"
+msgstr "Демо пользователи:"
 
-msgid "Core with Admin UI for web and native application maked on Angular7+"
-msgstr "Ядро с пользовательским интерфейсом администратора для веб и нативных приложений, сделанных на Angular7 +"
+msgid "user with admin group: admin@admin.com, password: 12345678"
+msgstr "с группой \"Администратор\": admin@admin.com, пароль: 12345678"
+
+msgid "user with user group: user1@user1.com, password: 12345678"
+msgstr "с группой \"Пользователь\": user1@user1.com, пароль: 12345678"
+
+msgid "user with user group: user2@user2.com, password: 12345678"
+msgstr "с группой \"Пользователь\": user2@user2.com, пароль: 12345678"
 
 msgid "Sign in with Facebook"
 msgstr "Вход через Facebook"
@@ -122,6 +128,18 @@ msgstr "Задачи проекта"
 
 msgid "Close"
 msgstr "Закрыть"
+
+msgid "Your session has expired, please re-login"
+msgstr "Ваша сессия истекла. Пожалуйста, авторизуйтесь снова, чтобы продолжить работу"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "Todo"
+msgstr "Список задач"
+
+msgid "Core with Admin UI for web and native application maked on Angular7+"
+msgstr "Ядро с пользовательским интерфейсом администратора для веб и нативных приложений, сделанных на Angular7 +"
 
 msgid "Sign out"
 msgstr "Выйти"
