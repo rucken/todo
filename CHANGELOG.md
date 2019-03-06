@@ -1,3 +1,13 @@
+## [3.0.1](https://github.com/rucken/todo/compare/3.0.0...3.0.1) (2019-03-06)
+
+
+### Bug Fixes
+
+* Update dependencies ([9cb1082](https://github.com/rucken/todo/commit/9cb1082))
+* Update translates ([0394bcc](https://github.com/rucken/todo/commit/0394bcc))
+
+
+
 ## [3.0.0](https://github.com/rucken/todo/compare/2.2.0...3.0.0) (2019-03-02)
 
 
