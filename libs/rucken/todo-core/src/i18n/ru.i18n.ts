@@ -26,7 +26,7 @@ export const RuI18n = {
   Status: 'Статус',
   'Open at': 'Дата открытия',
   'Close at': 'Дата закрытия',
-  'Task time': 'Диапазон',
+  'Task time': 'Время задачи',
   'Created user': 'Создал',
   'Updated user': 'Обновил',
   'Assigned user': 'Пользователь',
