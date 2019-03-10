@@ -3,7 +3,7 @@
     novalidate>
     <prompt-form-modal [bindIO]>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form-group
                     [bindIO]
                     name="title"
@@ -14,14 +14,15 @@
                         [readonly]="readonly">
                 </form-group>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <form-group
                     [bindIO]
                     name="description"
                     [title]="strings.description">
-                    <input
+                    <textarea
                         formControlName="description"
                         [readonly]="readonly">
+                    </textarea>
                 </form-group>
             </div>
             <div class="col-md-4">

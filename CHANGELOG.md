@@ -1,3 +1,17 @@
+## [3.0.2](https://github.com/rucken/todo/compare/3.0.1...3.0.2) (2019-03-10)
+
+
+### Bug Fixes
+
+* Add check to undefined ([2dae41f](https://github.com/rucken/todo/commit/2dae41f))
+* Add title on sub grids for project modal ([1acf96b](https://github.com/rucken/todo/commit/1acf96b))
+* Move configs and models from entities folder to parent ([688bb7a](https://github.com/rucken/todo/commit/688bb7a))
+* To all Date field add alternative type "Date | string" ([5ba6971](https://github.com/rucken/todo/commit/5ba6971))
+* Update dependencies ([daf1b45](https://github.com/rucken/todo/commit/daf1b45))
+* Update text and ru translate range => task time ([#176](https://github.com/rucken/todo/issues/176)) ([d2c445b](https://github.com/rucken/todo/commit/d2c445b))
+
+
+
 ## [3.0.1](https://github.com/rucken/todo/compare/3.0.0...3.0.1) (2019-03-06)
 
 
