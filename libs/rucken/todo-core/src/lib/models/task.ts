@@ -1,4 +1,11 @@
-import { serializeModel, transformDateToString, transformStringToDate, transformStringToObject, translate, User } from '@rucken/core';
+import {
+  serializeModel,
+  transformDateToString,
+  transformStringToDate,
+  transformStringToObject,
+  translate,
+  User
+} from '@rucken/core';
 import { Transform, Type } from 'class-transformer';
 import { IsNotEmpty } from 'class-validator';
 import { DateTime } from 'luxon';
@@ -85,11 +92,11 @@ export class Task implements IModel {
         arr.push(' >= ');
       }
       arr.push(
-        (
-          typeof this.openAt === 'string' ?
-            DateTime.fromISO(String(this.openAt)) :
-            DateTime.fromJSDate(this.openAt as Date)
-        ).toLocaleString());
+        (typeof this.openAt === 'string'
+          ? DateTime.fromISO(String(this.openAt))
+          : DateTime.fromJSDate(this.openAt as Date)
+        ).toLocaleString()
+      );
     }
     if (this.openAt && this.closeAt) {
       arr.push(' - ');
@@ -98,11 +105,12 @@ export class Task implements IModel {
       if (!this.openAt) {
         arr.push(' <= ');
       }
-      arr.push((
-        typeof this.closeAt === 'string' ?
-          DateTime.fromISO(String(this.closeAt)) :
-          DateTime.fromJSDate(this.closeAt as Date)
-      ).toLocaleString());
+      arr.push(
+        (typeof this.closeAt === 'string'
+          ? DateTime.fromISO(String(this.closeAt))
+          : DateTime.fromJSDate(this.closeAt as Date)
+        ).toLocaleString()
+      );
     }
     return arr.join('');
   }

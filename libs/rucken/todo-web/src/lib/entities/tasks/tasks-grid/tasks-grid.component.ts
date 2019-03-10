@@ -9,9 +9,10 @@ import {
   translate
 } from '@rucken/core';
 import { Project, Task, TASKS_CONFIG_TOKEN } from '@rucken/todo-core';
-import { DynamicRepository, IRestProviderOptions } from 'ngx-repository';
-import { TaskModalComponent } from '../task-modal/task-modal.component';
 import { BindIoInner } from 'ngx-bind-io';
+import { DynamicRepository, IRestProviderOptions } from 'ngx-repository';
+import { map } from 'rxjs/operators';
+import { TaskModalComponent } from '../task-modal/task-modal.component';
 
 @BindIoInner()
 @Component({
@@ -56,6 +57,14 @@ export class TasksGridComponent extends BaseEntityListComponent<Task> implements
         autoload: this.autoload
       });
     }
+    this.items$ = this.repository.items$.pipe(
+      map(items =>
+        items.map(item => {
+          item.project = this.project;
+          return item;
+        })
+      )
+    );
   }
   onChangeFilter(filter?: IBaseEntityGridFilter) {
     filter = filter ? filter : {};

@@ -31,6 +31,9 @@ msgstr ""
 msgid "Users"
 msgstr ""
 
+msgid "Completed tasks"
+msgstr ""
+
 msgid "Add new project"
 msgstr ""
 
@@ -83,6 +86,15 @@ msgid "Close at"
 msgstr ""
 
 msgid "Task time"
+msgstr ""
+
+msgid "Created user"
+msgstr ""
+
+msgid "Updated user"
+msgstr ""
+
+msgid "Assigned user"
 msgstr ""
 
 msgid "Add new task"
