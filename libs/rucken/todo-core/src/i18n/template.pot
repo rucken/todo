@@ -82,7 +82,7 @@ msgstr ""
 msgid "Close at"
 msgstr ""
 
-msgid "Range"
+msgid "Task time"
 msgstr ""
 
 msgid "Add new task"

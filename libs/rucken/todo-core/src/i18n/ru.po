@@ -90,7 +90,7 @@ msgstr "Дата открытия"
 msgid "Close at"
 msgstr "Дата закрытия"
 
-msgid "Range"
+msgid "Task time"
 msgstr "Диапазон"
 
 msgid "Add new task"

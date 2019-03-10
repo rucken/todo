@@ -23,7 +23,7 @@ export class Task implements IModel {
     closeAt: translate('Close at'),
     createdAt: translate('Created at'),
     updatedAt: translate('Updated at'),
-    range: translate('Range'),
+    range: translate('Task time'),
     createTitle: translate('Add new task'),
     viewTitle: translate('Task #{{id}}'),
     updateTitle: translate('Update task #{{id}}'),
