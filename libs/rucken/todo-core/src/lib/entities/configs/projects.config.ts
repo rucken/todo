@@ -16,14 +16,14 @@ export const DEFAULT_PROJECTS_CONFIG: IRestProviderOptions<Project> = {
         return true;
       } else {
         if (action === ProviderActionEnum.LoadAll) {
-          return plainToClass(Project, data.body.projects);
+          return plainToClass(Project, data && data.body && data.body.projects);
         } else {
-          return plainToClass(Project, data.body.project);
+          return plainToClass(Project, data && data.body && data.body.project);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta => {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data && data.body && data.body.meta && data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {

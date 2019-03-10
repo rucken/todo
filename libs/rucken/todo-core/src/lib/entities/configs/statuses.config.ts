@@ -16,14 +16,14 @@ export const DEFAULT_STATUSES_CONFIG: IRestProviderOptions<Status> = {
         return true;
       } else {
         if (action === ProviderActionEnum.LoadAll) {
-          return plainToClass(Status, data.body.statuses);
+          return plainToClass(Status, data && data.body && data.body.statuses);
         } else {
-          return plainToClass(Status, data.body.status);
+          return plainToClass(Status, data && data.body && data.body.status);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta => {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data && data.body && data.body.meta && data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {
