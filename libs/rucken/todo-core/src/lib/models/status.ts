@@ -18,16 +18,21 @@ export class Status implements IModel {
     deleteTitle: translate('Delete status #{{id}}'),
     deleteMessage: translate('Do you really want to delete status?')
   };
+
   id: number = undefined;
+
   @IsNotEmpty()
   name: string = undefined;
+
   title: string = undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  createdAt: Date = undefined;
+  createdAt: Date | string = undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  updatedAt: Date = undefined;
+  updatedAt: Date | string = undefined;
 
   toString() {
     return this.title;

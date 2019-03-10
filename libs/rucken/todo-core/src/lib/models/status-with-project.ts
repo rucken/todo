@@ -8,6 +8,7 @@ export class StatusWithProject extends Status {
     ...Status.strings,
     project: translate('Project')
   };
+
   @Type(serializeModel(Project))
   @Transform(transformStringToObject, { toPlainOnly: true })
   project: Project = undefined;

@@ -39,6 +39,9 @@ msgstr "Задачи"
 msgid "Users"
 msgstr "Пользователи"
 
+msgid "Completed tasks"
+msgstr "Выполненные задачи"
+
 msgid "Add new project"
 msgstr "Добавить проект"
 
@@ -90,8 +93,17 @@ msgstr "Дата открытия"
 msgid "Close at"
 msgstr "Дата закрытия"
 
-msgid "Range"
+msgid "Task time"
 msgstr "Диапазон"
+
+msgid "Created user"
+msgstr "Создал"
+
+msgid "Updated user"
+msgstr "Обновил"
+
+msgid "Assigned user"
+msgstr "Пользователь"
 
 msgid "Add new task"
 msgstr "Создание новой задачи"

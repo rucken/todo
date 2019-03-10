@@ -16,14 +16,14 @@ export const DEFAULT_TASKS_CONFIG: IRestProviderOptions<Task> = {
         return true;
       } else {
         if (action === ProviderActionEnum.LoadAll) {
-          return plainToClass(Task, data.body.tasks);
+          return plainToClass(Task, data && data.body && data.body.tasks);
         } else {
-          return plainToClass(Task, data.body.task);
+          return plainToClass(Task, data && data.body && data.body.task);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta => {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data && data.body && data.body.meta && data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {

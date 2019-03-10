@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { plainToClass } from 'class-transformer';
 import { IRestProviderOptions, PaginationMeta, ProviderActionEnum } from 'ngx-repository';
-import { Status } from '../models/status';
+import { Project } from '../models/project';
 
-export const DEFAULT_STATUSES_CONFIG: IRestProviderOptions<Status> = {
-  name: 'status',
-  pluralName: 'statuses',
+export const DEFAULT_PROJECTS_CONFIG: IRestProviderOptions<Project> = {
+  name: 'project',
+  pluralName: 'projects',
   autoload: true,
   paginationMeta: {
     perPage: 5
@@ -16,14 +16,14 @@ export const DEFAULT_STATUSES_CONFIG: IRestProviderOptions<Status> = {
         return true;
       } else {
         if (action === ProviderActionEnum.LoadAll) {
-          return plainToClass(Status, data.body.statuses);
+          return plainToClass(Project, data && data.body && data.body.projects);
         } else {
-          return plainToClass(Status, data.body.status);
+          return plainToClass(Project, data && data.body && data.body.project);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta => {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data && data.body && data.body.meta && data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {
@@ -32,4 +32,4 @@ export const DEFAULT_STATUSES_CONFIG: IRestProviderOptions<Status> = {
     searchTextQueryParam: 'q'
   }
 };
-export const STATUSES_CONFIG_TOKEN = 'StatusesConfig';
+export const PROJECTS_CONFIG_TOKEN = 'ProjectsConfig';
