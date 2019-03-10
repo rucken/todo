@@ -168,7 +168,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:32</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -285,8 +285,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="71"
-                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:71</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="80"
+                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:80</a></div>
                 </td>
             </tr>
 
@@ -355,8 +355,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="83"
-                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:83</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="92"
+                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:92</a></div>
                 </td>
             </tr>
 
@@ -425,8 +425,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="44"
-                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:44</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="45"
+                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:45</a></div>
                 </td>
             </tr>
 
@@ -464,8 +464,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="60"
-                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:60</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="69"
+                            class="link-to-prism">libs/rucken/todo-web/src/lib/entities/tasks/tasks-grid/tasks-grid.component.ts:69</a></div>
                 </td>
             </tr>
 
@@ -529,9 +529,10 @@ import {
   translate
 } from &#x27;@rucken/core&#x27;;
 import { Project, Task, TASKS_CONFIG_TOKEN } from &#x27;@rucken/todo-core&#x27;;
-import { DynamicRepository, IRestProviderOptions } from &#x27;ngx-repository&#x27;;
-import { TaskModalComponent } from &#x27;../task-modal/task-modal.component&#x27;;
 import { BindIoInner } from &#x27;ngx-bind-io&#x27;;
+import { DynamicRepository, IRestProviderOptions } from &#x27;ngx-repository&#x27;;
+import { map } from &#x27;rxjs/operators&#x27;;
+import { TaskModalComponent } from &#x27;../task-modal/task-modal.component&#x27;;
 
 @BindIoInner()
 @Component({
@@ -576,6 +577,14 @@ export class TasksGridComponent extends BaseEntityListComponent&lt;Task&gt; impl
         autoload: this.autoload
       });
     }
+    this.items$ &#x3D; this.repository.items$.pipe(
+      map(items &#x3D;&gt;
+        items.map(item &#x3D;&gt; {
+          item.project &#x3D; this.project;
+          return item;
+        })
+      )
+    );
   }
   onChangeFilter(filter?: IBaseEntityGridFilter) {
     filter &#x3D; filter ? filter : {};

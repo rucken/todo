@@ -60,7 +60,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>libs/rucken/todo-core/src/lib/entities/models/task.ts</code>
+            <code>libs/rucken/todo-core/src/lib/models/task.ts</code>
         </p>
 
 
@@ -86,10 +86,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#assignedUser">assignedUser</a>
+                            </li>
+                            <li>
                                 <a href="#closeAt">closeAt</a>
                             </li>
                             <li>
                                 <a href="#createdAt">createdAt</a>
+                            </li>
+                            <li>
+                                <a href="#createdUser">createdUser</a>
                             </li>
                             <li>
                                 <a href="#description">description</a>
@@ -115,6 +121,9 @@
                             </li>
                             <li>
                                 <a href="#updatedAt">updatedAt</a>
+                            </li>
+                            <li>
+                                <a href="#updatedUser">updatedUser</a>
                             </li>
                         </ul>
                     </td>
@@ -167,6 +176,47 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="assignedUser"></a>
+                        <span class="name">
+                            <b>
+                            assignedUser</b>
+                            <a href="#assignedUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>User</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Type(undefined)<br />@Transform(transformStringToObject, {toPlainOnly: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:82</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="closeAt"></a>
                         <span class="name">
                             <b>
@@ -177,7 +227,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                            <i>Type : </i>    <code>Date | string</code>
 
                         </td>
                     </tr>
@@ -197,7 +247,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:62</a></div>
                             </td>
                         </tr>
 
@@ -218,7 +268,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                            <i>Type : </i>    <code>Date | string</code>
 
                         </td>
                     </tr>
@@ -238,7 +288,48 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="66" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:66</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="createdUser"></a>
+                        <span class="name">
+                            <b>
+                            createdUser</b>
+                            <a href="#createdUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>User</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Type(undefined)<br />@Transform(transformStringToObject, {toPlainOnly: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -270,7 +361,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:49</a></div>
                             </td>
                         </tr>
 
@@ -302,7 +393,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:39</a></div>
                             </td>
                         </tr>
 
@@ -323,7 +414,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                            <i>Type : </i>    <code>Date | string</code>
 
                         </td>
                     </tr>
@@ -343,7 +434,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:47</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -384,7 +475,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:37</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:44</a></div>
                             </td>
                         </tr>
 
@@ -425,7 +516,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:44</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -463,7 +554,11 @@
     closeAt: translate(&#x27;Close at&#x27;),
     createdAt: translate(&#x27;Created at&#x27;),
     updatedAt: translate(&#x27;Updated at&#x27;),
-    range: translate(&#x27;Range&#x27;),
+    range: translate(&#x27;Task time&#x27;),
+    createdUser: translate(&#x27;Created user&#x27;),
+    updatedUser: translate(&#x27;Updated user&#x27;),
+    assignedUser: translate(&#x27;Assigned user&#x27;),
+
     createTitle: translate(&#x27;Add new task&#x27;),
     viewTitle: translate(&#x27;Task #{{id}}&#x27;),
     updateTitle: translate(&#x27;Update task #{{id}}&#x27;),
@@ -474,7 +569,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:16</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:17</a></div>
                             </td>
                         </tr>
 
@@ -515,7 +610,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:47</a></div>
                             </td>
                         </tr>
 
@@ -536,7 +631,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank" >Date</a></code>
+                            <i>Type : </i>    <code>Date | string</code>
 
                         </td>
                     </tr>
@@ -556,7 +651,48 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:70</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updatedUser"></a>
+                        <span class="name">
+                            <b>
+                            updatedUser</b>
+                            <a href="#updatedUser"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>User</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>undefined</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Type(undefined)<br />@Transform(transformStringToObject, {toPlainOnly: true})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:78</a></div>
                             </td>
                         </tr>
 
@@ -592,8 +728,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="57"
-                            class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:57</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="84"
+                            class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:84</a></div>
                 </td>
             </tr>
 
@@ -635,7 +771,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="60" class="link-to-prism">libs/rucken/todo-core/src/lib/entities/models/task.ts:60</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="88" class="link-to-prism">libs/rucken/todo-core/src/lib/models/task.ts:88</a></div>
                                 </td>
                             </tr>
 
@@ -651,7 +787,8 @@
   transformDateToString,
   transformStringToDate,
   transformStringToObject,
-  translate
+  translate,
+  User
 } from &#x27;@rucken/core&#x27;;
 import { Transform, Type } from &#x27;class-transformer&#x27;;
 import { IsNotEmpty } from &#x27;class-validator&#x27;;
@@ -671,47 +808,79 @@ export class Task implements IModel {
     closeAt: translate(&#x27;Close at&#x27;),
     createdAt: translate(&#x27;Created at&#x27;),
     updatedAt: translate(&#x27;Updated at&#x27;),
-    range: translate(&#x27;Range&#x27;),
+    range: translate(&#x27;Task time&#x27;),
+    createdUser: translate(&#x27;Created user&#x27;),
+    updatedUser: translate(&#x27;Updated user&#x27;),
+    assignedUser: translate(&#x27;Assigned user&#x27;),
+
     createTitle: translate(&#x27;Add new task&#x27;),
     viewTitle: translate(&#x27;Task #{{id}}&#x27;),
     updateTitle: translate(&#x27;Update task #{{id}}&#x27;),
     deleteTitle: translate(&#x27;Delete task #{{id}}&#x27;),
     deleteMessage: translate(&#x27;Do you really want to delete task?&#x27;)
   };
+
   id: number &#x3D; undefined;
+
   @IsNotEmpty()
   @Type(serializeModel(Project))
   @Transform(transformStringToObject, { toPlainOnly: true })
   project: Project &#x3D; undefined;
+
   @IsNotEmpty()
   title: string &#x3D; undefined;
+
   description: string &#x3D; undefined;
+
   @IsNotEmpty()
   @Type(serializeModel(Status))
   @Transform(transformStringToObject, { toPlainOnly: true })
   status: Status &#x3D; undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  openAt: Date &#x3D; undefined;
+  openAt: Date | string &#x3D; undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  closeAt: Date &#x3D; undefined;
+  closeAt: Date | string &#x3D; undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  createdAt: Date &#x3D; undefined;
+  createdAt: Date | string &#x3D; undefined;
+
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  updatedAt: Date &#x3D; undefined;
+  updatedAt: Date | string &#x3D; undefined;
+
+  @Type(serializeModel(User))
+  @Transform(transformStringToObject, { toPlainOnly: true })
+  createdUser: User &#x3D; undefined;
+
+  @Type(serializeModel(User))
+  @Transform(transformStringToObject, { toPlainOnly: true })
+  updatedUser: User &#x3D; undefined;
+
+  @Type(serializeModel(User))
+  @Transform(transformStringToObject, { toPlainOnly: true })
+  assignedUser: User &#x3D; undefined;
+
   toString() {
     return this.title;
   }
+
   get range() {
     const arr: string[] &#x3D; [];
     if (this.openAt) {
       if (!this.closeAt) {
         arr.push(&#x27; &gt;&#x3D; &#x27;);
       }
-      arr.push(DateTime.fromJSDate(this.openAt).toLocaleString());
+      arr.push(
+        (typeof this.openAt &#x3D;&#x3D;&#x3D; &#x27;string&#x27;
+          ? DateTime.fromISO(String(this.openAt))
+          : DateTime.fromJSDate(this.openAt as Date)
+        ).toLocaleString()
+      );
     }
     if (this.openAt &amp;&amp; this.closeAt) {
       arr.push(&#x27; - &#x27;);
@@ -720,7 +889,12 @@ export class Task implements IModel {
       if (!this.openAt) {
         arr.push(&#x27; &lt;&#x3D; &#x27;);
       }
-      arr.push(DateTime.fromJSDate(this.closeAt).toLocaleString());
+      arr.push(
+        (typeof this.closeAt &#x3D;&#x3D;&#x3D; &#x27;string&#x27;
+          ? DateTime.fromISO(String(this.closeAt))
+          : DateTime.fromJSDate(this.closeAt as Date)
+        ).toLocaleString()
+      );
     }
     return arr.join(&#x27;&#x27;);
   }

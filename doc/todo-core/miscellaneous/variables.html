@@ -57,28 +57,28 @@
                 <td class="col-md-4">
                     <ul class="index-list">
                         <li>
-                            <a href="#DEFAULT_PROJECTS_CONFIG" title="libs/rucken/todo-core/src/lib/entities/configs/projects.config.ts"><b>DEFAULT_PROJECTS_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../projects.config.ts)</a>
+                            <a href="#DEFAULT_PROJECTS_CONFIG" title="libs/rucken/todo-core/src/lib/configs/projects.config.ts"><b>DEFAULT_PROJECTS_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../projects.config.ts)</a>
                         </li>
                         <li>
-                            <a href="#DEFAULT_STATUSES_CONFIG" title="libs/rucken/todo-core/src/lib/entities/configs/statuses.config.ts"><b>DEFAULT_STATUSES_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../statuses.config.ts)</a>
+                            <a href="#DEFAULT_STATUSES_CONFIG" title="libs/rucken/todo-core/src/lib/configs/statuses.config.ts"><b>DEFAULT_STATUSES_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../statuses.config.ts)</a>
                         </li>
                         <li>
-                            <a href="#DEFAULT_TASKS_CONFIG" title="libs/rucken/todo-core/src/lib/entities/configs/tasks.config.ts"><b>DEFAULT_TASKS_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../tasks.config.ts)</a>
+                            <a href="#DEFAULT_TASKS_CONFIG" title="libs/rucken/todo-core/src/lib/configs/tasks.config.ts"><b>DEFAULT_TASKS_CONFIG</b>&nbsp;&nbsp;&nbsp;(libs/.../tasks.config.ts)</a>
                         </li>
                         <li>
-                            <a href="#ENTITIES_PROVIDERS" title="libs/rucken/todo-core/src/lib/entities/configs/index.ts"><b>ENTITIES_PROVIDERS</b>&nbsp;&nbsp;&nbsp;(libs/.../index.ts)</a>
+                            <a href="#ENTITIES_PROVIDERS" title="libs/rucken/todo-core/src/lib/configs/index.ts"><b>ENTITIES_PROVIDERS</b>&nbsp;&nbsp;&nbsp;(libs/.../index.ts)</a>
                         </li>
                         <li>
-                            <a href="#PROJECTS_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/entities/configs/projects.config.ts"><b>PROJECTS_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../projects.config.ts)</a>
+                            <a href="#PROJECTS_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/configs/projects.config.ts"><b>PROJECTS_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../projects.config.ts)</a>
                         </li>
                         <li>
                             <a href="#RuI18n" title="libs/rucken/todo-core/src/i18n/ru.i18n.ts"><b>RuI18n</b>&nbsp;&nbsp;&nbsp;(libs/.../ru.i18n.ts)</a>
                         </li>
                         <li>
-                            <a href="#STATUSES_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/entities/configs/statuses.config.ts"><b>STATUSES_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../statuses.config.ts)</a>
+                            <a href="#STATUSES_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/configs/statuses.config.ts"><b>STATUSES_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../statuses.config.ts)</a>
                         </li>
                         <li>
-                            <a href="#TASKS_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/entities/configs/tasks.config.ts"><b>TASKS_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../tasks.config.ts)</a>
+                            <a href="#TASKS_CONFIG_TOKEN" title="libs/rucken/todo-core/src/lib/configs/tasks.config.ts"><b>TASKS_CONFIG_TOKEN</b>&nbsp;&nbsp;&nbsp;(libs/.../tasks.config.ts)</a>
                         </li>
                     </ul>
                 </td>
@@ -87,7 +87,7 @@
     </table>
 </section>
 
-    <h3>libs/rucken/todo-core/src/lib/entities/configs/projects.config.ts</h3>
+    <h3>libs/rucken/todo-core/src/lib/configs/projects.config.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
@@ -122,14 +122,14 @@
         return true;
       } else {
         if (action &#x3D;&#x3D;&#x3D; ProviderActionEnum.LoadAll) {
-          return plainToClass(Project, data.body.projects);
+          return plainToClass(Project, data &amp;&amp; data.body &amp;&amp; data.body.projects);
         } else {
-          return plainToClass(Project, data.body.project);
+          return plainToClass(Project, data &amp;&amp; data.body &amp;&amp; data.body.project);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta &#x3D;&gt; {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data &amp;&amp; data.body &amp;&amp; data.body.meta &amp;&amp; data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {
@@ -172,7 +172,7 @@
             </tbody>
         </table>
 </section>
-    <h3>libs/rucken/todo-core/src/lib/entities/configs/statuses.config.ts</h3>
+    <h3>libs/rucken/todo-core/src/lib/configs/statuses.config.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
@@ -207,14 +207,14 @@
         return true;
       } else {
         if (action &#x3D;&#x3D;&#x3D; ProviderActionEnum.LoadAll) {
-          return plainToClass(Status, data.body.statuses);
+          return plainToClass(Status, data &amp;&amp; data.body &amp;&amp; data.body.statuses);
         } else {
-          return plainToClass(Status, data.body.status);
+          return plainToClass(Status, data &amp;&amp; data.body &amp;&amp; data.body.status);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta &#x3D;&gt; {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data &amp;&amp; data.body &amp;&amp; data.body.meta &amp;&amp; data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {
@@ -257,7 +257,7 @@
             </tbody>
         </table>
 </section>
-    <h3>libs/rucken/todo-core/src/lib/entities/configs/tasks.config.ts</h3>
+    <h3>libs/rucken/todo-core/src/lib/configs/tasks.config.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
@@ -292,14 +292,14 @@
         return true;
       } else {
         if (action &#x3D;&#x3D;&#x3D; ProviderActionEnum.LoadAll) {
-          return plainToClass(Task, data.body.tasks);
+          return plainToClass(Task, data &amp;&amp; data.body &amp;&amp; data.body.tasks);
         } else {
-          return plainToClass(Task, data.body.task);
+          return plainToClass(Task, data &amp;&amp; data.body &amp;&amp; data.body.task);
         }
       }
     },
     responsePaginationMeta: (data: any, action: ProviderActionEnum): PaginationMeta &#x3D;&gt; {
-      return { totalResults: data.body.meta.totalResults, perPage: undefined };
+      return { totalResults: data &amp;&amp; data.body &amp;&amp; data.body.meta &amp;&amp; data.body.meta.totalResults, perPage: undefined };
     }
   },
   restOptions: {
@@ -342,7 +342,7 @@
             </tbody>
         </table>
 </section>
-    <h3>libs/rucken/todo-core/src/lib/entities/configs/index.ts</h3>
+    <h3>libs/rucken/todo-core/src/lib/configs/index.ts</h3>
     <section>
     <h3></h3>        <table class="table table-sm table-bordered">
             <tbody>
@@ -417,6 +417,7 @@
   Statuses: &#x27;Статусы&#x27;,
   Tasks: &#x27;Задачи&#x27;,
   Users: &#x27;Пользователи&#x27;,
+  &#x27;Completed tasks&#x27;: &#x27;Выполненные задачи&#x27;,
   &#x27;Add new project&#x27;: &#x27;Добавить проект&#x27;,
   &#x27;Project #{{id}}&#x27;: &#x27;Проекта #{{id}}&#x27;,
   &#x27;Update project #{{id}}&#x27;: &#x27;Редактирование проекта #{{id}}&#x27;,
@@ -434,7 +435,10 @@
   Status: &#x27;Статус&#x27;,
   &#x27;Open at&#x27;: &#x27;Дата открытия&#x27;,
   &#x27;Close at&#x27;: &#x27;Дата закрытия&#x27;,
-  Range: &#x27;Диапазон&#x27;,
+  &#x27;Task time&#x27;: &#x27;Диапазон&#x27;,
+  &#x27;Created user&#x27;: &#x27;Создал&#x27;,
+  &#x27;Updated user&#x27;: &#x27;Обновил&#x27;,
+  &#x27;Assigned user&#x27;: &#x27;Пользователь&#x27;,
   &#x27;Add new task&#x27;: &#x27;Создание новой задачи&#x27;,
   &#x27;Task #{{id}}&#x27;: &#x27;Задача #{{id}}&#x27;,
   &#x27;Update task #{{id}}&#x27;: &#x27;Изменить задачу  #{{id}}&#x27;,

@@ -317,13 +317,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/TaskModalModule.html" data-type="entity-link">TaskModalModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-TaskModalModule-80f91c47b6e9dfaa3e275738146b4ef9"' : 'data-target="#xs-components-links-module-TaskModalModule-80f91c47b6e9dfaa3e275738146b4ef9"' }>
+                                            'data-target="#components-links-module-TaskModalModule-2ee490de0db6ef3a5456fa2f7cf3eaef"' : 'data-target="#xs-components-links-module-TaskModalModule-2ee490de0db6ef3a5456fa2f7cf3eaef"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-TaskModalModule-80f91c47b6e9dfaa3e275738146b4ef9"' :
-                                            'id="xs-components-links-module-TaskModalModule-80f91c47b6e9dfaa3e275738146b4ef9"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-TaskModalModule-2ee490de0db6ef3a5456fa2f7cf3eaef"' :
+                                            'id="xs-components-links-module-TaskModalModule-2ee490de0db6ef3a5456fa2f7cf3eaef"' }>
                                             <li class="link">
                                                 <a href="components/TaskModalComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">TaskModalComponent</a>
