@@ -40,6 +40,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
+                <h4 *ngIf="!readonly">{{strings.statuses | translate}}</h4>
                 <project-statuses-grid
                     formControlName="statuses"
                     [project]="data"
@@ -48,6 +49,7 @@
                     [apiUrl]="apiUrl"></project-statuses-grid>
             </div>
             <div class="col-md-6">
+                <h4 *ngIf="!readonly">{{strings.users | translate}}</h4>
                 <project-users-grid
                     formControlName="users"
                     [readonly]="readonly"
