@@ -44,16 +44,16 @@ export class Task implements IModel {
   status: Status = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  openAt: Date = undefined;
+  openAt: Date | string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  closeAt: Date = undefined;
+  closeAt: Date | string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  createdAt: Date = undefined;
+  createdAt: Date | string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  updatedAt: Date = undefined;
+  updatedAt: Date | string = undefined;
   toString() {
     return this.title;
   }

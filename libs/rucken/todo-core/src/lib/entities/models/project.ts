@@ -29,10 +29,10 @@ export class Project implements IModel {
   isPublic: boolean = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  createdAt: Date = undefined;
+  createdAt: Date | string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  updatedAt: Date = undefined;
+  updatedAt: Date | string = undefined;
   @IsOptional()
   @Type(serializeModel(Status))
   statuses: Status[] = [];

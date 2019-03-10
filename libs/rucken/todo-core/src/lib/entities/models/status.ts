@@ -24,10 +24,10 @@ export class Status implements IModel {
   title: string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  createdAt: Date = undefined;
+  createdAt: Date | string = undefined;
   @Transform(transformStringToDate, { toClassOnly: true })
   @Transform(transformDateToString, { toPlainOnly: true })
-  updatedAt: Date = undefined;
+  updatedAt: Date | string = undefined;
 
   toString() {
     return this.title;
