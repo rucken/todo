@@ -94,7 +94,7 @@ msgid "Close at"
 msgstr "Дата закрытия"
 
 msgid "Task time"
-msgstr "Диапазон"
+msgstr "Время задачи"
 
 msgid "Created user"
 msgstr "Создал"
