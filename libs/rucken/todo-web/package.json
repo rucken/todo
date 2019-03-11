@@ -1,6 +1,6 @@
 {
   "name": "@rucken/todo-web",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "engines": {
     "node": ">=10",
     "npm": ">=6.4.0"
@@ -76,8 +76,8 @@
     "ngx-dynamic-form-builder": "^0.9.0",
     "ngx-permissions": "^6.0.5",
     "ngx-repository": "^0.6.3",
-    "@rucken/core": "^3.9.8",
-    "@rucken/web": "^3.9.8",
+    "@rucken/core": "^3.9.9",
+    "@rucken/web": "^3.9.9",
     "object-path": "^0.11.4",
     "ngx-bind-io": "^0.6.5"
   }
