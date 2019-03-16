@@ -16,11 +16,11 @@ import {
 } from '@rucken/core';
 import { ENTITIES_PROVIDERS as TODO_ENTITIES_PROVIDERS } from '@rucken/todo-core';
 import { NavbarModule, ThemesModule, WebAuthModalModule, WebModalsModule } from '@rucken/web';
-import { environment } from 'apps/demo/src/environments/environment';
 import { NgxBindIOModule } from 'ngx-bind-io';
 import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
 import { CookieService } from 'ngx-cookie-service';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
 import { config } from './config/config';
