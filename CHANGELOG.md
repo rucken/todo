@@ -1,3 +1,13 @@
+## [3.0.4](https://github.com/rucken/todo/compare/3.0.3...3.0.4) (2019-03-25)
+
+
+### Bug Fixes
+
+* Update dependencies ([6244fd5](https://github.com/rucken/todo/commit/6244fd5))
+* Update sources and files structure for new rucken ([7e7579f](https://github.com/rucken/todo/commit/7e7579f))
+
+
+
 ## [3.0.3](https://github.com/rucken/todo/compare/3.0.2...3.0.3) (2019-03-11)
 
 
