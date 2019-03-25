@@ -119,3 +119,9 @@ msgstr "Удалить задачу  #{{id}}"
 
 msgid "Do you really want to delete task?"
 msgstr "Вы действительно хотите удалить задачу?"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"

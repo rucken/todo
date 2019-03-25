@@ -51,6 +51,12 @@ msgstr "Выберите задачу"
 msgid "Tasks"
 msgstr "Задачи"
 
+msgid "Russian"
+msgstr "Русский"
+
+msgid "English"
+msgstr "Английский"
+
 msgid "Delete"
 msgstr "Удалить"
 

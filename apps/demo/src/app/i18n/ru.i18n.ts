@@ -3,7 +3,6 @@ export const RuI18n = {
   'Core with UI for web todo application maked on Angular7+ based on Rucken template':
     'Ядро с пользовательским интерфейсом для веб-приложения "Список задач", созданного на Angular 7+ на основе шаблона Rucken',
   Russian: 'Русский',
-  English: 'Английский',
   'Demo users:': 'Демо пользователи:',
   'user with admin group: admin@admin.com, password: 12345678':
     'с группой "Администратор": admin@admin.com, пароль: 12345678',
@@ -42,6 +41,7 @@ export const RuI18n = {
   Update: 'Изменить',
   'Tasks of project': 'Задачи проекта',
   Close: 'Закрыть',
+  English: 'Английский',
   'Your session has expired, please re-login':
     'Ваша сессия истекла. Пожалуйста, авторизуйтесь снова, чтобы продолжить работу',
   No: 'Нет',

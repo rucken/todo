@@ -111,3 +111,9 @@ msgstr ""
 
 msgid "Do you really want to delete task?"
 msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "English"
+msgstr ""

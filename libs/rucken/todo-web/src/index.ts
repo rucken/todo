@@ -1,4 +1,5 @@
 export * from './i18n/ru.i18n';
+export * from './lib/todo-web.module';
 export * from './lib/entities/projects/project-input/project-input.component';
 export * from './lib/entities/projects/project-input/project-input.module';
 export * from './lib/entities/projects/project-modal/project-modal.component';

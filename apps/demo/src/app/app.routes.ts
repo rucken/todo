@@ -13,6 +13,7 @@ export const OAUTH_ROUTES = [
     component: AuthEmptyPageComponent,
     canActivate: [OauthGuard],
     data: {
+      visible: false,
       oauth: {
         provider: 'facebook',
         redirectTo: {
@@ -27,6 +28,7 @@ export const OAUTH_ROUTES = [
     component: AuthEmptyPageComponent,
     canActivate: [OauthGuard],
     data: {
+      visible: false,
       oauth: {
         provider: 'google-plus',
         redirectTo: {
