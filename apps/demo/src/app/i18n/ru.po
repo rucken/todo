@@ -21,9 +21,6 @@ msgstr "Ядро с пользовательским интерфейсом дл
 msgid "Russian"
 msgstr "Русский"
 
-msgid "English"
-msgstr "Английский"
-
 msgid "Demo users:"
 msgstr "Демо пользователи:"
 
@@ -128,6 +125,9 @@ msgstr "Задачи проекта"
 
 msgid "Close"
 msgstr "Закрыть"
+
+msgid "English"
+msgstr "Английский"
 
 msgid "Your session has expired, please re-login"
 msgstr "Ваша сессия истекла. Пожалуйста, авторизуйтесь снова, чтобы продолжить работу"

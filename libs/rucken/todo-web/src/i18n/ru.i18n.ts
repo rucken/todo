@@ -14,6 +14,8 @@ export const RuI18n = {
   Statuses: 'Статусы',
   'Select task': 'Выберите задачу',
   Tasks: 'Задачи',
+  Russian: 'Русский',
+  English: 'Английский',
   Delete: 'Удалить',
   Append: 'Добавить',
   Save: 'Сохранить',

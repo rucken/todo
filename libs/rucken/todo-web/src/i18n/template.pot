@@ -43,6 +43,12 @@ msgstr ""
 msgid "Tasks"
 msgstr ""
 
+msgid "Russian"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
 msgid "Delete"
 msgstr ""
 

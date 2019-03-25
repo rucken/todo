@@ -34,5 +34,7 @@ export const RuI18n = {
   'Task #{{id}}': 'Задача #{{id}}',
   'Update task #{{id}}': 'Изменить задачу  #{{id}}',
   'Delete task #{{id}}': 'Удалить задачу  #{{id}}',
-  'Do you really want to delete task?': 'Вы действительно хотите удалить задачу?'
+  'Do you really want to delete task?': 'Вы действительно хотите удалить задачу?',
+  Russian: 'Русский',
+  English: 'Английский'
 };

@@ -8,17 +8,15 @@ import {
   AccountModule,
   AuthModalModule,
   AuthModule,
-  ENTITIES_PROVIDERS as CORE_ENTITIES_PROVIDERS,
-  ErrorsExtractor,
   LangModule,
-  PermissionsGuard,
+  RuckenCoreModule,
   TransferHttpCacheModule
 } from '@rucken/core';
-import { ENTITIES_PROVIDERS as TODO_ENTITIES_PROVIDERS } from '@rucken/todo-core';
-import { NavbarModule, ThemesModule, WebAuthModalModule, WebModalsModule } from '@rucken/web';
+import { RuckenTodoCoreModule } from '@rucken/todo-core';
+import { RuckenTodoWebModule } from '@rucken/todo-web';
+import { RuckenWebModule, ThemesModule } from '@rucken/web';
 import { NgxBindIOModule } from 'ngx-bind-io';
-import { BsDatepickerModule, BsLocaleService } from 'ngx-bootstrap/datepicker';
-import { CookieService } from 'ngx-cookie-service';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { NgxPermissionsModule } from 'ngx-permissions';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
@@ -65,19 +63,12 @@ import { metaFactory } from './utils/meta-factory';
         providers: config.oauth
       }
     }),
-    WebAuthModalModule,
-    NavbarModule,
     BsDatepickerModule.forRoot(),
-    WebModalsModule,
-    NgxBindIOModule.forRoot()
-  ],
-  providers: [
-    ...CORE_ENTITIES_PROVIDERS,
-    ...TODO_ENTITIES_PROVIDERS,
-    CookieService,
-    ErrorsExtractor,
-    BsLocaleService,
-    PermissionsGuard
+    NgxBindIOModule.forRoot(),
+    RuckenCoreModule,
+    RuckenWebModule,
+    RuckenTodoCoreModule,
+    RuckenTodoWebModule
   ],
   bootstrap: [AppComponent]
 })
