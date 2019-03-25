@@ -344,12 +344,7 @@
       {
         title: translate(&#x27;Russian&#x27;),
         code: &#x27;ru&#x27;,
-        translations: [WebRuI18n, CoreRuI18n, TodoCoreRuI18n, TodoWebRuI18n, RuI18n]
-      },
-      {
-        title: translate(&#x27;English&#x27;),
-        code: &#x27;en&#x27;,
-        translations: []
+        translations: [RuI18n]
       }
     ]
   },
@@ -793,6 +788,7 @@
     component: AuthEmptyPageComponent,
     canActivate: [OauthGuard],
     data: {
+      visible: false,
       oauth: {
         provider: &#x27;facebook&#x27;,
         redirectTo: {
@@ -807,6 +803,7 @@
     component: AuthEmptyPageComponent,
     canActivate: [OauthGuard],
     data: {
+      visible: false,
       oauth: {
         provider: &#x27;google-plus&#x27;,
         redirectTo: {
@@ -1052,7 +1049,6 @@
   &#x27;Core with UI for web todo application maked on Angular7+ based on Rucken template&#x27;:
     &#x27;Ядро с пользовательским интерфейсом для веб-приложения &quot;Список задач&quot;, созданного на Angular 7+ на основе шаблона Rucken&#x27;,
   Russian: &#x27;Русский&#x27;,
-  English: &#x27;Английский&#x27;,
   &#x27;Demo users:&#x27;: &#x27;Демо пользователи:&#x27;,
   &#x27;user with admin group: admin@admin.com, password: 12345678&#x27;:
     &#x27;с группой &quot;Администратор&quot;: admin@admin.com, пароль: 12345678&#x27;,
@@ -1091,6 +1087,7 @@
   Update: &#x27;Изменить&#x27;,
   &#x27;Tasks of project&#x27;: &#x27;Задачи проекта&#x27;,
   Close: &#x27;Закрыть&#x27;,
+  English: &#x27;Английский&#x27;,
   &#x27;Your session has expired, please re-login&#x27;:
     &#x27;Ваша сессия истекла. Пожалуйста, авторизуйтесь снова, чтобы продолжить работу&#x27;,
   No: &#x27;Нет&#x27;,
