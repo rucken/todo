@@ -1,6 +1,6 @@
 {
   "name": "@rucken/todo-core",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "engines": {
     "node": ">=10",
     "npm": ">=6.4.0"
@@ -62,20 +62,20 @@
     }
   ],
   "peerDependencies": {
-    "rxjs": "^6.4.0",
-    "@angular/forms": "^7.2.10",
-    "@angular/common": "^7.2.10",
-    "@angular/compiler": "^7.2.10",
-    "@angular/core": "^7.2.10"
+    "rxjs": "6.4.0",
+    "@angular/forms": "7.2.12",
+    "@angular/common": "7.2.12",
+    "@angular/compiler": "7.2.12",
+    "@angular/core": "7.2.12"
   },
   "dependencies": {
-    "@ngx-translate/core": "^11.0.1",
-    "@types/jsonwebtoken": "^8.3.0",
-    "jsonwebtoken": "^8.4.0",
-    "ngx-permissions": "^6.0.5",
-    "ngx-repository": "^0.6.3",
-    "@rucken/core": "^3.9.10",
-    "@types/luxon": "^1.11.1",
-    "luxon": "^1.11.3"
+    "@ngx-translate/core": "11.0.1",
+    "@types/jsonwebtoken": "8.3.0",
+    "jsonwebtoken": "8.4.0",
+    "ngx-permissions": "6.0.5",
+    "ngx-repository": "0.6.3",
+    "@rucken/core": "3.9.12",
+    "@types/luxon": "1.11.1",
+    "luxon": "1.11.3"
   }
 }
