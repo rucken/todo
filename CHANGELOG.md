@@ -1,3 +1,12 @@
+## [3.0.5](https://github.com/rucken/todo/compare/3.0.4...3.0.5) (2019-04-08)
+
+
+### Bug Fixes
+
+* Update and freeze dependencies ([a37d3eb](https://github.com/rucken/todo/commit/a37d3eb))
+
+
+
 ## [3.0.4](https://github.com/rucken/todo/compare/3.0.3...3.0.4) (2019-03-25)
 
 
