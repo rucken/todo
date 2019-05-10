@@ -18,16 +18,16 @@
     ],
     "paths": {
       "@rucken/todo-core": [
-        "libs/rucken/todo-core/src"
+        "dist/rucken/todo-core"
       ],
       "@rucken/todo-core/*": [
-        "libs/rucken/todo-core/src/*"
+        "dist/rucken/todo-core/*"
       ],
       "@rucken/todo-web": [
-        "libs/rucken/todo-web/src"
+        "dist/rucken/todo-web"
       ],
       "@rucken/todo-web/*": [
-        "libs/rucken/todo-web/src/*"
+        "dist/rucken/todo-web/*"
       ]
     }
   }
