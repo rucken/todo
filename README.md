@@ -6,7 +6,14 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-Core with UI for web todo application maked on [Angular7+](https://angular.io) based on [Rucken](https://github.com/rucken) template
+Core with UI for web todo application maked on [Angular7+](https://angular.io) based on [Rucken](https://rucken.io) template
+
+## Screenshots
+<p>
+  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-projects.png" width="250" title="Web: Projects page for guests">
+  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-projects-view.png" width="250" title="Web: Modal for view project">
+  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-project-update-add-user.png" width="250" title="Web: Add user to project modal">
+</p>
 
 ## Usage
 ```
