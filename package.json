@@ -142,7 +142,7 @@
     "cors": "2.8.5",
     "dotenv": "8.0.0",
     "jsonwebtoken": "8.5.1",
-    "luxon": "1.13.2",
+    "luxon": "1.19.3",
     "ngx-bind-io": "0.6.6",
     "ngx-bootstrap": "4.1.1",
     "ngx-cookie-service": "2.1.0",
