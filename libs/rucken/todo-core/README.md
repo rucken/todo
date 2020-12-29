@@ -18,7 +18,7 @@ npm run start:prod
 
 [https://rucken.github.io/todo/](https://rucken.github.io/todo/) - Static site on [GitHub Pages](https://pages.github.com/)
 
-[https://todo.rucken.io](https://todo.rucken.io) - Server-side rendering (SSR) on VPS with [Dokku](http://dokku.viewdocs.io/dokku/)
+[https://todo.rucken.ru](https://todo.rucken.ru) - Server-side rendering (SSR) on VPS with [Dokku](http://dokku.viewdocs.io/dokku/)
 
 ## Compodoc documentations
 

@@ -6,13 +6,13 @@
 [![Gitter][gitter-image]][gitter-url]
 [![Join the chat at telegram][telegram-image]][telegram-url]
 
-Core with UI for web todo application maked on [Angular7+](https://angular.io) based on [Rucken](https://rucken.io) template
+Core with UI for web todo application maked on [Angular7+](https://angular.io) based on [Rucken](https://rucken.ru) template
 
 ## Screenshots
 <p>
-  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-projects.png" width="250" title="Web: Projects page for guests">
-  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-projects-view.png" width="250" title="Web: Modal for view project">
-  <img src="https://rucken.io/assets/rucken-todo/web/rucken-todo-web-project-update-add-user.png" width="250" title="Web: Add user to project modal">
+  <img src="https://rucken.ru/assets/rucken-todo/web/rucken-todo-web-projects.png" width="250" title="Web: Projects page for guests">
+  <img src="https://rucken.ru/assets/rucken-todo/web/rucken-todo-web-projects-view.png" width="250" title="Web: Modal for view project">
+  <img src="https://rucken.ru/assets/rucken-todo/web/rucken-todo-web-project-update-add-user.png" width="250" title="Web: Add user to project modal">
 </p>
 
 ## Usage
@@ -27,7 +27,7 @@ npm run start:prod
 
 [https://rucken.github.io/todo/](https://rucken.github.io/todo/) - Static site on [GitHub Pages](https://pages.github.com/)
 
-[https://todo.rucken.io](https://todo.rucken.io) - Server-side rendering (SSR) on VPS with [Dokku](http://dokku.viewdocs.io/dokku/)
+[https://todo.rucken.ru](https://todo.rucken.ru) - Server-side rendering (SSR) on VPS with [Dokku](http://dokku.viewdocs.io/dokku/)
 
 ## Compodoc documentations
 

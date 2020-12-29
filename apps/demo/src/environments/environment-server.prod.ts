@@ -4,5 +4,5 @@ export const environment: IEnvironment = {
   server: true,
   type: 'prod',
   production: true,
-  apiUrl: 'https://todo-nestjs.rucken.io/api'
+  apiUrl: 'https://todo-nestjs.rucken.ru/api'
 };
