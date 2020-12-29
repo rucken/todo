@@ -140,7 +140,7 @@
     "bind-observable": "1.0.2",
     "core-js": "2.6.5",
     "cors": "2.8.5",
-    "dotenv": "8.0.0",
+    "dotenv": "8.1.0",
     "jsonwebtoken": "8.5.1",
     "luxon": "1.13.2",
     "ngx-bind-io": "0.6.6",
